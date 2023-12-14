@@ -45,3 +45,15 @@ export interface Categories {
   id: string;
   label: string;
 }
+ 
+export interface ProfileForm  {
+  username: string;
+  email: any;
+  password: string;
+  imageUrls?: any;
+  country: string;
+  phone: string;
+  address: string;
+  postalcode: string;
+  city: string;
+}

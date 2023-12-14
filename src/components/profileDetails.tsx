@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { ProfileForm } from "@/utils/types";
 
 interface Image {
   setImageUrl: (value: React.SetStateAction<string>) => void;
@@ -72,17 +73,7 @@ export default function ProfileDetail({ session }: { session: any }) {
     e.preventDefault();
 
     try {
-      const body: {
-        username: string;
-        email: any;
-        password: string;
-        imageUrls?: any;
-        country: string;
-        phone: string;
-        address: string;
-        postalcode: string;
-        city: string;
-      } = {
+    const body: ProfileForm ={
         username,
         email: session?.user?.email,
         password,
@@ -167,7 +158,6 @@ export default function ProfileDetail({ session }: { session: any }) {
           <div>
             <label className="block text-left">Country</label>
             <input
-              // disabled={disabled}
               type="text"
               placeholder="Country"
               className="border p-3 rounded-lg w-full"
@@ -203,7 +193,7 @@ export default function ProfileDetail({ session }: { session: any }) {
                 placeholder="Postal code"
                 className="border p-3 rounded-lg"
                 value={session?.user?.postalcode}
-                onChange={(ev) => setPostalCode(e.target.value)}
+                onChange={(e) => setPostalCode(e.target.value)}
               />
             </div>
             <div>
@@ -213,7 +203,7 @@ export default function ProfileDetail({ session }: { session: any }) {
                 placeholder="City"
                 className="border p-3 rounded-lg"
                 value={session?.user?.city}
-                onChange={(ev) => setCity(e.target.value)}
+                onChange={(e) => setCity(e.target.value)}
               />
             </div>
           </div>
