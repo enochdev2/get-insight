@@ -31,6 +31,7 @@ export async function PUT(req: any, { params }: any) {
     postalcode,
     city,
   } = await req.json();
+  console.log("🚀 ~ file: route.ts:33 ~ PUT ~ city:", city)
   
 
   await db.connect();
@@ -66,6 +67,7 @@ export async function PUT(req: any, { params }: any) {
       },
       { new: true }
     );
+    console.log("🚀 ~ file: route.ts:70 ~ PUT ~ UserInfo:", UserInfo)
 
     await UserInfo.save();
     const { password, ...rest } = UserInfo._doc;

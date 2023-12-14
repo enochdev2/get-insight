@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ProfileForm } from "@/utils/types";
+import { BsArrowReturnRight } from "react-icons/bs";
 
 interface Image {
   setImageUrl: (value: React.SetStateAction<string>) => void;
@@ -108,13 +109,17 @@ export default function ProfileDetail({ session }: { session: any }) {
     }
   };
 
-  const picture = !imageUrls
-    ? session?.user?.avatar || session?.user?.image
-    : imageUrls;
+  const picture = () => { 
+    if(!imageUrls){
+    return   session?.user?.avatar || session?.user?.image
+    }else{
+      return  imageUrls;
+    }
   console.log(
     "🚀 ~ file: profileDetails.tsx:115 ~ ProfileDetail ~ picture:",
     picture
   );
+  }
 
   return (
     <div className="  p-3 max-w-screen-lg h-screen mx-auto">
