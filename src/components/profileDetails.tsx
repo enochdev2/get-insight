@@ -121,6 +121,8 @@ export default function ProfileDetail({ session }: { session: any }) {
   );
   }
 
+  const pictures = picture()
+
   return (
     <div className="  p-3 max-w-screen-lg h-screen mx-auto">
       <input
@@ -132,7 +134,7 @@ export default function ProfileDetail({ session }: { session: any }) {
       />
       <Image
         onClick={() => fileRef.current.click()}
-        src={picture}
+        src={pictures}
         width={300}
         height={300}
         alt="profile"
