@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import NextThemeProvider from "../Provider/ThemeProvider";
+import NextThemeProvider from "../Provider/ThemeProvider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Provider from "@/Provider";
@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "TechNoch Blog",
-  description: "Information for daily living",
+  description: "Bringing insight to your world",
 };
 
 export default function RootLayout({
@@ -23,12 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className=" w-screen dark:bg-transparent ">
         <Provider>
-          {/* <NextThemeProvider> */}
+          <NextThemeProvider>
             <Navbar />
             <SideBar />
             {children}
             <Footer />
-          {/* </NextThemeProvider> */}
+          </NextThemeProvider>
         </Provider>
       </body>
     </html>

@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <Headers/>
+      <Headers session={session}/>
     </div>
   )
 }
