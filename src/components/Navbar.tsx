@@ -4,8 +4,8 @@ import Headers from "./Headers";
 import { authOptions } from "@/lib/authOptions";
 
 
-const Navbar = () => {
-    const session = getServerSession(authOptions) as any;
+const Navbar = async () => {
+    const session = await getServerSession(authOptions) as any;
 
 
 

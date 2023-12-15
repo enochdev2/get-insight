@@ -34,8 +34,8 @@ export interface Blog {
   id: number;
   title: string;
   description: string;
-  category: string;
-  userid: string;
+  categories: string;
+  userId: {username:string};
   userimage: string;
   comments: string[];
   image: string;

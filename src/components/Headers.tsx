@@ -10,7 +10,6 @@ import { BiSearchAlt } from "react-icons/bi";
 import { Sarpanch } from "next/font/google";
 
 const Headers = ({ session }: any) => {
-  console.log("🚀 ~ file: Headers.tsx:13 ~ Headers ~ session:", session?.user);
   const [navMenu, setNavMenu] = useState<boolean>(false);
   const [sticky, setSticky] = useState<boolean>(false);
 
@@ -90,7 +89,7 @@ ${
               <ThemeToggler />
             </span>
             <div>
-              {session?.user ? (
+              {session?.user?.email ? (
                 <Link href="/profile">
                   <Image
                     className="rounded-full h-7 w-7 object-cover"
