@@ -115,10 +115,7 @@ export default function ProfileDetail({ session }: { session: any }) {
     }else{
       return  imageUrls;
     }
-  console.log(
-    "🚀 ~ file: profileDetails.tsx:115 ~ ProfileDetail ~ picture:",
-    picture
-  );
+ 
   }
 
   const pictures = picture()
@@ -235,10 +232,20 @@ export default function ProfileDetail({ session }: { session: any }) {
       <div className="flex justify-between mt-5">
         <span
           //   onClick={handleDeleteUser}
-          className="text-red-700 cursor-pointer"
+          className="bg-red-700 text-wite backdrop:cursor-pointer"
         >
           Delete account
         </span>
+        </div>
+      <div className="flex justify-between mt-5">
+        {session?.user?.role === "admin" &&
+        <span
+          //   onClick={handleDeleteUser}
+          className="bg-green-700 text-white cursor-pointer"
+        >
+          <Link href='/createBlog'>Create Post</Link>
+        </span>
+          }
         <span
           onClick={() => {
             signOut();

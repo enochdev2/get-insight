@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/authOptions";
 
 const Profile = async () => {
   const session  = await getServerSession(authOptions);
+  console.log("🚀 ~ file: page.tsx:15 ~ Profile ~ session?.user?.role:", session?.user)
 
   return (
     <div>
@@ -11,5 +12,6 @@ const Profile = async () => {
     </div>
   );
 };
+  
 
 export default Profile;

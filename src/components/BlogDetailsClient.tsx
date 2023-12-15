@@ -9,13 +9,20 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Blog } from "@/utils/types";
 import { useRouter } from "next/navigation";
+import { ShareSocial } from "react-share-social";
+import { style } from "@/utils";
 
-const BlogDetailsClient = ({ id, BlogDetail }:{id:string|number,BlogDetail:Blog}) => {
-  const { data: session, status } = useSession() as {data:any, status:any};
+const BlogDetailsClient = ({
+  id,
+  BlogDetail,
+}: {
+  id: string | number;
+  BlogDetail: Blog;
+}) => {
+  const { data: session, status } = useSession() as { data: any; status: any };
   const Router = useRouter();
   const [isLiked, setIsLiked] = useState(true);
   const [blogLikes, setBlogLikes] = useState(0);
-
 
   const handleDelete = async () => {
     try {
@@ -86,22 +93,34 @@ const BlogDetailsClient = ({ id, BlogDetail }:{id:string|number,BlogDetail:Blog}
             />
           )}
         </div>
-        {session?.user?.id === BlogDetail?.userId?.username && (
-          <div className="flex gap-4">
-            <Link className="flex items-center gap-1" href={`/blog/edit/${id}`}>
-              Edit
-              <BsFillPencilFill style={{ color: "blue" }} />
-            </Link>
-            <button
-              type="button"
-              className="flex gap-1 items-center"
-              onClick={handleDelete}
-            >
-              Delete
-              <AiFillDelete style={{ color: "red" }} />
-            </button>
-          </div>
-        )}
+        <div>
+          <ShareSocial
+            url="https://tech-noch-real-estate.onrender.com/"
+            socialTypes={["facebook", "twitter", "whatsapp", "linkedin"]}
+            onSocialButtonClicked={(data: any) => console.log(data)}
+            style={style}
+          />
+        </div>
+        <div>
+          {session?.user?.id === BlogDetail?.userId?.username && (
+            <div className="flex gap-4">
+              <Link
+                className="flex items-center gap-1"
+                href={`/blog/edit/${id}`}
+              >
+                <BsFillPencilFill style={{ color: "blue" }} />
+              </Link>
+              <button
+                title="button"
+                type="button"
+                className="flex gap-1 items-center"
+                onClick={handleDelete}
+              >
+                <AiFillDelete style={{ color: "red" }} />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <ToastContainer />
     </>

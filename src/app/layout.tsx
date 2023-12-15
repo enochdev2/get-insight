@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" w-screen dark:bg-transparent ">
+      <body className=" w-screen overflow-x-hidden dark:bg-transparent ">
         <Provider>
           <NextThemeProvider>
             <Navbar />

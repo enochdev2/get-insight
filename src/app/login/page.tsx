@@ -20,9 +20,9 @@ const LogIn = () => {
     const router = useRouter()
 
 
-    if(session){
-      router.push('/')
-    }
+    // if(session){
+    //   router.push('/')
+    // }
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
@@ -37,9 +37,9 @@ const LogIn = () => {
       }
 
       try {
-          const res = await signIn('credentials', { email, password, redirect: false })
+          const res:any = await signIn('credentials', { email, password, redirect: false })
 
-          if (res?.error == null) {
+          if (res.ok) {
               router.push("/")
           } else {
               toast.error("Error occured while logging")
