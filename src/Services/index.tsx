@@ -1,6 +1,5 @@
 export const fetchBlog = async () => {
-  const res = await fetch(`http://get-insight.vercel.app
-  /api/blog`, { cache: 'no-store' }) 
+  const res = await fetch(`http://get-insight.vercel.app/api/blog`, { cache: 'no-store' }) 
   const data = res.json();
   return data;
 }
