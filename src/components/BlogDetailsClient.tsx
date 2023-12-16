@@ -48,8 +48,8 @@ const BlogDetailsClient = ({
           method: "DELETE",
         });
         const data = await res.json();
-        toast.error(data.message);
         if (res.ok) {
+          toast.success(data.message);
           Router.push("/");
         }
       }
@@ -114,18 +114,18 @@ const BlogDetailsClient = ({
           <LinkedinShareButton url="">
             <LinkedinIcon size={26} round={true} />
           </LinkedinShareButton>
-          <PinterestShareButton url="">
+          {/* <PinterestShareButton url="">
             <PinterestIcon size={26} round={true} />
-          </PinterestShareButton>
+          </PinterestShareButton> */}
         </div>
-          {session?.user?.id ==='admin' && (
-        <div>
+        {session?.user?.role === "admin" && (
+          <div>
             <div className="flex gap-4">
               <Link
                 className="flex items-center gap-1"
                 href={`/blog/edit/${id}`}
               >
-                <BsFillPencilFill style={{ color: "blue" }} />
+                <BsFillPencilFill size={20} style={{ color: "blue" }} />
               </Link>
               <button
                 title="button"
@@ -133,12 +133,11 @@ const BlogDetailsClient = ({
                 className="flex gap-1 items-center"
                 onClick={handleDelete}
               >
-                <AiFillDelete style={{ color: "red" }} />
+                <AiFillDelete size={20} style={{ color: "red" }} />
               </button>
             </div>
-        </div>
-          )
-          }
+          </div>
+        )}
       </div>
       <ToastContainer />
     </>

@@ -28,7 +28,7 @@ export async function GET(req: any, ctx: any) {
 export async function PUT(req: any, { params }: any) {
   const { id } = params;
   const headersList = headers();
-  const accessToken:any = headersList.get("authorization");
+  const accessToken: any = headersList.get("authorization");
   const token = accessToken.split(" ")[1];
 
   const decodedToken: any = jwtVerify(token);
@@ -39,8 +39,7 @@ export async function PUT(req: any, { params }: any) {
       { status: 403 }
     );
   }
- 
-  
+
   const body = await req.json();
   try {
     // const blog = await Blog.findById(id)
@@ -66,11 +65,10 @@ export async function DELETE(req: any, ctx: any) {
   const id = ctx.params.id;
 
   const headersList = headers();
-  const accessToken:any = headersList.get("authorization");
+  const accessToken: any = headersList.get("authorization");
   const token = accessToken.split(" ")[1];
 
   const decodedToken: any = jwtVerify(token);
-
 
   if (!accessToken || !decodedToken) {
     return new Response(
@@ -80,19 +78,22 @@ export async function DELETE(req: any, ctx: any) {
   }
 
   try {
-    const blog = await Blog.findById(id)
-    if (blog?.userId?._id.toString() !== decodedToken._id.toString()) {
+    const blog = await Blog.findById(id);
+    if (blog?.userId?.role === "admin") {
       return new Response(
-        JSON.stringify({ message: "Only author can delete his blog" }),
+        JSON.stringify({ message: "Only admin can delete this blog" }),
         { status: 403 }
       );
     }
 
     await Blog.findByIdAndDelete(id);
 
-    return new Response(JSON.stringify({ message: "Successfully deleted blog" }), {
-      status: 200,
-    });
+    return new Response(
+      JSON.stringify({ message: "Successfully deleted blog" }),
+      {
+        status: 200,
+      }
+    );
   } catch (error) {
     return new Response(JSON.stringify(null), { status: 500 });
   }

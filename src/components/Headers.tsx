@@ -117,8 +117,8 @@ ${
             </div>
           </div>
         </div>
-        <div onClick={handleMenu}>
-          <IoMenu size={30} className="cursor-pointer z-40" />
+        <div className="cursor-pointer md:hidden mr-3  z-40" onClick={handleMenu}>
+          <IoMenu size={30} className="cursor-pointer md:hidden  z-40" />
         </div>
         {navMenu && <SideBar handleMenu={handleMenu} />}
       </div>
