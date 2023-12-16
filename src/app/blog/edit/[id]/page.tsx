@@ -48,7 +48,7 @@ const router = useRouter()
 
 useEffect(() => {
   async function fetchBlog() {
-      const res = await fetch(`http://localhost:3000/api/blog/${params.id}`)
+      const res = await fetch(`https://get-insight.vercel.app/api/blog/${params.id}`)
       const blog = await res.json()
 
       setTitle(blog.title)
@@ -98,7 +98,7 @@ console.log(title);
     body.imageUrl = imageUrl
 }
     
-    const res = await fetch(`http://localhost:3000/api/blog/${params.id}`, {
+    const res = await fetch(`https://get-insight.vercel.app/api/blog/${params.id}`, {
       method: 'PUT',
       headers: {
          'Content-Type': 'application/json',

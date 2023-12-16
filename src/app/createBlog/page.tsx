@@ -68,7 +68,7 @@ const Create_post = () => {
       const imageUrl = await uploadImage();
       console.log(imageUrl);
 
-      const res = await fetch(`http://localhost:3000/api/blog`, {
+      const res = await fetch(`https://get-insight.vercel.app/api/blog`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -41,7 +41,7 @@ const BlogDetailsClient = ({
       );
 
       if (confirmModal) {
-        const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+        const res = await fetch(`https://get-insight.vercel.app/api/blog/${id}`, {
           headers: {
             Authorization: `Bearer ${session?.user?.accessToken}`,
           },
@@ -60,7 +60,7 @@ const BlogDetailsClient = ({
 
   const handleLike = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/blog/${id}/likes`, {
+      const res = await fetch(`https://get-insight.vercel.app/api/blog/${id}/likes`, {
         headers: {
           Authorization: `Bearer ${session?.user?.accessToken}`,
         },

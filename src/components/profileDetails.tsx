@@ -87,7 +87,7 @@ export default function ProfileDetail({ session }: { session: any }) {
       };
 
       const res = await fetch(
-        `http://localhost:3000/api/user/${session?.user?._id}`,
+        `https://get-insight.vercel.app/api/user/${session?.user?._id}`,
         {
           method: "PUT",
           headers: {
