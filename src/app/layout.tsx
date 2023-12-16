@@ -25,7 +25,6 @@ export default function RootLayout({
         <Provider>
           <NextThemeProvider>
             <Navbar />
-            <SideBar />
             {children}
             <Footer />
           </NextThemeProvider>

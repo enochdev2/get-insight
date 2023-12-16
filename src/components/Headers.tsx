@@ -8,6 +8,7 @@ import ThemeToggler from "./theme";
 
 import { BiSearchAlt } from "react-icons/bi";
 import { Sarpanch } from "next/font/google";
+import SideBar from "./SideBar";
 
 const Headers = ({ session }: any) => {
   const [navMenu, setNavMenu] = useState<boolean>(false);
@@ -111,6 +112,9 @@ ${
             </div>
           </div>
         </div>
+        {navMenu && 
+        <SideBar/>
+        }
       </div>
     </header>
   );

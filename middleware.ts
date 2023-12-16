@@ -6,10 +6,8 @@ import { authOptions } from "./src/lib/authOptions";
 export async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const session:any = getServerSession(authOptions)
-  const token = await getToken({
-    req: req,
-    secret: process.env.NEXTAUTH_SECRET,
-  });
+  console.log("🚀 ~ file: middleware.ts:9 ~ middleware ~ sessio:", session)
+ 
 
   const publicPaths = path === "/login" || path === "/register";
 
@@ -17,7 +15,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/", req.nextUrl));
   }
   if (!publicPaths && session.user) {
-    return NextResponse.redirect(new URL("/", req.nextUrl));
+    return NextResponse.redirect(new URL("/login", req.nextUrl));
   }
 }
 
