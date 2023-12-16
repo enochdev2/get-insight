@@ -5,6 +5,7 @@ import { NavBarItem } from "../utils/types";
 import { FaBars, FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import ThemeToggler from "./theme";
+import { IoMenu } from "react-icons/io5";
 
 import { BiSearchAlt } from "react-icons/bi";
 import { Sarpanch } from "next/font/google";
@@ -41,6 +42,10 @@ const Headers = ({ session }: any) => {
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
   });
+
+  const handleMenu = () => {
+    setNavMenu(!navMenu);
+  };
 
   return (
     <header
@@ -89,7 +94,7 @@ ${
             <span className="hidden sm:inline text-slate-700 hover:underline">
               <ThemeToggler />
             </span>
-            <div>
+            <div className="hidden md:block">
               {session?.user?.email ? (
                 <Link href="/profile">
                   <Image
@@ -112,9 +117,10 @@ ${
             </div>
           </div>
         </div>
-        {navMenu && 
-        <SideBar/>
-        }
+        <div onClick={handleMenu}>
+          <IoMenu size={30} className="cursor-pointer z-40" />
+        </div>
+        {navMenu && <SideBar handleMenu={handleMenu} />}
       </div>
     </header>
   );

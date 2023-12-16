@@ -17,8 +17,8 @@ const BlogDetails = async ({ params }: any) => {
   const handleLike = () => {};
 
   return (
-    <main className="w-full grid grid-cols-4 pt-0 py-5">
-       <div className="sticky col-span-4 w-full -mt-2 pt-4 pb-3 top-[60px] bg-slate-300 flex justify-center pr-4 z-[999]">
+    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
+      <div className="sticky col-span-4 w-full -mt-2 pt-4 pb-3 top-[60px] bg-slate-300 flex justify-center pr-4 z-[999]">
         <Categories
           style={`mx-6 px-3 py-2 rounded-lg bg-slate-200 `}
           title={null}

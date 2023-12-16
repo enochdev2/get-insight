@@ -16,16 +16,20 @@ const BlogDetails = async ({ params }: any) => {
   const handleLike = () => {};
 
   return (
-    <main className="w-full grid grid-cols-4 pt-0 py-5">
-      <div className=" -mt-2 col-span-4 w-full  m-auto border-b-black-700 text-xl text-center">
+    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
+      <div className="sticky col-span-4 w-full -mt-2 pt-4 pb-3 top-[60px] bg-slate-300 flex justify-center pr-4 z-[999]">
         <Categories
-          classNames={`dark:bg-teal-800 text-[#314E52] flex justify-between  bg-white items-center w-full shadow-lg rounded-lg  mb-12`}
-        />{" "}
+          style={`mx-3 md:mx-6 px-3 py-2 rounded-lg bg-slate-200 `}
+          title={null}
+          classNames={` text-[#314E52]  flex justify-space-around font-bold items-center h-full md:w-3xl py-2  my-2`}
+        />
       </div>
 
-      <div className="px-3 w-[90%] m-auto md:col-span-3  grid place-items-center gap-3">
-        <div className="w-full bg-slate-200 rounded-lg p-4 ">
-          <div className="font-bold my-8 text-2xl">{BlogDetail?.title}</div>
+      <div className="md:px-3  w-[90%] m-auto md:col-span-3  grid place-items-center gap-3">
+        <div className="w-full mt-4 bg-slate-200">
+          <div className="font-bold my-8 m-auto text-center text-2xl">
+            {BlogDetail?.title}
+          </div>
           <div className="relative overflow-hidden w-[90%] h-[200px] bg-red-800 m-auto">
             <Image src={BlogDetail?.imageUrl} fill alt="blog" className="" />
           </div>
@@ -43,13 +47,9 @@ const BlogDetails = async ({ params }: any) => {
           <div className="flex w-full ">
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
-
-          {/* <p className="py-3 px-5 text-lg text-justify">{BlogDetail?.desc.slice(0,370)}</p> */}
           <div className="relative overflow-hidden w-[70%] h-[150px] bg-red-800 m-auto">
             <Image src={BlogDetail.imageUrl} fill alt="blog" className="" />
           </div>
-          {/* <p className="py-3 px-5 text-lg 
-          text-justify">{BlogDetail?.desc.slice(370,700)}</p> */}
           <div
             className="py-3 px-5 text-lg 
           text-justify"
@@ -57,13 +57,8 @@ const BlogDetails = async ({ params }: any) => {
           />
         </div>
       </div>
-      {/* // <div className="">
-       // <div className="md:hidden lg:block relative top-8">
-          <RelatedPost categories={BlogDetail?.categories} />
-      //  </div>
-    //  </div> */}
 
-      <div className="sm:col-span-4 col-span-1">
+      <div className="col-span-1 md:col-span-4">
         <CommentsForm idx={idx} />
         <Comments id={params.id} />
       </div>

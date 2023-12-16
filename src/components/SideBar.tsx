@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { NavBarItem } from '@/utils/types'
 
-const SideBar = () => {
+const SideBar = ({handleMenu}:any) => {
         const [openSideBar, setOpenSideBar] = useState<boolean>(true)
       
       const item : NavBarItem[] =  [
@@ -31,20 +31,22 @@ const SideBar = () => {
       ]
 
   return (
-    <div>
-        { 
-        openSideBar &&
-      <div className='sm:hidden flex flex-col absolute w-screen h-screen justify-between items-center  gap-5'>  
+    <>
+        
+      <div className='sm:hidden ring-offset-slate-800 flex flex-col absolute top-[70px] bg-slate-700 left-0 w-screen h-screen justify-between items-center py-12  z-[2000] gap-5' onClick={()=> handleMenu()} >  
+      <div className='flex flex-col w-full gap-3'>
+
+  
             {item.map((items:NavBarItem, id:number)=>(
 
-            <Link href={items.link} key={id} className="py-2 px-4 bg-slate-400 rounded-xl hover:bg-white">
+            <Link href={items.link} key={id} className="py-2 px-4 my-3 text-center w-[80%] bg-slate-400 rounded-xl hover:bg-white">
               {items.name}
             </Link>
             ))}
         </div>
-        }
+        </div>
 
-    </div>
+    </>
   )
 }
 

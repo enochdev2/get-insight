@@ -9,7 +9,17 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Blog } from "@/utils/types";
 import { useRouter } from "next/navigation";
-import { ShareSocial } from "react-share-social";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  PinterestShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  PinterestIcon,
+  TwitterIcon,
+  LinkedinIcon,
+  FacebookIcon,
+} from "react-share";
 import { style } from "@/utils";
 
 const BlogDetailsClient = ({
@@ -73,7 +83,7 @@ const BlogDetailsClient = ({
 
   return (
     <>
-      <div className="flex w-full bg-slate-300 p-2 rounded-md dark:bg-white justify-between mt-1 m-3 px-4">
+      <div className="flex w-full bg-slate-300 p-2 rounded-md dark:bg-white items-center justify-between mt-1 m-3 px-4">
         <div className="">
           Category: <span>{BlogDetail?.categories}</span>
         </div>
@@ -94,15 +104,22 @@ const BlogDetailsClient = ({
           )}
         </div>
         <div>
-          <ShareSocial
-            url="https://tech-noch-real-estate.onrender.com/"
-            socialTypes={["facebook", "twitter", "whatsapp", "linkedin"]}
-            onSocialButtonClicked={(data: any) => console.log(data)}
-            style={style}
-          />
+          <FacebookShareButton url="" hashtag="#">
+            <FacebookIcon size={26} round={true} />
+          </FacebookShareButton>
+          <TwitterShareButton url="">
+            {" "}
+            <TwitterIcon size={26} round={true} />
+          </TwitterShareButton>
+          <LinkedinShareButton url="">
+            <LinkedinIcon size={26} round={true} />
+          </LinkedinShareButton>
+          <PinterestShareButton url="">
+            <PinterestIcon size={26} round={true} />
+          </PinterestShareButton>
         </div>
+          {session?.user?.id ==='admin' && (
         <div>
-          {session?.user?.id === BlogDetail?.userId?.username && (
             <div className="flex gap-4">
               <Link
                 className="flex items-center gap-1"
@@ -119,8 +136,9 @@ const BlogDetailsClient = ({
                 <AiFillDelete style={{ color: "red" }} />
               </button>
             </div>
-          )}
         </div>
+          )
+          }
       </div>
       <ToastContainer />
     </>
