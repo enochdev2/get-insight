@@ -41,13 +41,13 @@ const CommentsForm = ({idx}:any) => {
   };
 
   return (
-    <div className="bg-white w-11/12 shadow-lg rounded-lg p-8 pb-12 my-8 m-auto">
+    <div className="bg-white w-11/12 shadow-lg dark:bg-slate-800 rounded-lg p-8 pb-12 my-8 m-auto">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
-      <div className="grid grid-cols-1 gap-4 mb-4">
+      <div className="grid grid-cols-1 gap-4 mb-4 dark:bg-slate-950">
         <textarea 
         onChange={(e) => setCommentText(e.target.value)} 
         value={commentText}
-        className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" name="comment" placeholder="Comment" />
+        className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700 dark:text-white  dark:bg-slate-950" name="comment" placeholder="Comment" />
       </div>
     
       {error && <p className="text-xs text-red-500">All fields are mandatory</p>}

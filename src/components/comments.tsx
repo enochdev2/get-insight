@@ -5,6 +5,9 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { fetchComment } from "@/Services";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
+import DeleteComment from "./deleteComment";
 
 // import parse from 'html-react-parser';
 
@@ -17,30 +20,12 @@ interface Commentss {
   updatedAt?: Date;
 }
 const Comments = async ({ id }: any) => {
-  
+  const session = getServerSession(authOptions)
 
   const comments: any = await fetchComment(id);
-  // {commentSection.map((comment)=>(
+ 
 
-  //   <p>{comment.text}</p>
-  // ))}
-
-  // const handleDeleteComment = async (id: string) => {
-  //   try {
-  //     await fetch(`http://localhost:3000/api/comment/${id}`, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //       method: "DELETE",
-  //     });
-
-  //     setComments((prev) => {
-  //       return [...prev].filter((c) => c?._id !== id);
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+ 
 
   return (
     <>
@@ -49,12 +34,12 @@ const Comments = async ({ id }: any) => {
           {comments?.length} Comments
         </h3>
         {comments?.length > 0 && (
-          <div className="bg-white w-11/12 sm:w-full sm:col-span-4 shadow-lg rounded-lg p-8 pb-12 my-8 m-auto">
+          <div className="bg-white w-11/12 sm:w-full dark:bg-slate-800 sm:col-span-4 shadow-lg rounded-lg p-8 pb-12 my-8 m-auto">
             {comments.map((comment: any, index: any) => (
-              <div key={index} className="border-b border-gray-100 mb-4 pb-4">
+              <div key={index} className="border-b border-gray-100 mb-4 pb-4 dark:bg-slate-800">
                 <div className="flex gap-3 mb-4">
 
-                <div className="relative overflow-hidden w-9 h-[36px] bg-red-800 rounded-s-full ">
+                <div className="relative dark:bg-slate-800 overflow-hidden w-9 h-[36px] bg-red-800 rounded-s-full ">
             <Image src={comment?.userId?.avatar} fill alt="blog" className="" />
           </div>
                 <h4 className="font-semibold text-xl uppercase">{comment?.userId?.username}</h4>
@@ -64,7 +49,7 @@ const Comments = async ({ id }: any) => {
                 <p> {moment(comment.createdAt).format("MM-DD- YYYY")}</p>
                 <div className="flex justify-between">
                   <p className="mb-4">
-                  
+                  <DeleteComment commentUserID={comment?.userI} commentId={comment._id}/>
                     <span className="font-semibold">{comment.text}</span>
                   </p>
                   {/* <div className="">

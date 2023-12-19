@@ -6,20 +6,21 @@ import { useEffect, useState } from "react";
 
 export default function ThemeToggler() {
   const { systemTheme, theme, setTheme } = useTheme();
-  const [mounted,setMounted] = useState(false)
+  // const [mounted,setMounted] = useState(false)
 
-  useEffect(() =>  ()=> {setMounted(true)}, [])
-  
-const currentTheme = theme === "system" ? systemTheme : theme
+  // useEffect(() =>  ()=> {setMounted(true)}, [])
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <>
-    { mounted &&
-    <button type="button" onClick={() => setTheme(  currentTheme === "dark" ? "light" : "dark")}>
-        {
-            theme ==='dark' ? <BsSunFill size={25} /> : <MdDarkMode size={25}/>
-        }
-    </button>
-}
+      {/* { mounted && */}
+      <button
+        type="button"
+        onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+      >
+        {theme === "dark" ? <BsSunFill size={25} /> : <MdDarkMode size={25} />}
+      </button>
+      {/* } */}
     </>
   );
 }
