@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -50,63 +51,75 @@ const Register = () => {
   };
 
   return (
-    <div className="m-auto my-10 shadow-lg rounded-md max-w-[350px] border-blue-900 border-2 px-4 py-8 ">
-      <form onSubmit={handleSubmit} className="w-full ">
-        <h3 className="font-bold text-2">Create an account</h3>
+    <section className="mb-5 py-8">
+    <div className="m-auto mb-4 flex shadow-md rounded-xl h-[90%]  md:max-w-[80%] border-slate-300 border-2   ">
+      <div className="flex-1 bg-[url('/register.jpeg')] bg-cover bg-center">
+
+      </div>
+      <div className="flex-1 " >
+      <form onSubmit={handleSubmit} className="w-[80%] m-auto py-4">
+        <h3 className="font-semibold text-2xl text-center text-sky-700 mt-2">Create an account!</h3>
 
         <div className="my-2 flex flex-col text-2">
-          <label htmlFor="username" className="my-2">
-            Username
+          <label htmlFor="username" className="my-3 ml-2 text-lg ">
+            Username:
           </label>
           <input
             type="text"
             name="username"
             id="username"
-            className="h-9"
+            className=" h-12 text-lg border-slate-400 border  px-3 py-3 rounded-full"
+            placeholder="John Doe"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
 
         <div className="my-2 flex flex-col text-2">
-          <label htmlFor="email" className="my-2">
+          <label htmlFor="email" className="my-2  ml-2 text-lg">
             Email
           </label>
           <input
             type="text"
             name="email"
             id="email"
-            className="h-9"
+            placeholder="example@gmail.com"
+            className=" h-12 text-lg border-slate-400 border  px-5 py-3 rounded-full"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         <div className="my-2 mb-4 flex flex-col">
-          <label htmlFor="password" className="my-2">
+          <label htmlFor="password" className="my-2  ml-2">
             Password
           </label>
           <input
             type={`password`}
             name="password"
             id="password"
-            className="h-9"
+            placeholder="*********"
+            className=" h-12 text-lg border-slate-400 border  px-5 py-3 rounded-full"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button
           type="submit"
-          className=" text-white bg-blue-900 w-full m-auto rounded-md py-1 my-2 px-2 "
+          className=" h-12 text-lg border-slate-400 w-[95%] m-auto border my-2 mb-5 bg-sky-900 text-white px-3 py-3 rounded-full"
         >
           Register
         </button>
-        <button className=" my-2 text-white bg-blue-900 w-full m-auto rounded-md py-1 px-2 ">
-          Google
+        <button type="button" onClick={() => signIn('google')}
+                className="flex gap-4 justify-center w-[85%] m-auto  py-2 px-2 border border-sky-900 text-lg font-semibold rounded-full bg-slate-100  dark:bg-slate-800">
+          <Image src={'/google.png'} alt={'googleLogin'} width={24} height={24} />
+          Sign-Up with google
         </button>
       </form>
-      <h3>
-        Don&apos;t have an account? <Link href="/login">Login Here</Link>
+      <h3 className="mb-4 text-center text-lg">
+        Already have an account? <Link href="/login" className="text-sky-900">Login Here</Link>
       </h3>
+      </div>
       <ToastContainer />
     </div>
+    </section>
   );
 };
 

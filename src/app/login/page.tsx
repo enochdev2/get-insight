@@ -11,6 +11,7 @@ import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 
 
+
 const LogIn = () => {
   const { data: session, status } = useSession();
 
@@ -19,6 +20,10 @@ const LogIn = () => {
     const [password, setPassword] = useState("")
     const router = useRouter()
 
+
+    const refresh =()=>{
+      router.refresh()
+    }
 
     // if(session){
     //   router.push('/')
@@ -40,6 +45,7 @@ const LogIn = () => {
           const res:any = await signIn('credentials', { email, password, redirect: false })
 
           if (res.ok) {
+            refresh()
               router.push("/")
           } else {
               toast.error("Error occured while logging")
@@ -51,37 +57,61 @@ const LogIn = () => {
 
 
   return (
-    <div className='m-auto my-10 max-w-[350px] shadow-lg rounded-md border-blue-900 border-2 px-4 py-8 '>
-      <form onSubmit={handleSubmit}  className='w-full mb-3'>
-      <h3 className='font-bold text-2xl'>Login</h3>
-      <div className='my-2 flex flex-col text-2'>
-      <label htmlFor="email" className="my-2 text-lg">Email</label>
-        <input type="text" name='email' id="email" className='border p-3 rounded-lg' onChange={(e) => setEmail(e.target.value)} />
-      </div>
+    <section className="mb-5 py-8">
+    <div className="m-auto mb-4 flex shadow-md rounded-xl h-[90%]  md:max-w-[80%] border-slate-300 border-2   ">
+      <div className="flex-1 bg-[url('/register.jpeg')] bg-cover bg-center">
 
-      <div className='my-2 flex flex-col' >
-        <label htmlFor="password" className="my-2 text-lg">Password</label>
-        <input type={`password`} name='password' id="password" className='border p-3 rounded-lg' onChange={(e) => setPassword(e.target.value)}  />
       </div>
-      <button type="submit" disabled={status === "loading"} className=" text-white bg-blue-900 w-full m-auto mt-2 rounded-md py-2 px-2 text-lg font-bold " >Login</button>
+      <div className="flex-1 " >
+      <form onSubmit={handleSubmit} className="w-[80%] m-auto py-4">
+        <h3 className="font-semibold text-2xl text-center text-sky-700 mt-2">Welcome back!</h3>
 
-     
-      <div className="my-2 text-center text-gray-500">
-          or login with provider
+        <div className="my-2 flex flex-col text-2">
+          <label htmlFor="email" className="my-2  ml-2 text-lg">
+            Email
+          </label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="example@gmail.com"
+            className=" h-12 text-lg border-slate-400 border  px-5 py-3 rounded-full"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
-        <button type="button" onClick={() => signIn('google')}
-                className="flex gap-4 justify-center w-full m-auto rounded-md py-2 px-2 text-lg font-semibold bg-slate-500 ">
-          <Image src={'/google.png'} alt={'googleLogin'} width={24} height={24} />
-          Login with google
+        <div className="my-2 mb-4 flex flex-col">
+          <label htmlFor="password" className="my-2  ml-2">
+            Password
+          </label>
+          <input
+            type={`password`}
+            name="password"
+            id="password"
+            placeholder="*********"
+            className=" h-12 text-lg border-slate-400 border  px-5 py-3 rounded-full"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button
+          type="submit"
+          className=" h-12 text-lg border-slate-400 w-[95%] m-auto border my-2 mb-5 bg-sky-900 text-white px-3 font-semibold text-center py-3 rounded-full"
+        >
+          SignIn
         </button>
-
-
-      {/* <button type="button" className=" my-2 text-white bg-blue-900 w-full m-auto rounded-md py-1 px-2 " >Google</button> */}
+        <button type="button" onClick={() => signIn('google')}
+                className="flex gap-4 justify-center w-[85%] m-auto  py-2 px-2 border border-sky-900 text-lg font-semibold rounded-full bg-slate-100  dark:bg-slate-800">
+          <Image src={'/google.png'} alt={'googleLogin'} width={24} height={24} />
+          Sign-in with google
+        </button>
       </form>
-      <h3>Don&apos;t have an account? <Link href="/register">Register Here</Link></h3>
+      <h3 className="mb-4 text-center text-lg">
+        Already have an account? <Link href="/register" className="text-sky-900">register Here</Link>
+      </h3>
+      </div>
       <ToastContainer />
     </div>
+    </section>
   )
 }
 

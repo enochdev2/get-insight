@@ -10,7 +10,7 @@ const Blog = async () => {
   const blogs: any = await fetchBlog();
 
   const classNames =
-    " bg-slate-300 flex gap-4 flex-col shadow-lg rounded-lg p-8 pb-12 mb-8";
+    " bg-slate-300 flex gap-4 flex-col dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8";
 
   return (
     <main className="w-full pt-2   ">
@@ -31,7 +31,7 @@ const Blog = async () => {
             {blogs.map((blog: any, index: number) => (
               <div
                 key={index}
-                className="my-14 shadow-md lg:flex  bg-slate-200 rounded-lg py-5 gap-2 px-4"
+                className="my-14 shadow-md lg:flex  bg-slate-200 rounded-lg py-5 gap-2 px-4 dark:bg-slate-800"
               >
                 <div className="relative w-[95%] h-36 lg:h-52 m-auto mr-4 ">
                   <Image
@@ -62,7 +62,7 @@ const Blog = async () => {
             <div className="md:hidden lg:block relative top-8">
               <RelatedPost />
               <Categories
-                style={`cursor-pointer grow block  py-3 px-2 mb-3 w-[95%] rounded-lg
+                style={`cursor-pointer grow block  py-3 px-2 mb-3 w-[95%] dark:bg-slate-950 rounded-lg
                  bg-slate-200`}
                 title={"Categories :"}
                 classNames={classNames}

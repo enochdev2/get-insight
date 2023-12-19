@@ -20,14 +20,14 @@ const ReletedPost = async ({ categories }: any) => {
     
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded-lg dark:bg-slate-800 p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
         {categories ?  "related Posts" : "recent Posts" }
       </h3>
       {relatedPosts.map((post: Post, index: number) => (
         <div
           key={index}
-          className="flex items-center w-full py-2 px-1 rounded-lg bg-neutral-200 mb-4"
+          className="flex items-center w-full py-2 px-2 rounded-lg bg-neutral-200 mb-4  dark:bg-slate-950"
         >
           <div className="w-16 flex-none">
             <Image

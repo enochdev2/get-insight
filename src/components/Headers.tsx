@@ -10,6 +10,7 @@ import { IoMenu } from "react-icons/io5";
 import { BiSearchAlt } from "react-icons/bi";
 import { Sarpanch } from "next/font/google";
 import SideBar from "./SideBar";
+import { signOut } from "next-auth/react";
 
 const Headers = ({ session }: any) => {
   const [navMenu, setNavMenu] = useState<boolean>(false);
@@ -53,7 +54,7 @@ const Headers = ({ session }: any) => {
 ${
   sticky
     ? "!fixed !z-[9999] !bg-[#7E909A]  shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-20"
-    : "absolute"
+    : "fixed top-0 left-0"
 }
 `}
     >
@@ -71,7 +72,7 @@ ${
           <input
             type="text"
             placeholder="Search..."
-            className="bg-transparent focus:outline-none w-24 sm:w-64"
+            className="bg-transparent focus:outline-none h-6 w-24 sm:w-64"
             // value={searchTerm}
             // onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -117,7 +118,19 @@ ${
             </div>
           </div>
         </div>
-        <div className="cursor-pointer md:hidden mr-3  z-40" onClick={handleMenu}>
+        {session?.user?.email &&
+        <div className="px-3 ">
+          <button type="button"
+          className="px-3 py-2 font-semibold bg-rose-500 rounded-full"
+          onClick={()=> signOut()}>
+               LogOut
+          </button>
+        </div>
+}
+        <div
+          className="cursor-pointer md:hidden mr-3  z-40"
+          onClick={handleMenu}
+        >
           <IoMenu size={30} className="cursor-pointer md:hidden  z-40" />
         </div>
         {navMenu && <SideBar handleMenu={handleMenu} />}
