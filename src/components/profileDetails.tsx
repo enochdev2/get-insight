@@ -74,7 +74,7 @@ export default function ProfileDetail({ session }: { session: any }) {
     e.preventDefault();
 
     try {
-    const body: ProfileForm ={
+      const body: ProfileForm = {
         username,
         email: session?.user?.email,
         password,
@@ -109,55 +109,66 @@ export default function ProfileDetail({ session }: { session: any }) {
     }
   };
 
-  const picture = () => { 
-    if(!imageUrls){
-    return   session?.user?.avatar || session?.user?.image
-    }else{
-      return  imageUrls;
-    }
- 
-  }
+  useEffect(() => {
+     setImageUrl(session?.user?.avatar)
+     setImageUrl(session?.user?.image)
+  }, [])
+  
 
-  const pictures = picture()
 
   return (
-    <div className="  p-3 max-w-screen-lg h-screen mx-auto">
-      <input
-        onChange={(e: any) => setFile(e.target.files[0])}
-        type="file"
-        ref={fileRef}
-        hidden
-        accept="image/*"
-      />
-      <Image
-        onClick={() => fileRef.current.click()}
-        src={pictures}
-        width={300}
-        height={300}
-        alt="profile"
-        className="rounded-full m-auto mb-4 h-32 w-32 object-cover bg-slate-400 cursor-pointer self-center mt-2"
-      />
-
+    <div className=" relative p-3 max-w-screen-lg pb-2 mx-auto">
+      <div className="justify-self-end absolute top-3 right-1 md:max-w-lg ">
+      {session?.user?.role === "admin" && (
+          <span
+            //   onClick={handleDeleteUser}
+            className=" py-3 px-3 bg-teal-600 font-semibold rounded-2xl text-wite cursor-pointer"
+          >
+            <Link href="/createBlog">Create Post</Link>
+          </span>
+        )}
+        </div>
       <form
         onSubmit={handleSubmit}
-        className=" flex-col grid grid-cols-2 gap-4"
+        className=" flex-col shadow-lg shadow-sky-800 rounded-lg items-center m-auto py-5 pb-3 px-5 md:max-w-[550px] w-[80%] gap-4 mb-5 dark:bg-slate-800"
       >
+         <div className="w-full my-2" >
         <input
-          type="text"
-          placeholder="username"
-          defaultValue={session?.user?.username || session?.user?.name}
-          id="username"
-          className="border p-3 rounded-lg"
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e: any) => setFile(e.target.files[0])}
+          type="file"
+          ref={fileRef}
+          hidden
+          accept="image/*"
         />
-        <input
-          type="email"
-          placeholder="email"
-          id="email"
-          defaultValue={session?.user?.email}
-          className="border p-3 rounded-lg"
+        <Image
+          onClick={() => fileRef.current.click()}
+          src={imageUrls}
+          width={400}
+          height={400}
+          alt="profile"
+          className="rounded-full m-auto mb-4 h-32 w-32 object-cover bg-slate-400 cursor-pointer self-center mt-2"
         />
-
+      </div>
+        <div className="w-full my-2">
+          <input
+            type="text"
+            placeholder="username"
+            defaultValue={session?.user?.username || session?.user?.name}
+            id="username"
+            className="border w-full p-3 rounded-lg"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="w-full my-3">
+          <input
+          disabled
+            type="email"
+            placeholder="email"
+            id="email"
+            defaultValue={session?.user?.email}
+            className="border w-full p-3 rounded-lg"
+          />
+        </div>
         <>
           <div>
             <label className="block text-left">Country</label>
@@ -189,71 +200,73 @@ export default function ProfileDetail({ session }: { session: any }) {
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-          <div className="grid grid-cols-2 gap-2">
-            <div>
+          <div className="flex gap-2">
+            <div className="w-full">
               <label className="block">Postal code</label>
               <input
                 type="text"
                 placeholder="Postal code"
-                className="border p-3 rounded-lg"
+                className="border p-3  w-full rounded-lg"
                 value={session?.user?.postalcode}
                 onChange={(e) => setPostalCode(e.target.value)}
               />
             </div>
-            <div>
-              <label>City</label>
+            <div className="w-full">
+              <label className="block">City</label>
               <input
                 type="text"
                 placeholder="City"
-                className="border p-3 rounded-lg"
+                className="border w-full p-3 rounded-lg"
                 value={session?.user?.city}
                 onChange={(e) => setCity(e.target.value)}
               />
             </div>
           </div>
+
+          <div className="w-full mt-5">
+
           <input
             type="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
             id="password"
-            className="border p-3 rounded-lg"
+            className="border w-full p-3 rounded-lg"
           />
+          </div>
         </>
 
+        
         <button
+        
           title="buttton"
+          type="submit"
           //   disabled={status === "loading"}
-          className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+          className="bg-slate-700 text-white rounded-lg p-3 uppercase w-[80%] my-2 mt-5 mx-auto hover:opacity-95 self-center disabled:opacity-80 dark:bg-slate-950"
         >
           {/* {status === "loading" ? "Loading..." : "Update"} */}
           Update
         </button>
       </form>
+      <div className="flex justify-between -my-5 m-auto md:w-[550px] w-[80%]">
       <div className="flex justify-between mt-5">
         <span
           //   onClick={handleDeleteUser}
-          className="bg-red-700 text-wite backdrop:cursor-pointer"
+          className=" py-3 px-3 bg-rose-600 font-semibold rounded-2xl text-wite cursor-pointer"
         >
           Delete account
         </span>
-        </div>
+      </div>
       <div className="flex justify-between mt-5">
-        {session?.user?.role === "admin" &&
-        <span
-          //   onClick={handleDeleteUser}
-          className="bg-green-700 text-white cursor-pointer"
-        >
-          <Link href='/createBlog'>Create Post</Link>
-        </span>
-          }
+       
         <span
           onClick={() => {
             signOut();
           }}
-          className="text-red-700 cursor-pointer"
+          className=" py-3 px-3 bg-rose-600 font-semibold rounded-2xl text-wite cursor-pointer"
         >
           Sign out
         </span>
+      </div>
       </div>
       <ToastContainer />
     </div>

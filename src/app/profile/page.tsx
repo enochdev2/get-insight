@@ -7,9 +7,11 @@ const Profile = async () => {
   console.log("🚀 ~ file: page.tsx:15 ~ Profile ~ session?.user?.role:", session?.user)
 
   return (
-    <div>
+    <section className="py-5">
+    <div className="my-4 ">
       <ProfileDetail session={session} />
     </div>
+    </section>
   );
 };
   
