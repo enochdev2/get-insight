@@ -15,13 +15,18 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ProfileForm } from "@/utils/types";
 import { BsArrowReturnRight } from "react-icons/bs";
-
 interface Image {
   setImageUrl: (value: React.SetStateAction<string>) => void;
 }
 
-export default function ProfileDetail({ session }: { session: any }) {
+export default function ProfileDetail({session}:any) {
+  // const { data: session, status } = useSession() as { data: any; status: any };
   const router = useRouter();
+
+  console.log(
+    "🚀 ~ file: profileDetails.tsx:24 ~ ProfileDetail ~ session:",
+    session?.user?.username
+  );
 
   const fileRef = useRef<any>(null);
   const [file, setFile] = useState("");
@@ -86,17 +91,14 @@ export default function ProfileDetail({ session }: { session: any }) {
         city,
       };
 
-      const res = await fetch(
-        `https://get-insight.vercel.app/api/user/${session?.user?._id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${session?.user?.accessToken}`,
-          },
-          body: JSON.stringify(body),
-        }
-      );
+      const res = await fetch(`/api/user/${session?.user?._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session?.user?.accessToken}`,
+        },
+        body: JSON.stringify(body),
+      });
 
       const data = await res.json();
       if (!res.ok) {
@@ -110,16 +112,15 @@ export default function ProfileDetail({ session }: { session: any }) {
   };
 
   useEffect(() => {
-     setImageUrl(session?.user?.avatar)
-     setImageUrl(session?.user?.image)
-  }, [])
-  
-
+    if (!file) {
+      setImageUrl(session?.user?.image);
+    }
+  }, []);
 
   return (
     <div className=" relative p-3 max-w-screen-lg pb-2 mx-auto">
       <div className="justify-self-end absolute top-3 right-1 md:max-w-lg ">
-      {session?.user?.role === "admin" && (
+        {session?.user?.role === "admin" && (
           <span
             //   onClick={handleDeleteUser}
             className=" py-3 px-3 bg-teal-600 font-semibold rounded-2xl text-wite cursor-pointer"
@@ -127,33 +128,33 @@ export default function ProfileDetail({ session }: { session: any }) {
             <Link href="/createBlog">Create Post</Link>
           </span>
         )}
-        </div>
+      </div>
       <form
         onSubmit={handleSubmit}
         className=" flex-col shadow-lg shadow-sky-800 rounded-lg items-center m-auto py-5 pb-3 px-5 md:max-w-[550px] w-[80%] gap-4 mb-5 dark:bg-slate-800"
       >
-         <div className="w-full my-2" >
-        <input
-          onChange={(e: any) => setFile(e.target.files[0])}
-          type="file"
-          ref={fileRef}
-          hidden
-          accept="image/*"
-        />
-        <Image
-          onClick={() => fileRef.current.click()}
-          src={imageUrls}
-          width={400}
-          height={400}
-          alt="profile"
-          className="rounded-full m-auto mb-4 h-32 w-32 object-cover bg-slate-400 cursor-pointer self-center mt-2"
-        />
-      </div>
+        <div className="w-full my-2">
+          <input
+            onChange={(e: any) => setFile(e.target.files[0])}
+            type="file"
+            ref={fileRef}
+            hidden
+            accept="image/*"
+          />
+          <Image
+            onClick={() => fileRef.current.click()}
+            src={imageUrls}
+            width={400}
+            height={400}
+            alt="profile"
+            className="rounded-full m-auto mb-4 h-32 w-32 object-cover bg-slate-400 cursor-pointer self-center mt-2"
+          />
+        </div>
         <div className="w-full my-2">
           <input
             type="text"
             placeholder="username"
-            defaultValue={session?.user?.username || session?.user?.name}
+            defaultValue={session?.user?.name}
             id="username"
             className="border w-full p-3 rounded-lg"
             onChange={(e) => setUsername(e.target.value)}
@@ -161,7 +162,7 @@ export default function ProfileDetail({ session }: { session: any }) {
         </div>
         <div className="w-full my-3">
           <input
-          disabled
+            disabled
             type="email"
             placeholder="email"
             id="email"
@@ -224,20 +225,17 @@ export default function ProfileDetail({ session }: { session: any }) {
           </div>
 
           <div className="w-full mt-5">
-
-          <input
-            type="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            id="password"
-            className="border w-full p-3 rounded-lg"
-          />
+            <input
+              type="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+              id="password"
+              className="border w-full p-3 rounded-lg"
+            />
           </div>
         </>
 
-        
         <button
-        
           title="buttton"
           type="submit"
           //   disabled={status === "loading"}
@@ -248,25 +246,24 @@ export default function ProfileDetail({ session }: { session: any }) {
         </button>
       </form>
       <div className="flex justify-between -my-5 m-auto md:w-[550px] w-[80%]">
-      <div className="flex justify-between mt-5">
-        <span
-          //   onClick={handleDeleteUser}
-          className=" py-3 px-3 bg-rose-600 font-semibold rounded-2xl text-wite cursor-pointer"
-        >
-          Delete account
-        </span>
-      </div>
-      <div className="flex justify-between mt-5">
-       
-        <span
-          onClick={() => {
-            signOut();
-          }}
-          className=" py-3 px-3 bg-rose-600 font-semibold rounded-2xl text-wite cursor-pointer"
-        >
-          Sign out
-        </span>
-      </div>
+        <div className="flex justify-between mt-5">
+          <span
+            //   onClick={handleDeleteUser}
+            className=" py-3 px-3 bg-rose-600 font-semibold rounded-2xl text-wite cursor-pointer"
+          >
+            Delete account
+          </span>
+        </div>
+        <div className="flex justify-between mt-5">
+          <span
+            onClick={() => {
+              signOut();
+            }}
+            className=" py-3 px-3 bg-rose-600 font-semibold rounded-2xl text-wite cursor-pointer"
+          >
+            Sign out
+          </span>
+        </div>
       </div>
       <ToastContainer />
     </div>

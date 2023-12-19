@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         remotePatterns: [
-            { hostname: 'res.cloudinary.com', protocol: 'https', port: '' },
+            { hostname: 'cdn.pixabay.com', protocol: 'https', port: '' },
             {
                 protocol : 'https',
                 hostname : 'encrypted-tbn0.gstatic.com'

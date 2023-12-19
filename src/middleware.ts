@@ -7,8 +7,7 @@ export async function middleware(req: NextRequest) {
     req: req,
     secret: process.env.NEXTAUTH_SECRET,
   });
-  console.log("🚀 ~ file: middleware.ts:10 ~ middleware ~ token:", token);
-
+  
   const publicPaths = path === "/login" || path === "/register";
   const privatePaths = path === "/profile";
 
