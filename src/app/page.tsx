@@ -1,14 +1,19 @@
+'use client'
+
 import Image from 'next/image'
-// import CategoryFilter from '@/components/shared/CategoryFilter';
-// import Collection from '@/components/shared/Collection'
-// import Search from '@/components/shared/Search';
-// import { getAllEvents } from '@/lib/actions/event.actions';
-// import { SearchParamProps } from '@/types';
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react';
 
 
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.refresh();
+  }, [])
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
    

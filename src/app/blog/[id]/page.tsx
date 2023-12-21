@@ -35,7 +35,7 @@ const BlogDetails = async ({ params }: any) => {
             <Image src={BlogDetail?.imageUrl} fill alt="blog" className="" />
           </div>
           <div className="my-1 py-5 px-2">
-            <p className="text-black m-2 mb-4 shadow-md font-semibold text-base w-full flex justify-between">
+            <p className="text-black m-2 mb-4 shadow-md font-semibold text-base w-full flex justify-between dark:text-white dark:border py-3 px-3 rounded-lg ">
               <span>
                 {" "}
                 Author: <span>{BlogDetail?.userId?.username}</span>{" "}

@@ -41,12 +41,15 @@ const BlogDetailsClient = ({
       );
 
       if (confirmModal) {
-        const res = await fetch(`https://get-insight.vercel.app/api/blog/${id}`, {
-          headers: {
-            Authorization: `Bearer ${session?.user?.accessToken}`,
-          },
-          method: "DELETE",
-        });
+        const res = await fetch(
+          `https://get-insight.vercel.app/api/blog/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${session?.user?.accessToken}`,
+            },
+            method: "DELETE",
+          }
+        );
         const data = await res.json();
         if (res.ok) {
           toast.success(data.message);
@@ -60,12 +63,15 @@ const BlogDetailsClient = ({
 
   const handleLike = async () => {
     try {
-      const res = await fetch(`https://get-insight.vercel.app/api/blog/${id}/likes`, {
-        headers: {
-          Authorization: `Bearer ${session?.user?.accessToken}`,
-        },
-        method: "PUT",
-      });
+      const res = await fetch(
+        `https://get-insight.vercel.app/api/blog/${id}/likes`,
+        {
+          headers: {
+            Authorization: `Bearer ${session?.user?.accessToken}`,
+          },
+          method: "PUT",
+        }
+      );
 
       if (res.ok) {
         if (isLiked) {
@@ -83,8 +89,8 @@ const BlogDetailsClient = ({
 
   return (
     <>
-      <div className="flex w-full bg-slate-300 p-2 rounded-md dark:bg-white items-center justify-between mt-1 m-3 px-4">
-        <div className="">
+      <div className="flex w-full bg-slate-300 p-2 rounded-md dark:bg-transparent dark:bg-sky-950 dark:border items-center justify-between mt-1 m-3 px-4  dark:border-slate-300">
+        <div className=" dark:text-white ">
           Category: <span>{BlogDetail?.categories}</span>
         </div>
         <div className="flex items-center  cursor-pointer">
