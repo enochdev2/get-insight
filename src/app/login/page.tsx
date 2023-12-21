@@ -57,8 +57,8 @@ const LogIn = () => {
 
   return (
     <section className="mb-5 py-8">
-      <div className="m-auto mb-4 flex shadow-md rounded-xl h-[90%]  md:max-w-[80%] border-slate-300 border-2   ">
-        <div className="flex-1 bg-[url('/register.jpeg')] bg-cover bg-center"></div>
+      <div className="m-auto mb-4 flex shadow-md rounded-xl h-[90%] w-[90%] max-w-[500px] md:max-w-[70%] border-slate-300 border-2   ">
+        <div className="lg:flex-1 hidden md:flex bg-[url('/register.jpeg')] bg-cover md:w-[30%] bg-center"></div>
         <div className="flex-1 ">
           <form onSubmit={handleSubmit} className="w-[80%] m-auto py-4">
             <h3 className="font-semibold text-2xl text-center text-sky-700 mt-2">
@@ -100,7 +100,7 @@ const LogIn = () => {
             </button>
             <button
               type="button"
-              onClick={() => signIn('google')}
+              onClick={() => signIn("google")}
               className="flex gap-4 justify-center w-[85%] m-auto  py-2 px-2 border border-sky-900 text-lg font-semibold rounded-full bg-slate-100  dark:bg-slate-800"
             >
               <Image

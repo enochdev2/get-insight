@@ -60,6 +60,9 @@ export const authOptions: AuthOptions = {
         token.role = user.role;
         token.username = user.username;
         token.avatar = user.avatar;
+        token.country = user.country;
+        token.city = user.city;
+        token.phone = user.phone;
       }
       return token;
     },
@@ -71,6 +74,9 @@ export const authOptions: AuthOptions = {
         session.user.role = token.role;
         session.user.name = token.username;
         session.user.image = token.avatar;
+        session.user.city = token.city;
+        session.user.country = token.country;
+        session.user.phone = token.phone;
       }
       return session;
     },

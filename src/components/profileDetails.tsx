@@ -23,10 +23,7 @@ export default function ProfileDetail({session}:any) {
   // const { data: session, status } = useSession() as { data: any; status: any };
   const router = useRouter();
 
-  console.log(
-    "🚀 ~ file: profileDetails.tsx:24 ~ ProfileDetail ~ session:",
-    session?.user?.username
-  );
+  
 
   const fileRef = useRef<any>(null);
   const [file, setFile] = useState("");
@@ -105,6 +102,7 @@ export default function ProfileDetail({session}:any) {
         toast.error(data.message);
       } else {
         toast.success("User Updated Successfully");
+        router.refresh()
       }
     } catch (error) {
       console.log(error);
@@ -177,7 +175,7 @@ export default function ProfileDetail({session}:any) {
               type="text"
               placeholder="Country"
               className="border p-3 rounded-lg w-full"
-              value={session?.user?.country}
+              value={session?.user?.country|| country}
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>
@@ -187,7 +185,7 @@ export default function ProfileDetail({session}:any) {
               type="tel"
               placeholder="Phone number"
               className="border p-3 rounded-lg w-full"
-              value={session?.user?.phone}
+              value={session?.user?.phone || phone}
               onChange={(e) => setphone(e.target.value)}
             />
           </div>
@@ -197,7 +195,7 @@ export default function ProfileDetail({session}:any) {
               type="text"
               placeholder="Street address"
               className="border p-3 rounded-lg w-full"
-              value={session?.user?.address}
+              value={session?.user?.address || address}
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
@@ -208,7 +206,7 @@ export default function ProfileDetail({session}:any) {
                 type="text"
                 placeholder="Postal code"
                 className="border p-3  w-full rounded-lg"
-                value={session?.user?.postalcode}
+                value={session?.user?.postalcode|| postalcode}
                 onChange={(e) => setPostalCode(e.target.value)}
               />
             </div>
@@ -218,7 +216,7 @@ export default function ProfileDetail({session}:any) {
                 type="text"
                 placeholder="City"
                 className="border w-full p-3 rounded-lg"
-                value={session?.user?.city}
+                defaultValue={session?.user?.city}
                 onChange={(e) => setCity(e.target.value)}
               />
             </div>
