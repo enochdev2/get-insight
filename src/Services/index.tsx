@@ -1,18 +1,21 @@
+const localhost = process.env.domain;
+console.log("🚀 ~ file: index.tsx:2 ~ localhost:", localhost)
+
 export const fetchBlog = async () => {
-  const res = await fetch(`https://get-insight.vercel.app/api/blog`, { cache: "no-store" });
+  const res = await fetch(`${localhost}/api/blog`, { cache: "no-store" });
   const data = res.json();
   return data;
 };
 
 export const fetchSingleBlog = async (id: string | number) => {
-  const res = await fetch(`https://get-insight.vercel.app/api/blog/${id}`, {
+  const res = await fetch(`${localhost}/api/blog/${id}`, {
     cache: "no-store",
   });
   const data = res.json();
   return data;
 };
 export const fetchComment = async (id: string | number) => {
-  const res = await fetch(`https://get-insight.vercel.app/api/comment/${id}`, {
+  const res = await fetch(`${localhost}/api/comment/${id}`, {
     cache: "no-store",
   });
   const data = res.json();
@@ -21,9 +24,12 @@ export const fetchComment = async (id: string | number) => {
 
 export const fetchRecentPost = async () => {
   try {
-    const res = await fetch(`https://get-insight.vercel.app/api/blog/recentPost`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${localhost}/api/blog/recentPost`,
+      {
+        cache: "no-store",
+      }
+    );
     const data = await res.json();
     return data;
   } catch (error) {
@@ -34,7 +40,7 @@ export const fetchRecentPost = async () => {
 export const fetchRelatedPost = async (categories: string) => {
   try {
     const res = await fetch(
-      `https://get-insight.vercel.app/api/blog/relatedPost?categories=${categories}`,
+      `${localhost}/api/blog/relatedPost?categories=${categories}`,
       { cache: "no-store" }
     );
     const data = await res.json();
@@ -47,7 +53,7 @@ export const fetchRelatedPost = async (categories: string) => {
 export const fetchCategoriesPost = async (categories: string) => {
   try {
     const res = await fetch(
-      `https://get-insight.vercel.app/api/blog/categories?categories=${categories}`,
+      `${localhost}/api/blog/categories?categories=${categories}`,
       { cache: "no-store" }
     );
     const data = await res.json();

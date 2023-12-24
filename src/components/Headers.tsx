@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { NavBarItem } from "../utils/types";
 import { FaBars, FaSearch } from "react-icons/fa";
@@ -11,10 +11,14 @@ import { BiSearchAlt } from "react-icons/bi";
 import { Sarpanch } from "next/font/google";
 import SideBar from "./SideBar";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Headers = ({ session }: any) => {
   const [navMenu, setNavMenu] = useState<boolean>(false);
   const [sticky, setSticky] = useState<boolean>(false);
+  const [searchTerm, setSearchTerm] = useState<string | any>("");
+
+  const router = useRouter();
 
   const item: NavBarItem[] = [
     {
@@ -48,12 +52,20 @@ const Headers = ({ session }: any) => {
     setNavMenu(!navMenu);
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const searchParams = new URLSearchParams(window.location.search);
+    const search: any = searchParams.set("searchTerm", searchTerm);
+    const searchTerms = search.toString();
+    router.push(`/seachPage${searchTerms}`);
+  };
+
   return (
     <header
-      className={` relative flex w-full gap-3 items-center bg-[#7E909A] mb-0
+      className={` relative flex w-full gap-3 items-center bg-[#7E909A] mb-0 px-2
 ${
   sticky
-    ? "!fixed !z-[9999] !bg-[#7E909A]  shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-20"
+    ? "!fixed !z-[9999] !bg-[#7E909A]  shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-80"
     : "fixed top-0 left-0"
 }
 `}
@@ -66,15 +78,15 @@ ${
           </h1>
         </Link>
         <form
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           className="bg-slate-100 p-3 rounded-lg flex items-center"
         >
           <input
             type="text"
             placeholder="Search..."
-            className="bg-transparent focus:outline-none h-6 w-24 sm:w-64"
-            // value={searchTerm}
-            // onChange={(e) => setSearchTerm(e.target.value)}
+            className="bg-transparent focus:outline-none h-4 w-24 sm:w-64"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button title="submit" type="submit">
             <FaSearch className="text-slate-600" />
@@ -118,15 +130,17 @@ ${
             </div>
           </div>
         </div>
-        {session?.user?.email &&
-        <div className="px-3 ">
-          <button type="button"
-          className="px-3 py-2 font-semibold bg-rose-500 rounded-full"
-          onClick={()=> signOut()}>
-               LogOut
-          </button>
-        </div>
-}
+        {session?.user?.email && (
+          <div className="px-3 ">
+            <button
+              type="button"
+              className="px-1 md:px-3 py-2 md:font-semibold bg-rose-500 rounded-full"
+              onClick={() => signOut()}
+            >
+              LogOut
+            </button>
+          </div>
+        )}
         <div
           className="cursor-pointer md:hidden mr-3  z-40"
           onClick={handleMenu}

@@ -31,9 +31,9 @@ const CategoriesPostDetals = ({categoriesPost}:any) => {
       <main className="w-full pt-0 p-2">
         <div className="sticky -mt-2 pt-4 pb-3 top-[65px] bg-slate-300 flex justify-center pr-4 z-[999]">
           <Categories
-            style={`mx-6 px-3 py-2 rounded-lg bg-slate-200 `}
-            title={null}
-            classNames={` text-[#314E52]  flex justify-space-around font-bold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
+             style={`mx-1 md:mx-6 px-3 text-xs md:text-lg py-2 rounded-lg bg-slate-200 `}
+             title={null}
+             classNames={` text-[#314E52]  flex justify-space-around font-bold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
           />
         </div>
     
