@@ -47,7 +47,7 @@ export async function DELETE(req: Request, ctx: any) {
   try {
     const comment = await Comment.findById(id);
     console.log(comment);
-    if (comment.userId.toString() !== decodedToken._id.toString()) {
+    if (comment.userId.toString() !== decodedToken._id.toString() || decodedToken.role !== "admin") {
       return new Response(
         JSON.stringify({ msg: "Only author can delete his blog" }),
         { status: 401 }

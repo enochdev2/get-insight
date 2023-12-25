@@ -17,16 +17,8 @@ const BlogDetails = async ({ params }: any) => {
   const handleLike = () => {};
 
   return (
-    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-      <div className="sticky col-span-4 w-full -mt-2 pt-4 pb-3 top-[60px] bg-slate-300 flex justify-center pr-4 z-[999]">
-        <Categories
-           style={`mx-1 md:mx-6 px-3 text-xs md:text-lg py-2 rounded-lg bg-slate-200 `}
-           title={null}
-           classNames={` text-[#314E52]  flex justify-space-around font-bold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
-        />
-      </div>
-
-      <div className="px-3 w-[90%] m-auto md:col-span-3  grid place-items-center gap-3">
+    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 px-3 py-5">
+      <div className="px-3 w-[90%] m-auto lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
@@ -62,15 +54,15 @@ const BlogDetails = async ({ params }: any) => {
           />
         </div>
       </div>
-      <div className="">
-        <div className="md:hidden lg:block relative top-8">
+      <div className="md:hidden lg:block relative top-8 right-3">
+        <div className="md:hidden lg:block relative top-8 right-3">
           <RelatedPost categories={BlogDetail?.categories} />
         </div>
       </div>
 
       <div className="sm:col-span-4 col-span-1">
         <CommentsForm idx={idx} />
-        <Comments id={params.id} />
+       
       </div>
     </main>
   );

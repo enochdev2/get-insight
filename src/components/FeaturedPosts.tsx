@@ -6,7 +6,6 @@ import 'react-multi-carousel/lib/styles.css';
 import FeaturedPostCard from './FeaturedPostCard';
 import { fetchBlog } from '@/Services';
 
-// import { getFeaturedPosts } from '../services';
 
 const responsive = {
   superLargeDesktop: {
@@ -33,6 +32,7 @@ const FeaturedPosts = () => {
 
   useEffect(() => {
     fetchBlog().then((result) => {
+      console.log("🚀 ~ file: FeaturedPosts.tsx:35 ~ fetchBlog ~ result:", result)
       setFeaturedPosts(result);
       setDataLoaded(true);
     });

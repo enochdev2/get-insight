@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Blog } from "@/utils/types";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -19,6 +19,7 @@ import {
   TwitterIcon,
   LinkedinIcon,
   FacebookIcon,
+  WhatsappIcon,
 } from "react-share";
 import { style } from "@/utils";
 
@@ -30,6 +31,9 @@ const BlogDetailsClient = ({
   BlogDetail: Blog;
 }) => {
   const { data: session, status } = useSession() as { data: any; status: any };
+  const path = usePathname();
+ 
+
   const Router = useRouter();
   const [isLiked, setIsLiked] = useState(true);
   const [blogLikes, setBlogLikes] = useState(0);
@@ -109,20 +113,24 @@ const BlogDetailsClient = ({
             />
           )}
         </div>
-        <div>
-          <FacebookShareButton url="" hashtag="#">
+        <div className="space-x-1">
+          <FacebookShareButton
+            url={`https://get-insight.vercel.app/${path}`}
+            hashtag="#Tech-Noch"
+          >
             <FacebookIcon size={26} round={true} />
           </FacebookShareButton>
-          <TwitterShareButton url="">
+          <TwitterShareButton  url={`https://get-insight.vercel.app/${path}`}
+            >
             {" "}
             <TwitterIcon size={26} round={true} />
           </TwitterShareButton>
-          <LinkedinShareButton url="">
+          <LinkedinShareButton url={`https://get-insight.vercel.app/${path}`}>
             <LinkedinIcon size={26} round={true} />
           </LinkedinShareButton>
-          {/* <PinterestShareButton url="">
-            <PinterestIcon size={26} round={true} />
-          </PinterestShareButton> */}
+           <WhatsappShareButton url={`https://get-insight.vercel.app/${path}`} >
+            <WhatsappIcon size={26} round={true} />
+          </WhatsappShareButton> 
         </div>
         {session?.user?.role === "admin" && (
           <div>

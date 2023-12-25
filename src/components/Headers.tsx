@@ -26,6 +26,7 @@ const Headers = ({ session }: any) => {
       name: "HOME",
       link: "/",
     },
+    
     {
       id: 2,
       name: "BLOG",

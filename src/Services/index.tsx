@@ -1,5 +1,5 @@
-const localhost = process.env.domain;
-console.log("🚀 ~ file: index.tsx:2 ~ localhost:", localhost)
+export const localhost = process.env.domain;
+
 
 export const fetchBlog = async () => {
   const res = await fetch(`${localhost}/api/blog`, { cache: "no-store" });
@@ -14,13 +14,13 @@ export const fetchSingleBlog = async (id: string | number) => {
   const data = res.json();
   return data;
 };
-export const fetchComment = async (id: string | number) => {
-  const res = await fetch(`${localhost}/api/comment/${id}`, {
-    cache: "no-store",
-  });
-  const data = res.json();
-  return data;
-};
+// export const fetchComment = async (id: string | number) => {
+//   const res = await fetch(`${localhost}/api/comment/${id}`, {
+//     cache: "no-store",
+//   });
+//   const data = res.json();
+//   return data;
+// };
 
 export const fetchRecentPost = async () => {
   try {

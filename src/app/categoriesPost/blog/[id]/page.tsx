@@ -17,13 +17,6 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-      <div className="sticky col-span-4 w-full -mt-2 pt-4 pb-3 top-[60px] bg-slate-300 flex justify-center pr-4 z-[999]">
-        <Categories
-           style={`mx-1 md:mx-6 px-3 text-xs md:text-lg py-2 rounded-lg bg-slate-200 `}
-           title={null}
-           classNames={` text-[#314E52]  flex justify-space-around font-bold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
-        />
-      </div>
 
       <div className="md:px-3  w-[90%] m-auto md:col-span-3  grid place-items-center gap-3">
         <div className="w-full mt-4 bg-slate-200">
