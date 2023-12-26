@@ -26,11 +26,11 @@ export default function RootLayout({
         <Provider>
           <NextThemeProvider>
             <Navbar />
-            <div className="sticky -mt-2 pt-4 pb-3 top-[65px] bg-slate-300 flex justify-center pr-4 z-[999]">
+            <div className="sticky -mt-4 pt-2 pb-2 top-[60px] !bg-gray-100 dark:bg-gray-100/40 dark:text-white flex justify-center pr-4 z-[999]">
               <Categories
-                style={`mx-1 md:mx-6 px-3 text-sm md:text-lg py-2 rounded-lg bg-slate-200 `}
+                style={`mx-1 md:mx-6 px-3 text-sm md:text-base py-2 rounded-lg border-b `}
                 title={null}
-                classNames={` text-[#314E52]  flex justify-space-around font-bold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
+                classNames={` text-[#314E52]  flex justify-space-around font-semibold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
               />
             </div>
             {children}

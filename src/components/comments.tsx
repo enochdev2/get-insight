@@ -7,6 +7,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { localhost } from "@/Services";
 import Image from "next/image";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import parse from 'html-react-parser';
 
@@ -31,7 +33,7 @@ const Comments = ({ id }: any) => {
 
   useEffect(() => {
     const fetchComment = async () => {
-      const res = await fetch(`http://localhost:3000//api/comment/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/comment/${id}`, {
         cache: "no-store",
       });
       const data = await res.json();
@@ -44,16 +46,20 @@ const Comments = ({ id }: any) => {
   const handleDeleteComment = async (id: string) => {
     const token = session?.user?.accessToken;
     try {
-      await fetch(`http://localhost:3000/api/comment/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/comment/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
         method: "DELETE",
       });
+      const data: any = res.json();
+      if (res.ok) {
+        toast.success(data.msg);
+        setComments((prev) => {
+          return [...prev].filter((c: string | any) => c?._id !== id);
+        });
+      }
 
-      setComments((prev) => {
-        return [...prev].filter((c: string | any) => c?._id !== id);
-      });
     } catch (error) {
       console.log(error);
     }
@@ -105,6 +111,7 @@ const Comments = ({ id }: any) => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </>
   );
 };

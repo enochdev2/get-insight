@@ -18,8 +18,8 @@ const BlogDetails = async ({ params }: any) => {
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
 
-      <div className="md:px-3  w-[90%] m-auto md:col-span-3  grid place-items-center gap-3">
-        <div className="w-full mt-4 bg-slate-200">
+      <div className="md:px-3  w-[80%] m-auto md:col-span-4  lg:px-5  grid place-items-center gap-3">
+        <div className="w-full mt-4 px-2 md:px-">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
           </div>
@@ -40,9 +40,6 @@ const BlogDetails = async ({ params }: any) => {
           <div className="flex w-full ">
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
-          <div className="relative overflow-hidden w-[70%] h-[150px] bg-red-800 m-auto">
-            <Image src={BlogDetail.imageUrl} fill alt="blog" className="" />
-          </div>
           <div
             className="py-3 px-5 text-lg 
           text-justify"
@@ -53,7 +50,6 @@ const BlogDetails = async ({ params }: any) => {
 
       <div className="col-span-1 md:col-span-4">
         <CommentsForm idx={idx} />
-        <Comments id={params.id} />
       </div>
     </main>
   );

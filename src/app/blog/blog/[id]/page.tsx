@@ -18,7 +18,7 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-      <div className="px-3 w-[90%] m-auto md:col-span-3  grid place-items-center gap-3">
+      <div className="px-3 w-[80%] m-auto md:col-span-4  grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
@@ -40,13 +40,7 @@ const BlogDetails = async ({ params }: any) => {
           <div className="flex w-full ">
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
-
-          {/* <p className="py-3 px-5 text-lg text-justify">{BlogDetail?.desc.slice(0,370)}</p> */}
-          <div className="relative overflow-hidden w-[70%] h-[150px] bg-red-800 m-auto">
-            <Image src={BlogDetail.imageUrl} fill alt="blog" className="" />
-          </div>
-          {/* <p className="py-3 px-5 text-lg 
-          text-justify">{BlogDetail?.desc.slice(370,700)}</p> */}
+        
           <div
             className=" content py-3 px-5 text-lg 
           text-justify"
@@ -54,15 +48,9 @@ const BlogDetails = async ({ params }: any) => {
           />
         </div>
       </div>
-      {/* <div className="">
-        <div className="md:hidden lg:block relative top-8">
-          <RelatedPost categories={BlogDetail?.categories} />
-        </div>
-      </div> */}
 
       <div className="sm:col-span-4 col-span-1">
         <CommentsForm idx={idx} />
-        <Comments id={params.id} />
       </div>
     </main>
   );

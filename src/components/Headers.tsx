@@ -26,7 +26,7 @@ const Headers = ({ session }: any) => {
       name: "HOME",
       link: "/",
     },
-    
+
     {
       id: 2,
       name: "BLOG",
@@ -62,53 +62,57 @@ const Headers = ({ session }: any) => {
   };
 
   return (
-    <header
-      className={` relative flex w-full gap-3 items-center bg-[#7E909A] mb-0 px-2
+    <>
+      <header
+        className={` relative flex w-full gap-3 items-center  mb-0 px-2 bg-sky-950 shadow-md
 ${
   sticky
-    ? "!fixed !z-[9999] !bg-[#7E909A]  shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-80"
+    ? "!fixed !z-[9999]   shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-80"
     : "fixed top-0 left-0"
 }
 `}
-    >
-      <div className="flex justify-between gap-5 items-center w-full mx-auto p-3 ">
-        <Link href="/">
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-slate-500">My-</span>
-            <span className="text-slate-700">Insight</span>
-          </h1>
-        </Link>
-        <form
-          onSubmit={handleSubmit}
-          className="bg-slate-100 p-3 rounded-lg flex items-center"
-        >
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent focus:outline-none h-4 w-24 sm:w-64"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button title="submit" type="submit">
-            <FaSearch className="text-slate-600" />
-          </button>
-        </form>
-        <div>
-          <div className="flex gap-4 mx-2">
-            {item.map((items: NavBarItem, id: number) => (
-              <span key={id}>
-                <Link
-                  href={items.link}
-                  className="hidden sm:inline text-slate-700  rounded-lg bg-[#A5D8DD] px-2 py-1"
-                >
-                  {items.name}
-                </Link>
-              </span>
-            ))}
-            <span className="hidden sm:inline text-slate-700 hover:underline">
+      >
+        <div className="flex justify-between gap-2 items-center w-full mx-auto p-3 ">
+          <Link href="/">
+            <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
+              <span className="text-slate-500">My-</span>
+              <span className="text-slate-700">Insight</span>
+            </h1>
+          </Link>
+          <form
+            onSubmit={handleSubmit}
+            className="bg-slate-100 p-3 rounded-lg flex items-center"
+          >
+            <input
+              type="text"
+              placeholder="Search..."
+              className="bg-transparent focus:outline-none h-4 w-24 sm:w-36 lg:w-56"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button title="submit" type="submit">
+              <FaSearch className="text-slate-600" />
+            </button>
+          </form>
+          <div>
+            <div className="sm:flex hidden gap-4 mx-2">
+              {item.map((items: NavBarItem, id: number) => (
+                <span key={id}>
+                  <Link
+                    href={items.link}
+                    className="hidden sm:inline grow dark:text-black sm:text-sm  rounded-lg bg-white md:text-base px-2 py-1"
+                  >
+                    {items.name}
+                  </Link>
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="sm:flex hidden gap-3">
+            <span className="hidden sm:inline text-slate-500 hover:underline">
               <ThemeToggler />
             </span>
-            <div className="hidden md:block">
+            <div className="hidden sm:block">
               {session?.user?.email ? (
                 <Link href="/profile">
                   <Image
@@ -122,7 +126,7 @@ ${
               ) : (
                 <Link
                   href="/login"
-                  className="  hover:underline rounded-lg font-semibold px-3 py-2 text-white bg-red-300"
+                  className="  hover:underline rounded-lg font-semibold px-3 py-2 text-white bg-rose-500"
                 >
                   {" "}
                   Sign in
@@ -130,27 +134,30 @@ ${
               )}
             </div>
           </div>
-        </div>
-        {session?.user?.email && (
-          <div className="px-3 ">
-            <button
-              type="button"
-              className="px-1 md:px-3 py-2 md:font-semibold bg-rose-500 rounded-full"
-              onClick={() => signOut()}
-            >
-              LogOut
-            </button>
+          {session?.user?.email && (
+            <div className="lg:flex hidden ">
+              <button
+                type="button"
+                className="px-1 md:px-2 py-2 text-xs sm:text-sm md:text-base md:font-semibold bg-rose-500 rounded-full"
+                onClick={() => signOut()}
+              >
+                Sign Out
+              </button>
+            </div>
+          )}
+          <div className="cursor-pointer sm:hidden mr-3  z-40">
+            <IoMenu
+              size={26}
+              onClick={handleMenu}
+              className="cursor-pointer sm:hidden  z-40"
+            />
           </div>
-        )}
-        <div
-          className="cursor-pointer md:hidden mr-3  z-40"
-          onClick={handleMenu}
-        >
-          <IoMenu size={30} className="cursor-pointer md:hidden  z-40" />
         </div>
-        {navMenu && <SideBar handleMenu={handleMenu} />}
+      </header>
+      <div className="bg-black/10 absolute left-0 top-0">
+        <SideBar handleMenu={handleMenu} />
       </div>
-    </header>
+    </>
   );
 };
 

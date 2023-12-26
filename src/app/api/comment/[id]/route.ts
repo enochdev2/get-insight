@@ -12,7 +12,7 @@ export async function GET(req: Request, { params }: any) {
 
   try {
     const comments = await Comment.find({ blogId: id }).populate("userId");
-    
+
     // console.log(comments);
 
     return new Response(JSON.stringify(comments), {
@@ -23,16 +23,13 @@ export async function GET(req: Request, { params }: any) {
   }
 }
 
-
-
 export async function DELETE(req: Request, ctx: any) {
   await db.connect();
 
   const id = ctx.params.id;
-  console.log(id);
 
   const headersList = headers();
-  const accessToken:any = headersList.get("authorization");
+  const accessToken: any = headersList.get("authorization");
   const token = accessToken.split(" ")[1];
 
   const decodedToken: any = jwtVerify(token);
@@ -46,8 +43,8 @@ export async function DELETE(req: Request, ctx: any) {
 
   try {
     const comment = await Comment.findById(id);
-    console.log(comment);
-    if (comment.userId.toString() !== decodedToken._id.toString() || decodedToken.role !== "admin") {
+    console.log("🚀 ~ file: route.ts:48 ~ DELETE ~ comment:", comment);
+    if (comment.userId.toString() !== decodedToken._id.toString()) {
       return new Response(
         JSON.stringify({ msg: "Only author can delete his blog" }),
         { status: 401 }

@@ -32,7 +32,6 @@ const BlogDetailsClient = ({
 }) => {
   const { data: session, status } = useSession() as { data: any; status: any };
   const path = usePathname();
- 
 
   const Router = useRouter();
   const [isLiked, setIsLiked] = useState(true);
@@ -66,16 +65,19 @@ const BlogDetailsClient = ({
   };
 
   const handleLike = async () => {
+
+    if(!session?.user){
+      return toast.error("You must first Log in");
+    }
+
+
     try {
-      const res = await fetch(
-        `https://get-insight.vercel.app/api/blog/${id}/likes`,
-        {
-          headers: {
-            Authorization: `Bearer ${session?.user?.accessToken}`,
-          },
-          method: "PUT",
-        }
-      );
+      const res = await fetch(`http://localhost:3000/api/blog/${id}/likes`, {
+        headers: {
+          Authorization: `Bearer ${session?.user?.accessToken}`,
+        },
+        method: "PUT",
+      });
 
       if (res.ok) {
         if (isLiked) {
@@ -87,13 +89,13 @@ const BlogDetailsClient = ({
         }
       }
     } catch (error) {
-      toast.error("You must first Log in");
+      toast.error("Somethin went wrong");
     }
   };
 
   return (
     <>
-      <div className="flex w-full bg-slate-300 p-2 rounded-md dark:bg-transparent dark:bg-sky-950 dark:border items-center justify-between mt-1 m-3 px-4  dark:border-slate-300">
+      <div className="flex flex-wrap gap-2 w-full bg-slate-300 p-2 rounded-md dark:bg-transparent dark:bg-sky-950 dark:border items-center justify-between mt-1 m-3 px-4  dark:border-slate-300">
         <div className=" dark:text-white ">
           Category: <span>{BlogDetail?.categories}</span>
         </div>
@@ -120,17 +122,16 @@ const BlogDetailsClient = ({
           >
             <FacebookIcon size={26} round={true} />
           </FacebookShareButton>
-          <TwitterShareButton  url={`https://get-insight.vercel.app/${path}`}
-            >
+          <TwitterShareButton url={`https://get-insight.vercel.app/${path}`}>
             {" "}
             <TwitterIcon size={26} round={true} />
           </TwitterShareButton>
           <LinkedinShareButton url={`https://get-insight.vercel.app/${path}`}>
             <LinkedinIcon size={26} round={true} />
           </LinkedinShareButton>
-           <WhatsappShareButton url={`https://get-insight.vercel.app/${path}`} >
+          <WhatsappShareButton url={`https://get-insight.vercel.app/${path}`}>
             <WhatsappIcon size={26} round={true} />
-          </WhatsappShareButton> 
+          </WhatsappShareButton>
         </div>
         {session?.user?.role === "admin" && (
           <div>
