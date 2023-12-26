@@ -1,9 +1,8 @@
 export const localhost = process.env.domain;
-console.log("🚀 ~ file: index.tsx:2 ~ localhost:", localhost)
-
+console.log("🚀 ~ file: index.tsx:2 ~ localhost:", localhost);
 
 export const fetchBlog = async () => {
-  const res = await fetch(`${localhost}/api/blog`, { cache: "no-store" });
+  const res = await fetch(`http://localhost:3000/api/blog`, { cache: "no-store" });
   const data = res.json();
   return data;
 };
@@ -17,24 +16,11 @@ export const fetchSingleBlog = async (id: string | number) => {
 };
 
 
-export const deleteComment  = async (id:string|number,headers:any, methods:any) => await fetch(`${localhost}/api/comment/${id}`, headers)
-export const deleteComments  = async (id:string|number,headers:any, methods:any) => await fetch(`${localhost}/api/comment/${id}`, headers)
-// export const fetchComment = async (id: string | number) => {
-//   const res = await fetch(`${localhost}/api/comment/${id}`, {
-//     cache: "no-store",
-//   });
-//   const data = res.json();
-//   return data;
-// };
-
 export const fetchRecentPost = async () => {
   try {
-    const res = await fetch(
-      `${localhost}/api/blog/recentPost`,
-      {
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${localhost}/api/blog/recentPost`, {
+      cache: "no-store",
+    });
     const data = await res.json();
     return data;
   } catch (error) {

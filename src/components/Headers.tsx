@@ -72,7 +72,7 @@ ${
 }
 `}
       >
-        <div className="flex justify-between gap-2 items-center w-full mx-auto p-3 ">
+        <div className="flex justify-between gap-2 items-center w-full mx-auto py-2 px-2 md:pr-4 ">
           <Link href="/">
             <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
               <span className="text-slate-500">My-</span>
@@ -100,7 +100,7 @@ ${
                 <span key={id}>
                   <Link
                     href={items.link}
-                    className="hidden sm:inline grow dark:text-black sm:text-sm  rounded-lg bg-white md:text-base px-2 py-1"
+                    className="hidden sm:inline grow dark:text-white sm:text-sm  rounded-lg text-white md:text-base px-2 py-1"
                   >
                     {items.name}
                   </Link>
@@ -109,9 +109,6 @@ ${
             </div>
           </div>
           <div className="sm:flex hidden gap-3">
-            <span className="hidden sm:inline text-slate-500 hover:underline">
-              <ThemeToggler />
-            </span>
             <div className="hidden sm:block">
               {session?.user?.email ? (
                 <Link href="/profile">
@@ -134,6 +131,10 @@ ${
               )}
             </div>
           </div>
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:inline text-slate-500 hover:underline">
+              <ThemeToggler />
+            </span>
           {session?.user?.email && (
             <div className="lg:flex hidden ">
               <button
@@ -145,6 +146,8 @@ ${
               </button>
             </div>
           )}
+          </div>
+
           <div className="cursor-pointer sm:hidden mr-3  z-40">
             <IoMenu
               size={26}
