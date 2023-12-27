@@ -159,14 +159,12 @@ if(res.ok){
             <label htmlFor="desc" className="font-bold text-lg ">
               Description
             </label>
-            {/* <div className="content"> */}
             <ReactQuill
               value={desc}
               theme={"snow"}
               onChange={setDesc}
               modules={modules}
             />
-            {/* </div> */}
           </div>
 
           <div>
