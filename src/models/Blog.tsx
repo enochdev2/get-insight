@@ -1,46 +1,45 @@
 import mongoose from "mongoose";
 
-
-const BlogSchema = new mongoose.Schema({
-    title:{
-        type: String,
-        required: true, 
-        min: 8,
+const BlogSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      min: 8,
     },
-    desc:{
-        type: String,
-        required: true, 
-        min: 18,
+    except: {
+      type: String,
+      required: true,
+      min: 8,
     },
-    imageUrl:{
-        type: String,
-        required: true, 
+    desc: {
+      type: String,
+      required: true,
+      min: 18,
     },
-    categories:{
-        type: String,
-        required: true, 
-        enum : [
-            "Finance",
-            "Technology",
-            "Family",
-            "Business",
-            "Lifestyle/Leadership"
-        ],
-        default: "Finance",
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    categories: {
+      type: String,
+      required: true,
+      enum: ["Finance", "Technology", "Family", "Business"],
+      default: "Finance",
     },
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
     likes: {
-        type: [mongoose.Schema.Types.ObjectId],
-        ref: "User",
-        default: [],
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "User",
+      default: [],
     },
+  },
+  { timestamps: true }
+);
 
-}, {timestamps: true})
+const Blog = mongoose?.models?.Blog || mongoose.model("Blog", BlogSchema);
 
-
-const Blog =  mongoose?.models?.Blog || mongoose.model("Blog", BlogSchema)
-
-export default Blog
+export default Blog;

@@ -8,14 +8,7 @@ import { headers } from "next/headers";
 export async function GET(req: any, ctx: any) {
   await db.connect();
   const id = ctx.params.id;
-  // const accessToken = req.header.get("authorization")
-  //  const token = accessToken.split(" ")[1]
-
-  //  const decodedToken = jwtVerify(token)
-  //  if(!decodedToken){
-  //   return new Response(JSON.stringify({ error: "unauthorized (wrong or expired token)" }), { status: 403 })
-
-  //  }
+  
   try {
     const blog = await Blog.findById(id);
 
@@ -79,6 +72,7 @@ export async function DELETE(req: any, ctx: any) {
 
   try {
     const blog = await Blog.findById(id);
+    console.log("🚀 ~ file: route.ts:82 ~ DELETE ~ blog:", blog)
     if (blog?.userId?.role === "admin") {
       return new Response(
         JSON.stringify({ message: "Only admin can delete this blog" }),

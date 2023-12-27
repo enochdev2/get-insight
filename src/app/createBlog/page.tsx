@@ -7,8 +7,7 @@ import { AiOutlineFileImage } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReactQuill from "react-quill";
-import 'react-quill/dist/quill.snow.css';
-
+import "react-quill/dist/quill.snow.css";
 
 interface Image {
   setImageUrl: (value: React.SetStateAction<string>) => void;
@@ -17,30 +16,29 @@ interface Image {
 const modules = {
   toolbar: [
     [{ header: [1, 2, 3, false] }],
-    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    ["bold", "italic", "underline", "strike", "blockquote"],
     [
-      { list: 'ordered' },
-      { list: 'bullet' },
-      { indent: '-1' },
-      { indent: '+1' },
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
     ],
-    ['link', 'image'],
-    ['clean'],
+    ["link", "image"],
+    ["clean"],
   ],
 };
-
-
 
 const Create_post = () => {
   const CLOUD_NAME = "dg9ikhw52";
   const UPLOAD_PRESET = "My_Blog";
 
   const [title, setTitle] = useState("");
+  const [except, setExcept] = useState("");
   const [desc, setDesc] = useState("");
   const [imageUrls, setImageUrl] = useState<any>({});
   const [categories, setCategories] = useState("");
 
-  const { data: session, status } = useSession() as {data: any, status:any};
+  const { data: session, status } = useSession() as { data: any; status: any };
   const router = useRouter();
 
   if (status === "loading") {
@@ -59,7 +57,7 @@ const Create_post = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!imageUrls || !title || !categories || !desc) {
+    if (!imageUrls || !title || !except || !categories || !desc) {
       toast.error("All fields are required");
       return;
     }
@@ -68,7 +66,7 @@ const Create_post = () => {
       const imageUrl = await uploadImage();
       console.log(imageUrl);
 
-      const res = await fetch(`https://get-insight.vercel.app/api/blog`, {
+      const res = await fetch(`/api/blog`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,20 +74,22 @@ const Create_post = () => {
         },
         body: JSON.stringify({
           title,
+          except,
           desc,
           categories,
           imageUrl,
           userId: session?.user?._id,
         }),
       });
-
-      // if(!res.ok){
-      //   throw new Error("Error occured")
-      // }
-
       const blog = await res.json();
+if(res.ok){
+  router.push(`/blog/${blog?._id}`);
 
-      router.push(`/blog/${blog?._id}`);
+}else{
+    throw new Error("Error occured")
+}
+      
+
     } catch (error) {
       console.log(error);
     }
@@ -143,18 +143,30 @@ const Create_post = () => {
             />
           </div>
           <div className="flex flex-col">
+            <label htmlFor="title" className="font-bold text-lg">
+              Except
+            </label>
+            <input
+              type="text"
+              name="except"
+              title="except"
+              id="except"
+              className="h-10 px-2 py-5"
+              onChange={(e) => setExcept(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-col">
             <label htmlFor="desc" className="font-bold text-lg ">
               Description
             </label>
-            {/* <Editor value={desc} onChange={setDesc} /> */}
-            <div className="content">
-    <ReactQuill
-      value={desc}
-      theme={'snow'}
-      onChange={setDesc}
-      modules={modules} />
-    </div>
-           
+            {/* <div className="content"> */}
+            <ReactQuill
+              value={desc}
+              theme={"snow"}
+              onChange={setDesc}
+              modules={modules}
+            />
+            {/* </div> */}
           </div>
 
           <div>
@@ -169,7 +181,7 @@ const Create_post = () => {
               name="image"
               id="image"
               className={!imageUrls ? "hidden" : "block"}
-              onChange={(e:any) => setImageUrl(e.target.files[0])}
+              onChange={(e: any) => setImageUrl(e.target.files[0])}
               accept="image/*"
             />
           </div>
@@ -186,10 +198,9 @@ const Create_post = () => {
             >
               <option value="all">All</option>
               <option value="Finance">Finance</option>
-              <option value="Leadership">Leadership</option>
+              <option value="Technology">Technology</option>
               <option value="Family">Family</option>
               <option value="Business">Business</option>
-              <option value="Lifestyle">Lifestyle</option>
             </select>
           </div>
           <div className="m-auto w-10/12">

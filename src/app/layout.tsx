@@ -26,7 +26,7 @@ export default function RootLayout({
         <Provider>
           <NextThemeProvider>
             <Navbar />
-            <div className="sticky -mt-4 pt-2 pb-2 top-[60px] !bg-gray-100 dark:bg-gray-100/40 dark:text-white flex justify-center pr-4 z-[999]">
+            <div className="sticky -mt-2 pt-2 pb-2 top-[65px] !bg-gray-100 dark:bg-gray-100/40 dark:text-white flex justify-center pr-4 z-[999]">
               <Categories
                 style={`mx-1 md:mx-6 px-2 text-sm md:text-base py-2 rounded-lg border-b `}
                 title={null}

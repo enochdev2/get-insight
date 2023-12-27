@@ -44,15 +44,12 @@ const BlogDetailsClient = ({
       );
 
       if (confirmModal) {
-        const res = await fetch(
-          `https://get-insight.vercel.app/api/blog/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${session?.user?.accessToken}`,
-            },
-            method: "DELETE",
-          }
-        );
+        const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+          headers: {
+            Authorization: `Bearer ${session?.user?.accessToken}`,
+          },
+          method: "DELETE",
+        });
         const data = await res.json();
         if (res.ok) {
           toast.success(data.message);
@@ -60,16 +57,14 @@ const BlogDetailsClient = ({
         }
       }
     } catch (error) {
-      toast.error("Error occured while logging");
+      toast.error("Error occured");
     }
   };
 
   const handleLike = async () => {
-
-    if(!session?.user){
+    if (!session?.user) {
       return toast.error("You must first Log in");
     }
-
 
     try {
       const res = await fetch(`http://localhost:3000/api/blog/${id}/likes`, {

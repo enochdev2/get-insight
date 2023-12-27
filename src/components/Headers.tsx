@@ -64,7 +64,7 @@ const Headers = ({ session }: any) => {
   return (
     <>
       <header
-        className={` relative flex w-full gap-3 items-center  mb-0 px-2 bg-sky-950 shadow-md
+        className={` relative flex w-full gap-3 items-center  mb-0 pt-2 pb-2 px-2 bg-sky-950 shadow-md
 ${
   sticky
     ? "!fixed !z-[9999]   shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-80"
@@ -72,11 +72,11 @@ ${
 }
 `}
       >
-        <div className="flex justify-between gap-2 items-center w-full mx-auto py-2 px-2 md:pr-4 ">
+        <div className="flex justify-between gap-2 items-center w-full mx-auto py-2 px-2 md:pr-6 ">
           <Link href="/">
             <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-              <span className="text-slate-500">My-</span>
-              <span className="text-slate-700">Insight</span>
+              <span className="text-slate-200">Real-</span>
+              <span className="text-slate-400">Insight</span>
             </h1>
           </Link>
           <form
@@ -135,17 +135,17 @@ ${
             <span className="hidden sm:inline text-slate-500 hover:underline">
               <ThemeToggler />
             </span>
-          {session?.user?.email && (
-            <div className="lg:flex hidden ">
-              <button
-                type="button"
-                className="px-1 md:px-2 py-2 text-xs sm:text-sm md:text-base md:font-semibold bg-rose-500 rounded-full"
-                onClick={() => signOut()}
-              >
-                Sign Out
-              </button>
-            </div>
-          )}
+            {session?.user?.email && (
+              <div className="lg:flex hidden ">
+                <button
+                  type="button"
+                  className="px-1 md:px-2 py-1 text-xs sm:text-sm md:text-base md:font-semibold bg-rose-500 rounded-full"
+                  onClick={() => signOut()}
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="cursor-pointer sm:hidden mr-3  z-40">

@@ -32,7 +32,10 @@ export async function POST(req:any) {
   }
   
   const body = await req.json()
+  console.log("🚀 ~ file: route.ts:35 ~ POST ~ body:", body.except)
+  
   const NewBlog = new Blog(body)
+  console.log("🚀 ~ file: route.ts:36 ~ POST ~ NewBlog:", NewBlog)
   
   try {
     await NewBlog.save();

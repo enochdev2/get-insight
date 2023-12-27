@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

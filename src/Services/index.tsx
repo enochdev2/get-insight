@@ -1,5 +1,4 @@
 export const localhost = process.env.domain;
-console.log("🚀 ~ file: index.tsx:2 ~ localhost:", localhost);
 
 export const fetchBlog = async () => {
   const res = await fetch(`http://localhost:3000/api/blog`, { cache: "no-store" });

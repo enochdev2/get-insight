@@ -5,6 +5,7 @@ import Categories from "@/components/Categories";
 import RelatedPost from "@/components/RelatedPost";
 import { fetchBlog } from "@/Services";
 import Link from "next/link";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Blog = async () => {
   const blogs: any = await fetchBlog();
@@ -41,13 +42,13 @@ const Blog = async () => {
                     <Link href={`blog/${blog._id}`} className="">
                       <button
                         type="button"
-                        className="py-1 px-3 ml-5 text-white bg-cyan-700 rounded-md hover:bg-teal-600 "
+                        className="py-1 items-center px-3 flex ml-5  text-cyan-700 rounded-md hover:text-teal-600 "
                       >
-                        Read More
+                        Read More <FaArrowRightLong className='w-12' width='80px'/>
                       </button>
                     </Link>
                   </p>
-                </div>
+                </div> 
               </div>
             ))}
           </div>
