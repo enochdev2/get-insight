@@ -43,7 +43,7 @@ export const fetchRelatedPost = async (categories: string) => {
 export const fetchCategoriesPost = async (categories: string) => {
   try {
     const res = await fetch(
-      `${localhost}/api/blog/categories?categories=${categories}`,
+      `https://get-insight.vercel.app/}/api/blog/categories?categories=${categories}`,
       { cache: "no-store" }
     );
     const data = await res.json();
@@ -53,20 +53,3 @@ export const fetchCategoriesPost = async (categories: string) => {
   }
 };
 
-// export const fetchRelatedPost = async () => {
-//     try {
-//       const res = await fetch(`http://localhost:3000/api/blog/relatedPost?${categories}`, { cache: 'no-store' })
-//       const data = await res.json();
-//       setRelatedPosts(data);
-//     } catch (error) {
-
-//     }
-//   }
-
-// export const fetchComment = async (id:string) => {
-//     const res = await fetch(`http://localhost:3000/api/comment/${id}`, {
-//       cache: "no-store"
-//     })
-//     const data = res.json();
-//     return data;
-// };
