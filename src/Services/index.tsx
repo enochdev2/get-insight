@@ -30,7 +30,7 @@ export const fetchRecentPost = async () => {
 export const fetchRelatedPost = async (categories: string) => {
   try {
     const res = await fetch(
-      `${localhost}/api/blog/relatedPost?categories=${categories}`,
+      `https://get-insight.vercel.app//api/blog/relatedPost?categories=${categories}`,
       { cache: "no-store" }
     );
     const data = await res.json();
