@@ -40,13 +40,6 @@ const BlogDetails = async ({ params }: any) => {
           <div className="flex w-full ">
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
-
-          {/* <p className="py-3 px-5 text-lg text-justify">{BlogDetail?.desc.slice(0,370)}</p> */}
-          <div className="relative overflow-hidden w-[70%] h-[150px] bg-red-800 m-auto">
-            <Image src={BlogDetail.imageUrl} fill alt="blog" className="" />
-          </div>
-          {/* <p className="py-3 px-5 text-lg 
-          text-justify">{BlogDetail?.desc.slice(370,700)}</p> */}
           <div
             className=" content py-3 px-5 text-lg 
           text-justify"
