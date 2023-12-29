@@ -52,7 +52,7 @@ const Register = () => {
 
   return (
     <section className="mb-5 py-8">
-      <div className="m-auto mb-4 flex shadow-md rounded-xl h-[90%] w-[90%] max-w-[500px] md:max-w-[70%] border-slate-300 border-2  ">
+      <div className="m-auto mt-16 mb-4 flex shadow-md rounded-xl h-[90%] w-[90%] max-w-[500px] md:max-w-[70%] border-slate-300 border-2  ">
         <div className="lg:flex-1 hidden md:flex bg-[url('/register.jpeg')] bg-cover md:w-[30%] bg-center"></div>
         <div className="flex-1 ">
           <form onSubmit={handleSubmit} className="w-[80%] m-auto py-4">

@@ -11,7 +11,7 @@ const Profile = async () => {
 
   return (
     <section className="py-5">
-      <div className="my-4 ">
+      <div className="my-20 ">
         <ProfileDetail
          session={session} 
          />
