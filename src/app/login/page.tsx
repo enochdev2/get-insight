@@ -101,7 +101,7 @@ const LogIn = () => {
             <button
               type="button"
               onClick={() => signIn("google", { callbackUrl: "/" })}
-              className="flex gap-4 justify-center w-[85%] m-auto  py-2 px-2 border border-sky-900 text-lg font-semibold rounded-full bg-slate-100  dark:bg-slate-800"
+              className="flex gap-4 justify-center w-[85%] m-auto  py-2 px-2 border border-sky-900 md:text-lg  text-base font-semibold rounded-full bg-slate-100  dark:bg-slate-800"
             >
               <Image
                 src={"/google.png"}

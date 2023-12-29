@@ -31,7 +31,7 @@ const CategoriesPostDetals = ({ categoriesPost }: any) => {
             {categoriesPost?.map((blog: any, index: number) => (
               <div
                 key={index}
-                className="my-11 mx-8 bg-slate-200 rounded-lg m-auto shadow-md py-5 px-4"
+                className="my-11 mx-8 bg-slate-200 rounded-lg m-auto  dark:bg-slate-800 shadow-md py-5 px-4"
               >
                 <div className="relative w-[80%] h-36 lg:h-52 m-auto ">
                   <Image
@@ -43,7 +43,7 @@ const CategoriesPostDetals = ({ categoriesPost }: any) => {
                 </div>
                 <h2 className="font-bold my-2 text-xl">{blog.title}</h2>
                 <p>
-                  {`${blog.desc}`.substring(1, 200)}...
+                  {`${blog.except}`}...
                   <div onClick={() => linkRedirect(`${blog._id}`)} className="">
                     <button
                       type="button"
