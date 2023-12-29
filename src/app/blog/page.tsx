@@ -15,7 +15,7 @@ const Blog = async () => {
 
   return (
     <main className="w-full pt-2   ">
-      <div className=" mt-12 w-full  text- m-auto border-b-black-700 text-sky-900 text-xl text-center font-semibold">
+      <div className=" mt-20 w-full  text- m-auto border-b-black-700 text-sky-900 text-xl text-center font-semibold">
         FeaturedPosts{" "}
       </div>
       <div className="container  mx-auto px-5 lg:px-10 mt-4 mb-8">

@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Provider from "@/Provider";
 import SideBar from "@/components/SideBar";
 import Categories from "@/components/Categories";
+import CategoryHolder from "@/components/CategoryHolder";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,17 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" w-screen overflow-x-hidden dark:bg-transparent ">
+      <body className=" relative w-screen overflow-x-hidden dark:bg-transparent ">
         <Provider>
           <NextThemeProvider>
             <Navbar />
-            <div className="sticky -mt-2 pt-2 pb-2 top-[65px] !bg-gray-100 dark:bg-gray-100/40 dark:text-white flex justify-center pr-4 z-[999]">
-              <Categories
-                style={`mx-1 md:mx-6 px-2 text-sm md:text-base py-2 rounded-lg border-b `}
-                title={null}
-                classNames={` text-[#314E52]  flex justify-space-around font-semibold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
-              />
-            </div>
+           <CategoryHolder/>
             {children}
             <Footer />
           </NextThemeProvider>

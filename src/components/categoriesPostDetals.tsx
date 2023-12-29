@@ -21,7 +21,7 @@ const CategoriesPostDetals = ({ categoriesPost }: any) => {
 
   return (
     <main className="w-full pt-0 p-2 min-h-screen">
-      <div className=" mt-3 w-full  m-auto border-b-black-700 text-xl text-center">
+      <div className=" mt-20 w-full  m-auto border-b-black-700 text-sky-900  font-semibold text-xl text-center">
         FeaturedPosts{" "}
       </div>
       <div className="container  mx-auto px-5 lg:px-10 mt-4 mb-8">

@@ -18,13 +18,14 @@ export default function Home() {
       <section className="bg-primary-50 bg-dotted-pattern bg-contain  h-screen w-screen">
         {/* <div className=" max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0"> */}
         <div className="relative flex flex-col h-full w-full" id="">
+          <div className="rotate-0 absolute top-0  h-full w-full bg-black/50 left-0 z-[2] object-cover "></div>
           <video
             autoPlay
             muted
             loop
             className="rotate-0 absolute top-0  h-full w-full left-0 z-[1] object-cover "
           >
-            <source src="/cardsvideo.webm" type="video/webm" />
+            <source src="/videoplayback.webm" type="video/webm" />
           </video>
           <MainContent />
         </div>

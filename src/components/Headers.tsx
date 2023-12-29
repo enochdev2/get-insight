@@ -64,7 +64,7 @@ const Headers = ({ session }: any) => {
   return (
     <>
       <header
-        className={` relative flex w-full gap-3 items-center  mb-0 pt-2 pb-2 px-2 bg-sky-950 shadow-md
+        className={` flex w-full gap-3 items-center  mb-0 pt-2 pb-2 px-2 bg-sky-950 shadow-md
 ${
   sticky
     ? "!fixed !z-[9999]   shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-80"
@@ -155,11 +155,14 @@ ${
               className="cursor-pointer sm:hidden  z-40"
             />
           </div>
+          {navMenu && (
+        <div className="absolute z-5000 left-0 top-0">
+          <SideBar handleMenu={handleMenu} />
+        </div>
+      )}
         </div>
       </header>
-      <div className="bg-black/10 absolute left-0 top-0">
-        <SideBar handleMenu={handleMenu} />
-      </div>
+     
     </>
   );
 };

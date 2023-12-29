@@ -32,7 +32,6 @@ const FeaturedPosts = () => {
 
   useEffect(() => {
     fetchBlog().then((result) => {
-      console.log("🚀 ~ file: FeaturedPosts.tsx:35 ~ fetchBlog ~ result:", result)
       setFeaturedPosts(result);
       setDataLoaded(true);
     });

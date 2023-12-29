@@ -33,7 +33,7 @@ const SideBar = ({ handleMenu }: any) => {
   return (
     <>
       <div
-        className="sm:hidden ring-offset-slate-800 flex flex-col absolute top-[70px] bg-slate-700 left-0 w-screen h-screen justify-between items-center py-12  z-[2000] gap-5"
+        className="sm:hidden flex flex-col  absolute top-[70px] bg-slate-700 left-0 w-screen h-screen justify-between items-center py-12  z-[30] gap-5"
         onClick={() => handleMenu()}
       >
         <div className="flex justify-center flex-col w-full gap-3">

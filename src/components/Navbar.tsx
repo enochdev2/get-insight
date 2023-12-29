@@ -6,7 +6,7 @@ const Navbar = async () => {
   const session = (await getServerSession(authOptions)) as any;
 
   return (
-    <div className="w-full relative overflow-x-hidden">
+    <div className="w-full z-[300] relative overflow-x-hidden">
       <Headers session={session} />
     </div>
   );
