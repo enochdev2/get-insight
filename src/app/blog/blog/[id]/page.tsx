@@ -18,7 +18,7 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-      <div className="px-3 w-[80%] m-auto md:col-span-4  grid place-items-center gap-3">
+      <div className="px-3 w-[80%] m-auto mt-20 md:col-span-4  grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
