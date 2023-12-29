@@ -20,7 +20,7 @@ const CategoriesPostDetals = ({ categoriesPost }: any) => {
   };
 
   return (
-    <main className="w-full pt-0 p-2">
+    <main className="w-full pt-0 p-2 min-h-screen">
       <div className=" mt-3 w-full  m-auto border-b-black-700 text-xl text-center">
         FeaturedPosts{" "}
       </div>
