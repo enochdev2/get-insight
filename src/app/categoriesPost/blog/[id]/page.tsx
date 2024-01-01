@@ -17,7 +17,6 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-
       <div className="md:px-3  w-[97%] m-auto mt-20 md:col-span-4  lg:px-5  grid place-items-center gap-3">
         <div className="w-full mt-4 px-1 md:px-2">
           <div className="font-bold my-8 m-auto text-center px-1 text-2xl">
@@ -30,7 +29,9 @@ const BlogDetails = async ({ params }: any) => {
             <p className="text-black m-2 mb-4 shadow-md font-semibold text-base w-full flex justify-between">
               <span>
                 {" "}
-                Author: <span bg-slate-200>{BlogDetail?.userId?.username}</span>{" "}
+                Author: <span bg-slate-200>
+                  {BlogDetail?.userId?.username}
+                </span>{" "}
               </span>{" "}
               Time posted:{" "}
               {moment(BlogDetail?.createdAt).format("MMM DD, YYYYY")}{" "}
