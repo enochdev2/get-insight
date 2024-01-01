@@ -37,7 +37,7 @@ const Blog = async () => {
                 </div>
                 <div className="px-2">
                   <h2 className="font-bold my-2 mb-8 text-xl">{blog.title}</h2>
-                  <p className="my-4">
+                  <p className="my-4 text-justify">
                     {`${blog.except}`}
                     <Link href={`blog/${blog._id}`} className="">
                       <button

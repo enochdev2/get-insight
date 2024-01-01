@@ -82,14 +82,11 @@ const Create_post = () => {
         }),
       });
       const blog = await res.json();
-if(res.ok){
-  router.push(`/blog/${blog?._id}`);
-
-}else{
-    throw new Error("Error occured")
-}
-      
-
+      if (res.ok) {
+        router.push(`/blog/${blog?._id}`);
+      } else {
+        throw new Error("Error occured");
+      }
     } catch (error) {
       console.log(error);
     }
