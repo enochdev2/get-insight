@@ -15,7 +15,7 @@ const MainContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-20 w-full z-[20]"
+      className="flex flex-row items-center justify-center px-8 md:px-16 mt-20 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -23,7 +23,7 @@ const MainContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">Tech-Noch dev</h1>
+          <h1 className="Welcome-text text-[13px]">Dev-Noch</h1>
         </motion.div>
 
         <motion.div

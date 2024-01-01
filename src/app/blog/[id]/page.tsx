@@ -5,7 +5,6 @@ import BlogDetailsClient from "@/components/BlogDetailsClient";
 import Comments from "@/components/comments";
 import moment from "moment";
 import RelatedPost from "@/components/RelatedPost";
-// import {ShareSocial} from 'react-share-social'
 
 import { getServerSession } from "next-auth/next";
 import Categories from "@/components/Categories";
@@ -17,8 +16,8 @@ const BlogDetails = async ({ params }: any) => {
   const handleLike = () => {};
 
   return (
-    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 px-3 py-5">
-      <div className="px-3 w-[90%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
+    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 px-1 py-5">
+      <div className="px-2 w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
