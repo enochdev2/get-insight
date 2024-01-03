@@ -6,6 +6,12 @@ import RelatedPost from "@/components/RelatedPost";
 import { fetchBlog } from "@/Services";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dev-Noch Blog",
+  description: "Bringing insight to your world",
+};
 
 const Blog = async () => {
   const blogs: any = await fetchBlog();

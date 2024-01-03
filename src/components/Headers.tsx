@@ -73,12 +73,20 @@ ${
 `}
       >
         <div className="flex justify-between gap-2 items-center w-full mx-auto py-2 px-2 md:pr-6 ">
-          <Link href="/">
+          <div>
+          <Link href="/" className="flex items-center gap-2">
+            <Image  
+            src='/Dev-Noch1.png'
+            alt="logo"
+            width={46}
+            height={26}
+            className="object-contain"/>
             <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-              <span className="text-slate-200">Real-</span>
-              <span className="text-slate-400">Insight</span>
+              <span className="text-slate-200">Dev-</span>
+              <span className="text-slate-400">Noch</span>
             </h1>
           </Link>
+          </div>
           <form
             onSubmit={handleSubmit}
             className="bg-slate-100 p-3 rounded-lg flex items-center"

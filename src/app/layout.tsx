@@ -12,8 +12,8 @@ import CategoryHolder from "@/components/CategoryHolder";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TechNoch Blog",
-  description: "Bringing insight to your world",
+  title: "Dev-Noch",
+  description: "Providing the best digital experiences",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
         <Provider>
           <NextThemeProvider>
             <Navbar />
-           <CategoryHolder/>
+            <CategoryHolder />
             {children}
             <Footer />
           </NextThemeProvider>

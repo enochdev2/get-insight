@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16">
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
-             src='/insight.jfif'
+             src='/Dev-Noch1.png'
             alt="logo"
             width={118}
             height={118}

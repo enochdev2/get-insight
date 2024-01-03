@@ -2,12 +2,19 @@ import Image from "next/image";
 import { fetchSingleBlog } from "@/Services";
 import CommentsForm from "@/components/commentsForm";
 import BlogDetailsClient from "@/components/BlogDetailsClient";
-import Comments from "@/components/comments";
 import moment from "moment";
 import RelatedPost from "@/components/RelatedPost";
+import { Metadata } from "next";
 
-import { getServerSession } from "next-auth/next";
-import Categories from "@/components/Categories";
+
+
+export const generatemetadata: Metadata = {
+  title: "TechNoch Blog",
+  description: "Bringing insight to your world",
+};
+
+
+
 
 const BlogDetails = async ({ params }: any) => {
   const BlogDetail = await fetchSingleBlog(params.id);

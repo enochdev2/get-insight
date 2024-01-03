@@ -1,19 +1,22 @@
+"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { motion } from "framer-motion";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "login | register",
-  description: "Bringing insight to your world",
-};
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className=" relative w-screen overflow-x-hidden dark:bg-transparent ">
-        {children}
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 0 }}
+            transition={{dalay: 0.25}}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </body>
     </html>
   );

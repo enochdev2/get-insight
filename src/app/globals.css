@@ -9,6 +9,12 @@
     font-family: "Inter", sans-serif;
   }
 }
+
+@layer components{
+  .service{
+    grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));
+  }
+}
 .content img{
   width: 70%;
   height:300px;

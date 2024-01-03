@@ -21,7 +21,7 @@ const SideBar = ({ handleMenu }: any) => {
     {
       id: 3,
       name: " SERVICE",
-      link: "/service",
+      link: "/productOffer",
     },
     {
       id: 4,
