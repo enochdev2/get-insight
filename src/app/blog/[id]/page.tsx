@@ -8,10 +8,10 @@ import { Metadata } from "next";
 
 
 
-export const generatemetadata: Metadata = {
-  title: "TechNoch Blog",
-  description: "Bringing insight to your world",
-};
+// export const generatemetadata: Metadata = {
+//   title: "TechNoch Blog",
+//   description: "Bringing insight to your world",
+// };
 
 
 
