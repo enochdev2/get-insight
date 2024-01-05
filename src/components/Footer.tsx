@@ -1,8 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerLinks } from "@/utils";
-import {FaFacebook, FaBars, FaLinkedin, FaTwitter} from "react-icons/fa"
-
+import { FaFacebook, FaBars, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  PinterestShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  PinterestIcon,
+  TwitterIcon,
+  LinkedinIcon,
+  FacebookIcon,
+  WhatsappIcon,
+} from "react-share";
 
 const Footer = () => {
   return (
@@ -10,7 +21,7 @@ const Footer = () => {
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16">
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
-             src='/Dev-Noch1.png'
+            src="/Dev-Noch1.png"
             alt="logo"
             width={118}
             height={118}
@@ -18,13 +29,17 @@ const Footer = () => {
           />
           <div className="flex flex-1  justify-end gap-3">
             <div>
-              <FaFacebook size={30} className='text-blue-800' />
+              <a href="https://web.facebook.com/profile.php?id=61555363765065">
+                <FacebookIcon size={30} round={true} />
+              </a>
             </div>
             <div>
-              <FaTwitter size={30} className='text-blue-800'/>
+              <TwitterIcon size={30} round={true} />
             </div>
             <div>
-              <FaLinkedin size={30} className='bg-blue-400 text-blue-900'/>
+              <a href="https://www.linkedin.com/in/enoch-akhabue-01b991269/">
+                <LinkedinIcon size={30} round={true} />
+              </a>
             </div>
           </div>
           <p className="text-xl text-grey-700">
