@@ -81,7 +81,7 @@ const EditPost = ({ params }: any) => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!imageUrls || !title || except || !categories || !desc) {
+    if (!imageUrls || !title || !except || !categories || !desc) {
       toast.error("All fields are required");
       return;
     }
