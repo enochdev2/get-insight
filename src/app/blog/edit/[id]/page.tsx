@@ -180,7 +180,7 @@ const EditPost = ({ params }: any) => {
           </div>
           <div className="flex flex-col">
             <label htmlFor="except" className="font-bold text-lg">
-              Title
+              Except
             </label>
             <input
               type="text"
