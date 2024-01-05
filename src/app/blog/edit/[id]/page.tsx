@@ -56,6 +56,7 @@ const EditPost = ({ params }: any) => {
 
       setTitle(blog.title);
       setDesc(blog.desc);
+      setExcept(blog.except);
       setCategories(blog.categories);
       setImageUrl(blog.imageUrl);
     }

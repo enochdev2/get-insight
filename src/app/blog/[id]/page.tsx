@@ -6,15 +6,10 @@ import moment from "moment";
 import RelatedPost from "@/components/RelatedPost";
 import { Metadata } from "next";
 
-
-
 // export const generatemetadata: Metadata = {
 //   title: "TechNoch Blog",
 //   description: "Bringing insight to your world",
 // };
-
-
-
 
 const BlogDetails = async ({ params }: any) => {
   const BlogDetail = await fetchSingleBlog(params.id);
@@ -36,7 +31,12 @@ const BlogDetails = async ({ params }: any) => {
             <p className="text-black m-2 mb-4 shadow-md font-semibold text-base w-full flex justify-between dark:text-white dark:border py-3 px-3 rounded-lg ">
               <span>
                 {" "}
-                Author: <span>{BlogDetail?.userId?.username}</span>{" "}
+                Author:{" "}
+                <span>
+                  {BlogDetail?.userId?.username
+                    ? BlogDetail?.userId?.username
+                    : "Enoch Promise"}
+                </span>{" "}
               </span>{" "}
               Time posted:{" "}
               {moment(BlogDetail?.createdAt).format("MMM DD, YYYYY")}{" "}
@@ -61,7 +61,6 @@ const BlogDetails = async ({ params }: any) => {
 
       <div className="sm:col-span-4 col-span-1">
         <CommentsForm idx={idx} />
-       
       </div>
     </main>
   );
