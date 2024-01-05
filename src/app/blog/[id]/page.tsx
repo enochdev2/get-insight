@@ -38,7 +38,7 @@ const BlogDetails = async ({ params }: any) => {
                     : "Enoch Promise"}
                 </span>{" "}
               </span>{" "}
-              Time posted:{" "}
+              Time:{" "}
               {moment(BlogDetail?.createdAt).format("MMM DD, YYYYY")}{" "}
             </p>
           </div>
