@@ -12,8 +12,15 @@ import CategoryHolder from "@/components/CategoryHolder";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dev-Noch",
+  metadataBase: new URL("https://www.dev-noch.com.ng"),
+  title: {
+    default:"Dev-Noch",
+    template:"$s : Dev-Noch",
+  },
   description: "Providing the best digital experiences",
+  verification:{
+   google: "google-site-verification: google8736e73035654ff5.html"
+  }
 };
 
 export default function RootLayout({

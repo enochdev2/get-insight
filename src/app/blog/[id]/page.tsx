@@ -6,10 +6,28 @@ import moment from "moment";
 import RelatedPost from "@/components/RelatedPost";
 import { Metadata } from "next";
 
-// export const generatemetadata: Metadata = {
-//   title: "TechNoch Blog",
-//   description: "Bringing insight to your world",
-// };
+export async function generateMetadata({
+  params,
+}: {
+  params: any;
+}): Promise<Metadata> {
+  const BlogDetail = await fetchSingleBlog(params.id);
+  if (!BlogDetail)
+    return {
+      title: "not Found",
+      description: "the page is not found",
+    };
+
+  return {
+    title: BlogDetail.title,
+    description: BlogDetail.desc,
+    alternates:{
+      canonical: `https://www.dev-noch.com.ng/blog/${params.id}`
+    }
+  };
+}
+
+
 
 const BlogDetails = async ({ params }: any) => {
   const BlogDetail = await fetchSingleBlog(params.id);
@@ -19,7 +37,7 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 px-1 py-5">
-      <div className="px-2 w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
+      <div className="px-2 w-[99%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
@@ -38,8 +56,7 @@ const BlogDetails = async ({ params }: any) => {
                     : "Enoch Promise"}
                 </span>{" "}
               </span>{" "}
-              Time:{" "}
-              {moment(BlogDetail?.createdAt).format("MMM DD, YYYYY")}{" "}
+              Time: {moment(BlogDetail?.createdAt).format("MMM DD, YYYYY")}{" "}
             </p>
           </div>
 
@@ -47,7 +64,7 @@ const BlogDetails = async ({ params }: any) => {
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
           <div
-            className=" content py-3 px-5 text-lg 
+            className=" content py-3 px-2 md:px-5 md:text-lg text-base 
           text-justify"
             dangerouslySetInnerHTML={{ __html: BlogDetail?.desc }}
           />

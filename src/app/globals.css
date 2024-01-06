@@ -10,15 +10,15 @@
   }
 }
 
-@layer components{
-  .service{
-    grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));
+@layer components {
+  .service {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
-.content img{
-  width: 70%;
-  height:300px;
-  margin:auto;
+.content img {
+  width: 80%;
+  height: 300px;
+  margin: auto;
 }
 
 @layer components {
@@ -54,7 +54,7 @@
     border-radius: 32px;
     box-shadow: inset 0 -7px 11px #a48fff1f;
     display: flex;
-  
+
     position: relative;
     width: -moz-max-content;
     width: max-content;
@@ -68,5 +68,4 @@
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
-  
 }
