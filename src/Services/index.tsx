@@ -17,7 +17,7 @@ export const fetchSingleBlog = async (id: string | number) => {
 
 export const fetchRecentPost = async () => {
   try {
-    const res = await fetch(`https://get-insight.vercel.app/api/blog/recentPost`, {
+    const res = await fetch(`https://www.dev-noch.com.ng/api/blog/recentPost`, {
       cache: "no-store",
     });
     const data = await res.json();
