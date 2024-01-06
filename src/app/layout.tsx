@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.dev-noch.com.ng"),
   title: {
     default:"Dev-Noch",
-    template:"$s : Dev-Noch",
+    template:"%s : Dev-Noch",
   },
   description: "Providing the best digital experiences",
   verification:{

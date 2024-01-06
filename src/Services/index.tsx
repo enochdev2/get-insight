@@ -1,7 +1,7 @@
 export const localhost = process.env.domain;
 
 export const fetchBlog = async () => {
-  const res = await fetch(`https://get-insight.vercel.app/api/blog`, { cache: "no-store" });
+  const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, { cache: "no-store" });
   const data = res.json();
   return data;
 };
