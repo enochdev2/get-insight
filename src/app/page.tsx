@@ -2,10 +2,13 @@
 
 import MainContent from "@/components/MainContent";
 import ServicesOffer from "@/components/ServicesOffer";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+
+
 
 export default function Home() {
   const router = useRouter();
@@ -17,7 +20,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
       <section className="bg-primary-50 bg-dotted-pattern bg-contain  min-h-screen w-screen">
-      
         <div className="relative flex flex-col pb-5 h-full w-full" id="">
           <div className="rotate-0 absolute top-0  h-full w-full bg-black/50 left-0 z-[2] object-cover "></div>
           <video
@@ -36,7 +38,7 @@ export default function Home() {
         id=""
         className="max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full my-8 flex flex-col gap-8 md:gap-12"
       >
-        <ServicesOffer/>
+        <ServicesOffer />
       </section>
     </main>
   );

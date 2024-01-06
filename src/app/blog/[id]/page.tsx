@@ -16,6 +16,9 @@ export async function generateMetadata({
     return {
       title: "not Found",
       description: "the page is not found",
+      verification:{
+        google: "google-site-verification: google8736e73035654ff5.html"
+       }
     };
 
   return {
