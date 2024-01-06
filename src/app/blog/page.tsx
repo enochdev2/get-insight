@@ -11,6 +11,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
   description: "Bringing insight to your world",
+  verification:{
+    google: "google-site-verification: google8736e73035654ff5.html"
+   }
 };
 
 const Blog = async () => {
