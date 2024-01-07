@@ -7,109 +7,140 @@ const ServicesOffer = () => {
       <div className="w-full flex justify-center">
         <h2 className="font-bold">We Offer Quality Web Service</h2>
       </div>
-      <div className=" service gap-5 lg:px-24 w-full h-full justify-center px-4 py-4 items-center">
-        <div className=" flex flex-col justify-center shadow-xl dark:shadow-slate-500 px-3  py-4">
-          <h2 className="m-auto font-bold text-2xl">
-
-          Front-End
-          </h2>
+      <div className=" service gap-8 lg:px-24 w-full h-full justify-center px-4 py-4 items-center">
+        <div className=" h-96 flex flex-col justify-center shadow-xl dark:shadow-slate-900 px-5  py-4 dark:border rounded-xl ">
+          <h2 className="m-auto font-bold text-2xl">Front-End</h2>
           <div>
             <h4 className="underline font-semibold text-xl">Stack</h4>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Tailwind
             </p>
-            <p className="flex gap-3" >
-            <IoCheckmarkCircleSharp />
+            <p className="flex gap-3">
+              <IoCheckmarkCircleSharp />
               Javascript
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Typescript
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               React
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Next js
             </p>
           </div>
           <p className="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam, vel velit distinctio soluta ipsam corporis quae eligendi ea odit optio atque magni aliquid consectetur explicabo dolore quasi ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore magni voluptatem corporis perspiciatis? Repellat tempore odio necessitatibus maxime quam, minus officia sequi cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
+            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
+            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
+            magni voluptatem corporis perspiciatis? Repellat tempore odio
+            necessitatibus maxime quam, minus officia sequi cumque.
           </p>
         </div>
-        <div className=" flex flex-col justify-center shadow-xl dark:shadow-white px-3  py-4">
-          <h2 className="m-auto font-bold text-2xl">
-
-          Back-End
-          </h2>
+        <div className=" flex flex-col h-96 justify-center shadow-xl dark:shadow-slate-950 px-5  py-4 dark:border rounded-xl">
+          <h2 className="m-auto font-bold text-2xl">Back-End</h2>
           <div>
-            <h4  className="underline font-semibold text-xl">Stack</h4>
+            <h4 className="underline font-semibold text-xl">Stack</h4>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Javascript
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Node js
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Express
             </p>
-            
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam, vel velit distinctio soluta ipsam corporis quae eligendi ea odit optio atque magni aliquid consectetur explicabo dolore quasi ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore magni voluptatem corporis perspiciatis? Repellat tempore odio necessitatibus maxime quam, minus officia sequi cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
+            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
+            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
+            magni voluptatem corporis perspiciatis? Repellat tempore odio
+            necessitatibus maxime quam, minus officia sequi cumque.
           </p>
         </div>
-        <div className=" flex flex-col justify-center shadow-xl dark:shadow-white px-3  py-4">
-          <h2 className="m-auto font-bold text-2xl">
-
-          Full-Stack
-          </h2>
+        <div className=" flex flex-col h-96 justify-center shadow-xl dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
+          <h2 className="m-auto font-bold text-2xl">Full-Stack</h2>
           <div>
-            <h4  className="underline font-semibold text-xl">Stack</h4>
+            <h4 className="underline font-semibold text-xl">Stack</h4>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Javascript
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Typescript
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               React
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Next js
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Node js
             </p>
             <p className="flex gap-3">
-            <IoCheckmarkCircleSharp />
+              <IoCheckmarkCircleSharp />
               Express
             </p>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam, vel velit distinctio soluta ipsam corporis quae eligendi ea odit optio atque magni aliquid consectetur explicabo dolore quasi ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore magni voluptatem corporis perspiciatis? Repellat tempore odio necessitatibus maxime quam, minus officia sequi cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
+            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
+            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
+            magni voluptatem corporis perspiciatis? Repellat tempore odio
+            necessitatibus maxime quam, minus officia sequi cumque.
           </p>
         </div>
-       
-        <div className=" shadow-lg px-3  py-4">
-          <h2>
-          Smart-Contract
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam, vel velit distinctio soluta ipsam corporis quae eligendi ea odit optio atque magni aliquid consectetur explicabo dolore quasi ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore magni voluptatem corporis perspiciatis? Repellat tempore odio necessitatibus maxime quam, minus officia sequi cumque.
-          </p>
+
+        <div className=" shadow-lg h-96 dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
+          <h2 className="m-auto font-bold text-2xl">Smart-Contract</h2>
+          <div>
+            <h4 className="underline font-semibold text-xl">Stack</h4>
+            <p className="flex gap-3">
+              <IoCheckmarkCircleSharp />
+              Javascript
+            </p>
+            <p className="flex gap-3">
+              <IoCheckmarkCircleSharp />
+              Solidity
+            </p>
+            <p className="flex gap-3">
+              <IoCheckmarkCircleSharp />
+              React
+            </p>
+            <p className="flex gap-3">
+              <IoCheckmarkCircleSharp />
+              Next js
+            </p>
+            <p className="flex gap-3">
+              <IoCheckmarkCircleSharp />
+              Node js
+            </p>
           </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
+            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
+            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
+            magni voluptatem corporis perspiciatis? Repellat tempore odio
+            necessitatibus maxime quam, minus officia sequi cumque.
+          </p>
+        </div>
       </div>
     </section>
   );

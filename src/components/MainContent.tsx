@@ -44,14 +44,14 @@ const MainContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Tech-Noch Software Engineer with experience in Website, Mobile, and
-          Software development. Check out my projects and skills.
+          Dev-Noch Technology with experience in Website, Mobile, and
+          Software development.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Learn More!
+          {/* Learn More! */}
         </motion.a>
       </div>
 
