@@ -15,7 +15,7 @@ const ServicesOffer = () => {
           </h2>
           <div>
             <h4 className="underline font-semibold text-xl">Stack</h4>
-            <p className="flex gap-3" ap-3">
+            <p className="flex gap-3">
             <IoCheckmarkCircleSharp />
               Tailwind
             </p>
