@@ -12,7 +12,8 @@
 
 @layer components {
   .service {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 }
 .content img {

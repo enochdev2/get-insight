@@ -2,7 +2,6 @@
 
 import MainContent from "@/components/MainContent";
 import ServicesOffer from "@/components/ServicesOffer";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -39,6 +38,12 @@ export default function Home() {
         className="max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full my-8 flex flex-col gap-8 md:gap-12"
       >
         <ServicesOffer />
+      </section>
+      <section
+        id=""
+        className="max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full my-8 flex flex-col gap-8 md:gap-12"
+      >
+        
       </section>
     </main>
   );
