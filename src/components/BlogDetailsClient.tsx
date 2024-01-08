@@ -112,19 +112,19 @@ const BlogDetailsClient = ({
         </div>
         <div className="space-x-1">
           <FacebookShareButton
-            url={`https://get-insight.vercel.app/${path}`}
+            url={`https://dev-noch.com.ng/${path}`}
             hashtag="#Tech-Noch"
           >
             <FacebookIcon size={26} round={true} />
           </FacebookShareButton>
-          <TwitterShareButton url={`https://get-insight.vercel.app/${path}`}>
+          <TwitterShareButton url={`https://dev-noch.com.ng/${path}`}>
             {" "}
             <TwitterIcon size={26} round={true} />
           </TwitterShareButton>
-          <LinkedinShareButton url={`https://get-insight.vercel.app/${path}`}>
+          <LinkedinShareButton url={`https://dev-noch.com.ng${path}`}>
             <LinkedinIcon size={26} round={true} />
           </LinkedinShareButton>
-          <WhatsappShareButton url={`https://get-insight.vercel.app/${path}`}>
+          <WhatsappShareButton url={`https://dev-noch.com.ng/${path}`}>
             <WhatsappIcon size={26} round={true} />
           </WhatsappShareButton>
         </div>
