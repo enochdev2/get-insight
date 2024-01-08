@@ -16,14 +16,18 @@ export async function generateMetadata({
     return {
       title: "not Found",
       description: "the page is not found",
-      verification:{
-        google: "google-site-verification: google8736e73035654ff5.html"
-       }
+  
     };
 
   return {
     title: BlogDetail.title,
     description: BlogDetail.desc,
+    openGraph: {
+      images: [BlogDetail.imageUrl]
+    },
+    verification:{
+      google: "google-site-verification: google8736e73035654ff5.html"
+     },
     alternates:{
       canonical: `https://www.dev-noch.com.ng/blog/${params.id}`
     }
