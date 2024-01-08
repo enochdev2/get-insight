@@ -18,9 +18,12 @@ export const metadata: Metadata = {
     template: "%s : Dev-Noch",
   },
   description: "Providing the best digital experiences",
-  verification: {
-    google: "google-site-verification: google8736e73035654ff5.html",
+  openGraph: {
+    images: ['/Dev-Noch1.png']
   },
+  verification:{
+    google: "google-site-verification: google8736e73035654ff5.html"
+   },
 };
 
 export default function RootLayout({
