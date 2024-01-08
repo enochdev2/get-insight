@@ -36,12 +36,7 @@ const ServicesOffer = () => {
             </p>
           </div>
           <p className="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
-            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
-            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
-            magni voluptatem corporis perspiciatis? Repellat tempore odio
-            necessitatibus maxime quam, minus officia sequi cumque.
+           Providin our customer with stuning design and crafting seamless and intuitive user interfaces that drive exceptional user experiences.
           </p>
         </div>
         <div className="flex flex-col h-96 sm:h-[450px] lg:h-96 overflow-hidden justify-between shadow-xl dark:shadow-slate-950 px-5  py-4 dark:border rounded-xl">
@@ -64,12 +59,7 @@ const ServicesOffer = () => {
             </p>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
-            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
-            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
-            magni voluptatem corporis perspiciatis? Repellat tempore odio
-            necessitatibus maxime quam, minus officia sequi cumque.
+          Providin our customer with stuning design and crafting seamless and intuitive user interfaces that drive exceptional user experiences.
           </p>
         </div>
         <div className=" flex flex-col h-96  sm:h-[450px] lg:h-96 overflow-hidden justify-center shadow-xl dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
@@ -105,12 +95,7 @@ const ServicesOffer = () => {
             </p>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
-            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
-            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
-            magni voluptatem corporis perspiciatis? Repellat tempore odio
-            necessitatibus maxime quam, minus officia sequi cumque.
+          Providin our customer with stuning design and crafting seamless and intuitive user interfaces that drive exceptional user experiences.
           </p>
         </div>
 
@@ -144,12 +129,7 @@ const ServicesOffer = () => {
             </p>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            quisquam, vel velit distinctio soluta ipsam corporis quae eligendi
-            ea odit optio atque magni aliquid consectetur explicabo dolore quasi
-            ad voluptatum dolorum accusantium iure? Reprehenderit, sunt labore
-            magni voluptatem corporis perspiciatis? Repellat tempore odio
-            necessitatibus maxime quam, minus officia sequi cumque.
+          Providin our customer with stuning design and crafting seamless and intuitive user interfaces that drive exceptional user experiences.
           </p>
         </div>
       </div>
