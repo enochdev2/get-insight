@@ -1,11 +1,18 @@
 import React from "react";
-import { IoCheckmarkCircleSharp } from "react-icons/io5";
+import {LiaStarSolid } from 'react-icons/lia'
+
+
+const Icons = () => {
+  return <LiaStarSolid />
+}
+
+
 
 const ServicesOffer = () => {
   return (
     <section>
       <div className="w-full flex justify-center mb-4">
-        <h2 className="font-bold text-2xl">We Offer Quality Web Service</h2>
+        <h2 className="font-bold text-2xl my-3">We Offer Quality Web Service</h2>
       </div>
       <div className=" service lg:grid-cols-2 gap-8 lg:gap-8 lg:px-32 w-full h-full justify-center px-4 py-4 items-center">
         <div className=" h-96 flex flex-col  sm:h-[450px] lg:h-96 overflow-hidden justify-center shadow-xl dark:shadow-slate-900 px-5  py-4 dark:border rounded-xl ">
@@ -15,23 +22,23 @@ const ServicesOffer = () => {
           </div>
           <div className=" flex flex-wrap gap-2 my-2">
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Tailwind
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Javascript
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Typescript
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               React
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Next js
             </p>
           </div>
@@ -46,15 +53,15 @@ const ServicesOffer = () => {
           </div>
           <div className=" flex flex-wrap gap-2 my-2 mb-12">
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Javascript
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Node js
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Express
             </p>
           </div>
@@ -70,27 +77,27 @@ const ServicesOffer = () => {
           </div>
           <div className=" flex flex-wrap gap-2 my-2">
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Javascript
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Typescript
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               React
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Next js
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Node js
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Express
             </p>
           </div>
@@ -108,23 +115,23 @@ const ServicesOffer = () => {
           </div>
           <div className=" flex flex-wrap gap-2 my-2">
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Javascript
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+            <Icons />
               Solidity
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               React
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Next js
             </p>
             <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
-              <IoCheckmarkCircleSharp />
+              <Icons />
               Node js
             </p>
           </div>

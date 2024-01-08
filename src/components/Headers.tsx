@@ -35,8 +35,8 @@ const Headers = ({ session }: any) => {
 
     {
       id: 3,
-      name: " ABOUT",
-      link: "/about",
+      name: " SERVICES",
+      link: "/service",
     },
   ];
 
@@ -74,18 +74,19 @@ ${
       >
         <div className="flex justify-between gap-2 items-center w-full mx-auto py-2 px-2 md:pr-6 ">
           <div>
-          <Link href="/" className="flex items-center gap-2">
-            <Image  
-            src='/Dev-Noch1.png'
-            alt="logo"
-            width={46}
-            height={26}
-            className="object-contain"/>
-            <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-              <span className="text-slate-200">Dev-</span>
-              <span className="text-slate-400">Noch</span>
-            </h1>
-          </Link>
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/Dev-Noch1.png"
+                alt="logo"
+                width={46}
+                height={26}
+                className="object-contain"
+              />
+              <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
+                <span className="text-slate-200">Dev-</span>
+                <span className="text-slate-400">Noch</span>
+              </h1>
+            </Link>
           </div>
           <form
             onSubmit={handleSubmit}
@@ -164,13 +165,12 @@ ${
             />
           </div>
           {navMenu && (
-        <div className="absolute z-5000 left-0 top-0">
-          <SideBar handleMenu={handleMenu} />
-        </div>
-      )}
+            <div className="absolute z-5000 left-0 top-0">
+              <SideBar handleMenu={handleMenu} />
+            </div>
+          )}
         </div>
       </header>
-     
     </>
   );
 };
