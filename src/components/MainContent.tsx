@@ -44,8 +44,9 @@ const MainContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Dev-Noch Technology with experience in Website, Mobile, and
-          Software development.
+          In Dev-Noch Technology, we are experience in Website and Software
+          development, Delivering Top-quality software solutions that tackle
+          complex business challenges.
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
