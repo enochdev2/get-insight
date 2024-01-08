@@ -36,7 +36,7 @@ const Headers = ({ session }: any) => {
     {
       id: 3,
       name: " SERVICES",
-      link: "/service",
+      link: "/productOffer",
     },
   ];
 
