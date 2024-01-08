@@ -21,7 +21,7 @@ export async function generateMetadata({
 
   return {
     title: BlogDetail.title,
-    description: BlogDetail.desc,
+    description: BlogDetail.except,
     openGraph: {
       images: [BlogDetail.imageUrl]
     },
