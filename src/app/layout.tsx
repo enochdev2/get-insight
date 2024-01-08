@@ -14,13 +14,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dev-noch.com.ng"),
   title: {
-    default:"Dev-Noch",
-    template:"%s : Dev-Noch",
+    default: "Dev-Noch",
+    template: "%s : Dev-Noch",
   },
   description: "Providing the best digital experiences",
-  verification:{
-   google: "google-site-verification: google8736e73035654ff5.html"
-  }
+  verification: {
+    google: "google-site-verification: google8736e73035654ff5.html",
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +30,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6981662648759585"
+            crossOrigin="anonymous"
+          ></script>
+        )}
+      </head>
       <body className=" relative w-screen overflow-x-hidden dark:bg-transparent ">
         <Provider>
           <NextThemeProvider>

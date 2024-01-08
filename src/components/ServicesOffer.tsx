@@ -4,31 +4,33 @@ import { IoCheckmarkCircleSharp } from "react-icons/io5";
 const ServicesOffer = () => {
   return (
     <section>
-      <div className="w-full flex justify-center">
-        <h2 className="font-bold">We Offer Quality Web Service</h2>
+      <div className="w-full flex justify-center mb-4">
+        <h2 className="font-bold text-2xl">We Offer Quality Web Service</h2>
       </div>
-      <div className=" service gap-8 lg:px-24 w-full h-full justify-center px-4 py-4 items-center">
-        <div className=" h-96 flex flex-col justify-center shadow-xl dark:shadow-slate-900 px-5  py-4 dark:border rounded-xl ">
-          <h2 className="m-auto font-bold text-2xl">Front-End</h2>
+      <div className=" service lg:grid-cols-2 gap-8 lg:gap-8 lg:px-32 w-full h-full justify-center px-4 py-4 items-center">
+        <div className=" h-96 flex flex-col  sm:h-[450px] lg:h-96 overflow-hidden justify-center shadow-xl dark:shadow-slate-900 px-5  py-4 dark:border rounded-xl ">
+          <h2 className="m-auto font-bold text-2xl  my-2">Front-End</h2>
           <div>
             <h4 className="underline font-semibold text-xl">Stack</h4>
-            <p className="flex gap-3">
+          </div>
+          <div className=" flex flex-wrap gap-2 my-2">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Tailwind
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Javascript
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Typescript
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               React
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Next js
             </p>
@@ -42,19 +44,21 @@ const ServicesOffer = () => {
             necessitatibus maxime quam, minus officia sequi cumque.
           </p>
         </div>
-        <div className=" flex flex-col h-96 justify-center shadow-xl dark:shadow-slate-950 px-5  py-4 dark:border rounded-xl">
+        <div className="flex flex-col h-96 sm:h-[450px] lg:h-96 overflow-hidden justify-between shadow-xl dark:shadow-slate-950 px-5  py-4 dark:border rounded-xl">
           <h2 className="m-auto font-bold text-2xl">Back-End</h2>
           <div>
             <h4 className="underline font-semibold text-xl">Stack</h4>
-            <p className="flex gap-3">
+          </div>
+          <div className=" flex flex-wrap gap-2 my-2 mb-12">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Javascript
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Node js
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Express
             </p>
@@ -68,31 +72,34 @@ const ServicesOffer = () => {
             necessitatibus maxime quam, minus officia sequi cumque.
           </p>
         </div>
-        <div className=" flex flex-col h-96 justify-center shadow-xl dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
+        <div className=" flex flex-col h-96  sm:h-[450px] lg:h-96 overflow-hidden justify-center shadow-xl dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
           <h2 className="m-auto font-bold text-2xl">Full-Stack</h2>
+
           <div>
             <h4 className="underline font-semibold text-xl">Stack</h4>
-            <p className="flex gap-3">
+          </div>
+          <div className=" flex flex-wrap gap-2 my-2">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Javascript
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Typescript
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               React
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Next js
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Node js
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Express
             </p>
@@ -107,27 +114,31 @@ const ServicesOffer = () => {
           </p>
         </div>
 
-        <div className=" shadow-lg h-96 dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
-          <h2 className="m-auto font-bold text-2xl">Smart-Contract</h2>
+        <div className=" shadow-lg h-96  sm:h-[450px] lg:h-96 overflow-hidden dark:shadow-slate-95 px-5  py-4 dark:border rounded-xl">
+          <h2 className="m-auto font-bold text-center text-2xl my-2">
+            Smart-Contract
+          </h2>
           <div>
             <h4 className="underline font-semibold text-xl">Stack</h4>
-            <p className="flex gap-3">
+          </div>
+          <div className=" flex flex-wrap gap-2 my-2">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Javascript
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Solidity
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               React
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Next js
             </p>
-            <p className="flex gap-3">
+            <p className="flex gap-3 items-center border rounded-lg px-2 py-1">
               <IoCheckmarkCircleSharp />
               Node js
             </p>
