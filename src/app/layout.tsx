@@ -35,11 +35,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {process.env.NODE_ENV === "production" && (
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2895511936246845"
-            crossOrigin="anonymous"
-          ></script>
+          <head>
+            <meta name="google-site-verification" content="LqB4UQLPw3sKncsnA4dKYWLX6epHf4JNcrdSlsQTzwU" />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2895511936246845"
+              crossOrigin="anonymous"
+            ></script>
+          </head>
         )}
       </head>
       <body className=" relative w-screen overflow-x-hidden dark:bg-transparent ">
