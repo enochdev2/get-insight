@@ -36,15 +36,7 @@ export default function RootLayout({
       <head>
         {process.env.NODE_ENV === "production" && (
           <head>
-          <!-- Google tag (gtag.js) -->
        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN69E65JZV"></script>
-         <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MN69E65JZV');
-          </script>
             <meta name="google-site-verification" content="LqB4UQLPw3sKncsnA4dKYWLX6epHf4JNcrdSlsQTzwU" />
             <script
               async
