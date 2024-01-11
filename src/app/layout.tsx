@@ -37,7 +37,7 @@ export default function RootLayout({
         {process.env.NODE_ENV === "production" && (
           <script
             async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6981662648759585"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2895511936246845"
             crossOrigin="anonymous"
           ></script>
         )}
