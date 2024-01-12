@@ -8,6 +8,7 @@ import Provider from "@/Provider";
 import SideBar from "@/components/SideBar";
 import Categories from "@/components/Categories";
 import CategoryHolder from "@/components/CategoryHolder";
+import App from "./app";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,11 @@ export const metadata: Metadata = {
   },
   description: "Providing the best digital experiences",
   openGraph: {
-    images: ['/Dev-Noch1.png']
+    images: ["/Dev-Noch1.png"],
   },
-  verification:{
-    google: "google-site-verification: google8736e73035654ff5.html"
-   },
+  verification: {
+    google: "google-site-verification: google8736e73035654ff5.html",
+  },
 };
 
 export default function RootLayout({
@@ -36,8 +37,14 @@ export default function RootLayout({
       <head>
         {process.env.NODE_ENV === "production" && (
           <head>
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN69E65JZV"></script>
-            <meta name="google-site-verification" content="LqB4UQLPw3sKncsnA4dKYWLX6epHf4JNcrdSlsQTzwU" />
+            {/* <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-MN69E65JZV"
+            ></script> */}
+            <meta
+              name="google-site-verification"
+              content="LqB4UQLPw3sKncsnA4dKYWLX6epHf4JNcrdSlsQTzwU"
+            />
             <script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2895511936246845"
@@ -50,6 +57,20 @@ export default function RootLayout({
         <Provider>
           <NextThemeProvider>
             <Navbar />
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN69E65JZV"></script>
+            <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', "G-MN69E65JZV", {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
             <CategoryHolder />
             {children}
             <Footer />
