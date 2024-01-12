@@ -8,7 +8,6 @@ import Provider from "@/Provider";
 import SideBar from "@/components/SideBar";
 import Categories from "@/components/Categories";
 import CategoryHolder from "@/components/CategoryHolder";
-import App from "./app";
 
 const inter = Inter({ subsets: ["latin"] });
 
