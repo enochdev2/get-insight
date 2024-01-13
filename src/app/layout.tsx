@@ -5,8 +5,6 @@ import NextThemeProvider from "../Provider/ThemeProvider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Provider from "@/Provider";
-import SideBar from "@/components/SideBar";
-import Categories from "@/components/Categories";
 import CategoryHolder from "@/components/CategoryHolder";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.dev-noch.com.ng"),
   title: {
     default: "Dev-Noch",
-    template: "%s : Dev-Noch",
+    template: "$s : Dev-Noch",
   },
   description: "Providing the best digital experiences",
   openGraph: {
@@ -56,10 +54,13 @@ export default function RootLayout({
         <Provider>
           <NextThemeProvider>
             <Navbar />
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN69E65JZV"></script>
             <script
-          dangerouslySetInnerHTML={{
-            __html: `
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-MN69E65JZV"
+            ></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -68,8 +69,8 @@ export default function RootLayout({
                 page_path: window.location.pathname,
               });
             `,
-          }}
-        />
+              }}
+            />
             <CategoryHolder />
             {children}
             <Footer />

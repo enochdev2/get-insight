@@ -33,7 +33,7 @@ const Comments = ({ id }: any) => {
 
   useEffect(() => {
     const fetchComment = async () => {
-      const res = await fetch(`https://get-insight.vercel.app/api/comment/${id}`, {
+      const res = await fetch(`https://www.dev-noch.com.ng/api/comment/${id}`, {
         cache: "no-store",
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ const Comments = ({ id }: any) => {
   const handleDeleteComment = async (id: string) => {
     const token = session?.user?.accessToken;
     try {
-      const res = await fetch(`https://get-insight.vercel.app/api/comment/${id}`, {
+      const res = await fetch(`https://www.dev-noch.com.ng/api/comment/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,6 @@ const Comments = ({ id }: any) => {
           return [...prev].filter((c: string | any) => c?._id !== id);
         });
       }
-
     } catch (error) {
       console.log(error);
     }
