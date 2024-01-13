@@ -7,15 +7,6 @@ import RelatedPost from "@/components/RelatedPost";
 import { Metadata } from "next";
 
 
-export async function generateStaticParams() {
-  const response = await fetch("https://get-insight.vercel.app/api/blog");
-  const blogs:any  = await response.json();
-
-  return blogs.map((blog:any) => blog._id);
-}
-
-
-
 export async function generateMetadata({
   params,
 }: {
