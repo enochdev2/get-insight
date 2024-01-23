@@ -49,7 +49,9 @@ const EditPost = ({ params }: any) => {
 
   useEffect(() => {
     async function fetchBlog() {
-      const res = await fetch(`http://localhost:3000/api/blog/${params.id}`);
+      const res = await fetch(
+        `https://get-insight.vercel.app/api/blog/${params.id}`
+      );
       const blog = await res.json();
 
       setTitle(blog.title);
