@@ -7,8 +7,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-
-
 export default function Home() {
   const router = useRouter();
 
@@ -35,16 +33,14 @@ export default function Home() {
 
       <section
         id=""
-        className="max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full my-8 flex flex-col gap-8 md:gap-12"
+        className=" gradient-bg-services lg:mx-auto   xl:px-0 w-full flex  flex-col gap-8 md:gap-12"
       >
         <ServicesOffer />
       </section>
       <section
         id=""
-        className="max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full my-8 flex flex-col gap-8 md:gap-12"
-      >
-        
-      </section>
+        className="max-w-7xl lg:mx-auto  md:px-10 xl:px-0 w-full  flex flex-col gap-8 md:gap-12"
+      ></section>
     </main>
   );
 }

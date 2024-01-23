@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { localhost } from "@/Services";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,7 +32,7 @@ const Comments = ({ id }: any) => {
 
   useEffect(() => {
     const fetchComment = async () => {
-      const res = await fetch(`https://www.dev-noch.com.ng/api/comment/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/comment/${id}`, {
         cache: "no-store",
       });
       const data = await res.json();
@@ -46,7 +45,7 @@ const Comments = ({ id }: any) => {
   const handleDeleteComment = async (id: string) => {
     const token = session?.user?.accessToken;
     try {
-      const res = await fetch(`https://www.dev-noch.com.ng/api/comment/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/comment/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

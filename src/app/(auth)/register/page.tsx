@@ -26,7 +26,7 @@ const Register = () => {
     }
 
     try {
-      const res = await fetch("https://www.dev-noch.com.ng/api/register", {
+      const res = await fetch("http://localhost:3000/api/register", {
         headers: {
           "Content-Type": "application/json",
         },

@@ -1,11 +1,11 @@
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const response = await fetch("https://www.dev-noch.com.ng/api/blog");
+  const response = await fetch("http://localhost:3000/api/blog");
   const blogs: any = await response.json();
 
   const postEntries: MetadataRoute.Sitemap = blogs.map((blog: any) => ({
-    url: `https://www.dev-noch.com.ng/api/blog/${blog._id}`,
+    url: `http://localhost:3000/api/blog/${blog._id}`,
     lastModified: new Date(blog.updatedAt),
     // changeFrequency:,
     // priority:
@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: `https://www.dev-noch.com.ng/api/blog`,
+      url: `http://localhost:3000/api/blog`,
       //   lastModified: new Date(),
     },
     ...postEntries,
