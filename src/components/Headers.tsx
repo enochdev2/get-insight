@@ -132,10 +132,9 @@ ${
               ) : (
                 <Link
                   href="/login"
-                  className="  hover:underline rounded-lg font-semibold px-3 py-2 text-white bg-rose-500"
+                  className=" block w-16 lg:w-20 hover:underline rounded-full text-center font-semibold text-sm lg:text-base lg:px-3  px-1 py-2 text-white bg-rose-500 "
                 >
-                  {" "}
-                  Sign in
+                  Sign-in
                 </Link>
               )}
             </div>

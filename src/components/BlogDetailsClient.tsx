@@ -90,7 +90,7 @@ const BlogDetailsClient = ({
         }
       }
     } catch (error) {
-      toast.error("Somethin went wrong");
+      toast.error("Something went wrong");
     }
   };
 

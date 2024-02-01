@@ -8,7 +8,6 @@ export async function GET(req: Request, { params }: any) {
   await db.connect();
   const { id } = params;
   console.log(id);
-  // blog id !!
 
   try {
     const comments = await Comment.find({ blogId: id }).populate("userId");

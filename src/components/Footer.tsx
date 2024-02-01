@@ -22,7 +22,10 @@ const Footer = () => {
           />
           <div className="flex flex-1  justify-end gap-3">
             <div>
-              <a title="icon" href="https://web.facebook.com/profile.php?id=61555363765065">
+              <a
+                title="icon"
+                href="https://web.facebook.com/profile.php?id=61555363765065"
+              >
                 <FacebookIcon size={30} round={true} />
               </a>
             </div>
@@ -30,16 +33,19 @@ const Footer = () => {
               <TwitterIcon size={30} round={true} />
             </div>
             <div>
-              <WhatsappIcon  size={30} round={true} />
+              <WhatsappIcon size={30} round={true} />
             </div>
             <div>
-              <a title="icon" href="https://www.linkedin.com/in/enoch-akhabue-01b991269/">
+              <a
+                title="icon"
+                href="https://www.linkedin.com/in/enoch-akhabue-01b991269/"
+              >
                 <LinkedinIcon size={30} round={true} />
               </a>
             </div>
           </div>
           <p className="text-xl text-grey-700">
-            MY-INSIGHT 2023 <br />
+            MY-INSIGHT {new Date().getFullYear()} <br />
             All Rights Reserved &copy;
           </p>
         </div>
