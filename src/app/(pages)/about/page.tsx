@@ -29,9 +29,10 @@ const About = () => {
             At Dev-noch Technology, our mission is to transform ideas into
             impactful digital experiences. We strive to empower businesses by
             leveraging cutting-edge technologies and a comprehensive Full-Stack
-            approach. Whether you're a startup navigating uncharted waters or an
-            established enterprise seeking to redefine your online presence,
-            we're here to architect solutions tailored to your unique needs.
+            approach. Whether you`&lsquo;`re a startup navigating uncharted
+            waters or an established enterprise seeking to redefine your online
+            presence, we`&lsquo;`re here to architect solutions tailored to your
+            unique needs.
             <p className="text-teal-900 text-center underline font-bold my-3 text-xl">
               What Sets Us Apart
             </p>
@@ -73,13 +74,13 @@ const About = () => {
             enhance user experience and boost sales. <br />
             <span className="underline">Custom Software:</span> {""}
             Designing and developing bespoke software solutions to address
-            specific business challenges and opportunities. Let's Build Together
-            Embark on a journey of digital transformation with Dev-noch
+            specific business challenges and opportunities. Let`&lsquo;`s Build
+            Together Embark on a journey of digital transformation with Dev-noch
             Technology. We believe in the power of collaboration and the
             potential of technology to drive success. Join hands with us, and
-            let's build solutions that not only meet today's requirements but
-            also pave the way for a future of innovation and growth. Your
-            vision, our expertise—let's make it happen.
+            let`&lsquo;`s build solutions that not only meet today`&lsquo;`s
+            requirements but also pave the way for a future of innovation and
+            growth. Your vision, our expertise—let`&lsquo;`s make it happen.
           </p>
         </div>
       </div>
