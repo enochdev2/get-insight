@@ -50,7 +50,7 @@ const EditPost = ({ params }: any) => {
   useEffect(() => {
     async function fetchBlog() {
       const res = await fetch(
-        `https://get-insight.vercel.app/api/blog/${params.id}`
+        `https://www.dev-noch.com.ng/api/blog/${params.id}`
       );
       const blog = await res.json();
 

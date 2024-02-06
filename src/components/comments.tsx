@@ -32,12 +32,9 @@ const Comments = ({ id }: any) => {
 
   useEffect(() => {
     const fetchComment = async () => {
-      const res = await fetch(
-        `https://get-insight.vercel.app/api/comment/${id}`,
-        {
-          cache: "no-store",
-        }
-      );
+      const res = await fetch(`https://www.dev-noch.com.ng/api/comment/${id}`, {
+        cache: "no-store",
+      });
       const data = await res.json();
 
       setComments(data);
@@ -48,15 +45,12 @@ const Comments = ({ id }: any) => {
   const handleDeleteComment = async (id: string) => {
     const token = session?.user?.accessToken;
     try {
-      const res = await fetch(
-        `https://get-insight.vercel.app/api/comment/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`https://www.dev-noch.com.ng/api/comment/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        method: "DELETE",
+      });
       const data: any = res.json();
       if (res.ok) {
         toast.success(data.msg);

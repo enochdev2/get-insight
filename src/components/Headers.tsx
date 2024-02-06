@@ -38,6 +38,11 @@ const Headers = ({ session }: any) => {
       name: " SERVICES",
       link: "/productOffer",
     },
+    {
+      id: 4,
+      name: " ABOUT",
+      link: "/about",
+    },
   ];
 
   function handleStickyNavbar() {
@@ -104,12 +109,12 @@ ${
             </button>
           </form>
           <div>
-            <div className="sm:flex hidden gap-4 mx-2">
+            <div className="sm:flex hidden sm:gap-1  md:gap-2">
               {item.map((items: NavBarItem, id: number) => (
                 <span key={id}>
                   <Link
                     href={items.link}
-                    className="hidden sm:inline grow dark:text-white sm:text-sm  rounded-lg text-white md:text-base px-2 py-1"
+                    className="hidden sm:inline grow dark:text-white sm:text-[0.8rem]  rounded-lg text-white md:text-sm  md:px-2 px-1 py-1"
                   >
                     {items.name}
                   </Link>

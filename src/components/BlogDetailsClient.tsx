@@ -44,15 +44,12 @@ const BlogDetailsClient = ({
       );
 
       if (confirmModal) {
-        const res = await fetch(
-          `https://get-insight.vercel.app/api/blog/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${session?.user?.accessToken}`,
-            },
-            method: "DELETE",
-          }
-        );
+        const res = await fetch(`https://www.dev-noch.com.ng/api/blog/${id}`, {
+          headers: {
+            Authorization: `Bearer ${session?.user?.accessToken}`,
+          },
+          method: "DELETE",
+        });
         const data = await res.json();
         if (res.ok) {
           toast.success(data.message);
@@ -71,7 +68,7 @@ const BlogDetailsClient = ({
 
     try {
       const res = await fetch(
-        `https://get-insight.vercel.app/api/blog/${id}/likes`,
+        `https://www.dev-noch.com.ng/api/blog/${id}/likes`,
         {
           headers: {
             Authorization: `Bearer ${session?.user?.accessToken}`,

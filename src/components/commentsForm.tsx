@@ -27,7 +27,7 @@ const CommentsForm = ({ idx }: any) => {
       blogId: idx,
       text: commentText,
     };
-    const res = await fetch("https://get-insight.vercel.app/api/comment", {
+    const res = await fetch("https://www.dev-noch.com.ng/api/comment", {
       method: "Post",
       headers: {
         "Content-Type": "Application/json",

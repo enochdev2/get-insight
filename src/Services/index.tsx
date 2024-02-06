@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 export const localhost = process.env.domain;
 
 export const fetchBlog = async () => {
-  const res = await fetch(`https://get-insight.vercel.app/api/blog`, {
+  const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
     cache: "no-store",
   });
   const data = res.json();
@@ -11,7 +11,7 @@ export const fetchBlog = async () => {
 };
 
 export const fetchSingleBlog = async (id: string | number) => {
-  const res = await fetch(`https://get-insight.vercel.app/api/blog/${id}`, {
+  const res = await fetch(`https://www.dev-noch.com.ng/api/blog/${id}`, {
     cache: "no-store",
   });
   const data = res.json();
@@ -25,7 +25,7 @@ export const fetchSingleBlog = async (id: string | number) => {
 export const fetchRecentPost = async () => {
   try {
     const res = await fetch(
-      `https://get-insight.vercel.app/api/blog/recentPost`,
+      `https://www.dev-noch.com.ng/api/blog/recentPost`,
       {
         cache: "no-store",
       }
@@ -40,7 +40,7 @@ export const fetchRecentPost = async () => {
 export const fetchRelatedPost = async (categories: string) => {
   try {
     const res = await fetch(
-      `https://get-insight.vercel.app/api/blog/relatedPost?categories=${categories}`,
+      `https://www.dev-noch.com.ng/api/blog/relatedPost?categories=${categories}`,
       { cache: "no-store" }
     );
     const data = await res.json();
@@ -53,7 +53,7 @@ export const fetchRelatedPost = async (categories: string) => {
 export const fetchCategoriesPost = async (categories: string) => {
   try {
     const res = await fetch(
-      `https://get-insight.vercel.app/api/blog/categories?categories=${categories}`,
+      `https://www.dev-noch.com.ng/api/blog/categories?categories=${categories}`,
       { cache: "no-store" }
     );
     const data = await res.json();
