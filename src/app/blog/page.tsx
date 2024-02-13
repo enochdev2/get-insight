@@ -7,6 +7,7 @@ import { fetchBlog } from "@/Services";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Metadata } from "next";
+import BlogCard from "@/components/blogCard";
 
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 
 const Blog = async () => {
   const blogs: any = await fetchBlog();
+  
+  const blogCardstyle = "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg py-5 gap-2 px-4 dark:bg-slate-800"
 
   const classNames =
     " bg-slate-300 flex gap-4 flex-col dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8";
@@ -31,37 +34,9 @@ const Blog = async () => {
         <FeaturedPosts />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 my-15">
           <div className="lg:col-span-8 col-span-1 my-15">
-            {blogs.map((blog: any, index: number) => (
-              <div
-                key={index}
-                className="my-14 shadow-md lg:flex  bg-slate-200 rounded-lg py-5 gap-2 px-4 dark:bg-slate-800"
-              >
-                <div className="relative w-[95%] h-36 lg:h-52 m-auto mr-4 ">
-                  <Image
-                    src={blog.imageUrl}
-                    fill
-                    className=" m-auto "
-                    alt="blog"
-                  />
-                </div>
-                <div className="px-2">
-                  <h2 className="font-bold my-2 mb-8 text-xl">{blog.title}</h2>
-                  <p className="my-4 text-justify">
-                    {`${blog.except}`}
-                    <Link href={`blog/${blog._id}`} className="">
-                      <button
-                        type="button"
-                        className="py-1 items-center px-3 flex ml-5  text-cyan-700 rounded-md hover:text-teal-600 "
-                      >
-                        Read More{" "}
-                        <FaArrowRightLong className="w-12" width="80px" />
-                      </button>
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            ))}
+            <BlogCard blogs={blogs} blogCardsytle={blogCardstyle} />
           </div>
+
           <div className="lg:col-span-4 col-span-1">
             <div className="md:hidden lg:block relative top-8">
               <RelatedPost />

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NextThemeProvider from "../Provider/ThemeProvider";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 import Provider from "@/Provider";
 import CategoryHolder from "@/components/CategoryHolder";
 
@@ -11,10 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dev-noch.com.ng"),
-  title: {
-    default: "Dev-Noch",
-    template: "$s : Dev-Noch",
-  },
+  title: "Dev-Noch",
+  
   description: "Providing the best digital experiences",
   openGraph: {
     images: ["/Dev-Noch1.png"],

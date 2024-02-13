@@ -25,6 +25,7 @@ export interface FormControlItem {
 
 export interface BlogFormData {
   title: string;
+  except: string;
   description: string;
   image: string;
   category: string;
