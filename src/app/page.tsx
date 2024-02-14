@@ -41,7 +41,7 @@ export default async function Home() {
             aspects of modern life. Join us as we explore the intricate
             interplay between finance, business, family dynamics, and
             technology, offering insights, tips, and strategies to achieve
-            harmony and success in today's dynamic world.
+            harmony and success in today&lsquo;s dynamic world.
           </h1>
         </div>
       </section>

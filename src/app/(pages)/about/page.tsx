@@ -36,7 +36,7 @@ const About = () => {
         <ul>
           <li>
             Business : Explore cutting-edge business trends, entrepreneurial
-            insights, and strategies for success in today's competitive
+            insights, and strategies for success in today&lsquo;s competitive
             landscape.
           </li>
           <li>
