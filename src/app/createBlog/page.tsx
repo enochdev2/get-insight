@@ -2,7 +2,12 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React, { FormEvent, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  InputHTMLAttributes,
+  useState,
+} from "react";
 import { AiOutlineFileImage } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -136,19 +141,20 @@ const Create_post = () => {
               name="title"
               id="title"
               className="h-10 px-2 py-5"
+              value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="title" className="font-bold text-lg">
+            <label htmlFor="except" className="font-bold text-lg">
               Except
             </label>
             <input
               type="text"
               name="except"
-              title="except"
               id="except"
               className="h-10 px-2 py-5"
+              value={except}
               onChange={(e) => setExcept(e.target.value)}
             />
           </div>
@@ -176,7 +182,9 @@ const Create_post = () => {
               name="image"
               id="image"
               className={!imageUrls ? "hidden" : "block"}
-              onChange={(e: any) => setImageUrl(e.target.files[0])}
+              onChange={(
+                e: ChangeEvent | any | InputHTMLAttributes<HTMLInputElement>
+              ) => setImageUrl(e.target.files[0])}
               accept="image/*"
             />
           </div>
@@ -189,6 +197,7 @@ const Create_post = () => {
               name="categories"
               id="category"
               className="w-lg"
+              value={categories}
               onChange={(e) => setCategories(e.target.value)}
             >
               <option value="all">All</option>
