@@ -14,9 +14,9 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-interface Image {
-  setImageUrl: (value: React.SetStateAction<string>) => void;
-}
+// interface Image {
+//   setImageUrl: (value: React.SetStateAction<string>) => void;
+// }
 
 const modules = {
   toolbar: [
@@ -43,7 +43,7 @@ const Create_post = () => {
   const [imageUrls, setImageUrl] = useState<any>({});
   const [categories, setCategories] = useState("");
 
-  const { data: session, status } = useSession() as { data: any; status: any };
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   if (status === "loading") {
@@ -59,7 +59,7 @@ const Create_post = () => {
     return <p className="">Access Denied</p>;
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!imageUrls || !title || !except || !categories || !desc) {
@@ -182,8 +182,7 @@ const Create_post = () => {
               name="image"
               id="image"
               className={!imageUrls ? "hidden" : "block"}
-              onChange={(
-                e: ChangeEvent | any | InputHTMLAttributes<HTMLInputElement>
+              onChange={(e
               ) => setImageUrl(e.target.files[0])}
               accept="image/*"
             />
