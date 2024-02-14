@@ -2,21 +2,16 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React, {
-  ChangeEvent,
-  FormEvent,
-  InputHTMLAttributes,
-  useState,
-} from "react";
+import React, { FormEvent, useState } from "react";
 import { AiOutlineFileImage } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-// interface Image {
-//   setImageUrl: (value: React.SetStateAction<string>) => void;
-// }
+interface Image {
+  setImageUrl: (value: React.SetStateAction<string>) => void;
+}
 
 const modules = {
   toolbar: [
@@ -33,7 +28,7 @@ const modules = {
   ],
 };
 
-const CreatePpost = () => {
+const Create_post = () => {
   const CLOUD_NAME = "dg9ikhw52";
   const UPLOAD_PRESET = "My_Blog";
 
@@ -43,7 +38,7 @@ const CreatePpost = () => {
   const [imageUrls, setImageUrl] = useState<any>({});
   const [categories, setCategories] = useState("");
 
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession() as { data: any; status: any };
   const router = useRouter();
 
   if (status === "loading") {
@@ -59,7 +54,7 @@ const CreatePpost = () => {
     return <p className="">Access Denied</p>;
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!imageUrls || !title || !except || !categories || !desc) {
@@ -141,20 +136,19 @@ const CreatePpost = () => {
               name="title"
               id="title"
               className="h-10 px-2 py-5"
-              value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="except" className="font-bold text-lg">
+            <label htmlFor="title" className="font-bold text-lg">
               Except
             </label>
             <input
               type="text"
               name="except"
+              title="except"
               id="except"
               className="h-10 px-2 py-5"
-              value={except}
               onChange={(e) => setExcept(e.target.value)}
             />
           </div>
@@ -182,8 +176,7 @@ const CreatePpost = () => {
               name="image"
               id="image"
               className={!imageUrls ? "hidden" : "block"}
-              onChange={(e
-              ) => setImageUrl(e.target.files[0])}
+              onChange={(e: any) => setImageUrl(e.target.files[0])}
               accept="image/*"
             />
           </div>
@@ -196,7 +189,6 @@ const CreatePpost = () => {
               name="categories"
               id="category"
               className="w-lg"
-              value={categories}
               onChange={(e) => setCategories(e.target.value)}
             >
               <option value="all">All</option>
@@ -222,4 +214,4 @@ const CreatePpost = () => {
   );
 };
 
-export default CreatePpost;
+export default Create_post;
