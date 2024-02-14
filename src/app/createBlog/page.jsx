@@ -33,7 +33,7 @@ const modules = {
   ],
 };
 
-const Create_post = () => {
+const CreatePpost = () => {
   const CLOUD_NAME = "dg9ikhw52";
   const UPLOAD_PRESET = "My_Blog";
 
@@ -222,4 +222,4 @@ const Create_post = () => {
   );
 };
 
-export default Create_post;
+export default CreatePpost;
