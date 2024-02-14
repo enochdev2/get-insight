@@ -3,8 +3,6 @@ import BlogCard from "@/components/blogCard";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
@@ -25,6 +23,15 @@ export default async function Home() {
       <section>
         <div className="relative w-full h-96">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
+        </div>
+        <div className="z-10 w-2/3 bg-slate-300 absolute translate-x-[-50%] translate-y-[-30%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
+          <h2 className="font-bold text-3xl my-2">Welcome to Dev-Noch Blog,</h2>
+          <h4 className="text-xl font-sans">
+            Your ultimate destination for insightful and enriching content.
+            Here, we embark on a journey through the realms of business,
+            finance, family, and technology, offering you a treasure trove of
+            knowledge and wisdom.
+          </h4>
         </div>
         <div className="w-3/4 m-auto font-serif font-semibold text-justify text-lg my-8 shadow-lg py-5 px-5 rounded-lg">
           <h1>
