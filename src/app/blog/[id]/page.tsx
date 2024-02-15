@@ -45,8 +45,8 @@ const BlogDetails = async ({ params }: any) => {
   const handleLike = () => {};
 
   return (
-    <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 px-1 py-5">
-      <div className="px-2 w-[99%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
+    <main className="w-full md:grid flex flex-col md:grid-cols-4 gap-2 pt-2 px-0 py-5">
+      <div className="px-4 md:px-5 overflow-x-hidden w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
@@ -73,13 +73,14 @@ const BlogDetails = async ({ params }: any) => {
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
           <div
-            className=" content py-3 px-2 md:px-5 md:text-lg text-base 
-          text-justify"
+            className=" content py-3 px-3 md:px-5 md:text-lg text-[18px] 
+          text-justify whitespace-no-wrap md:whitespace-normal font-sans"
             dangerouslySetInnerHTML={{ __html: BlogDetail?.desc }}
           />
         </div>
       </div>
-      <div className="md:hidden lg:block relative top-8 right-3">
+
+      <div className="md:hidden lg:block relative top-10 right-1">
         <div className="md:hidden lg:block relative top-8 right-3">
           <RelatedPost categories={BlogDetail?.categories} />
         </div>

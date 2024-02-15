@@ -20,21 +20,21 @@ export const metadata: Metadata = {
 const Blog = async () => {
   const blogs: any = await fetchBlog();
   
-  const blogCardstyle = "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg py-5 gap-2 px-4 dark:bg-slate-800"
+  const blogCardstyle = "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg pt-5 pb-3 gap-2 px-4 dark:bg-slate-800"
 
   const classNames =
     " bg-slate-300 flex gap-4 flex-col dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8";
 
   return (
-    <main className="w-full pt-2   ">
+    <main className="w-full pt-2  ">
       <div className=" mt-20 w-full  text- m-auto border-b-black-700 text-sky-900 text-xl text-center font-semibold">
         FeaturedPosts{" "}
       </div>
       <div className="container  mx-auto px-5 lg:px-10 mt-4 mb-8">
         <FeaturedPosts />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 my-15">
-          <div className="lg:col-span-8 col-span-1 my-15">
-            <BlogCard blogs={blogs} blogCardsytle={blogCardstyle} />
+          <div className="lg:col-span-8 gap-3 col-span-1 my-15">
+            <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} />
           </div>
 
           <div className="lg:col-span-4 col-span-1">
