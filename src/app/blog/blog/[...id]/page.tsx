@@ -18,7 +18,7 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-      <div className="px-3 w-[80%] m-auto mt-20 md:col-span-4  grid place-items-center gap-3">
+      <div className="px-4 md:px-5 overflow-x-hidden shadow-lg w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto text-center text-2xl">
             {BlogDetail?.title}
@@ -40,10 +40,10 @@ const BlogDetails = async ({ params }: any) => {
           <div className="flex w-full ">
             <BlogDetailsClient id={BlogDetail._id} BlogDetail={BlogDetail} />
           </div>
-        
+
           <div
-            className=" content py-3 px-5 text-lg 
-          text-justify"
+            className=" content py-3 px-3 md:px-5 md:text-lg text-[18px] 
+          text-justify whitespace-no-wrap md:whitespace-normal font-sans"
             dangerouslySetInnerHTML={{ __html: BlogDetail?.desc }}
           />
         </div>

@@ -17,7 +17,7 @@ const BlogDetails = async ({ params }: any) => {
 
   return (
     <main className="w-full md:grid flex flex-col md:grid-cols-4 pt-0 py-5">
-      <div className="md:px-3  w-[97%] m-auto mt-20 md:col-span-4  lg:px-5  grid place-items-center gap-3">
+      <div className="px-4 md:px-5 overflow-x-hidden shadow-lg w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full mt-4 px-1 md:px-2">
           <div className="font-bold my-8 m-auto text-center px-1 text-2xl">
             {BlogDetail?.title}
