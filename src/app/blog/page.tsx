@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 
 const Blog = async () => {
   const blogs: any = await fetchBlog();
+
+  const path = "blog"
   
   const blogCardstyle = "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg pt-5 pb-3 gap-2 px-4 dark:bg-slate-800"
 
@@ -34,7 +36,7 @@ const Blog = async () => {
         <FeaturedPosts />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 my-15">
           <div className="lg:col-span-8 gap-3 col-span-1 my-15">
-            <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} />
+            <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} value={path} />
           </div>
 
           <div className="lg:col-span-4 col-span-1">

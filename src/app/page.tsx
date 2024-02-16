@@ -64,7 +64,7 @@ export default async function Home() {
       </section>
       <section className="mx-2 w-full overflow-x-hidden">
         <div className="service w-10/12 overflow-x-hidden  lg:col-span-2 col-span-3 my-15 text-ellipsis py-8 mx-auto justify-center px-3 md:px-12 gap-6 bg-gray-100">
-          <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} />
+          <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} value="home" />
         </div>
       </section>
     </main>
