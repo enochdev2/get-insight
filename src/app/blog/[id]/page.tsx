@@ -48,8 +48,10 @@ const BlogDetails = async ({ params }: any) => {
     <main className="w-full sm:grid flex flex-col md:grid-cols-4 gap-2 pt-2 px-0 py-5">
       <div className="px-4 md:px-5 overflow-x-hidden shadow-lg w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
-          <div className="font-bold my-8 m-auto text-center text-2xl">
+          <div className="font-bold my-8 m-auto  text-2xl">
+            <h1>
             {BlogDetail?.title}
+            </h1>
           </div>
           <div className="relative overflow-hidden w-[90%] h-[200px] shadow-md rounded-lg m-auto">
             <Image src={BlogDetail?.imageUrl} fill alt="blog" className="shadow-md" />

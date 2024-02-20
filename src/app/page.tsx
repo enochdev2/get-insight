@@ -1,4 +1,4 @@
-import { fetchBlog } from "@/Services";
+import { fetchRecentPost } from "@/Services";
 import Categories from "@/components/Categories";
 import BlogCard from "@/components/blogCard";
 import { Metadata } from "next";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const blogs: any = await fetchBlog();
+  const blogs: any = await fetchRecentPost();
 
   const classNames =
     " bg-slate-100 flex gap-2 flex-col dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8";
