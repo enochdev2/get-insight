@@ -29,17 +29,9 @@ export const footerLinks = [
     links: [
       // { title: "How it works", url: "/" },
       { title: "Featured", url: "/" },
-      { title: "Partnership", url: "/" },
-      { title: "Bussiness Relation", url: "/" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { title: "Events", url: "/" },
       { title: "Blog", url: "/blog" },
-      { title: "Podcast", url: "/" },
-      // { title: "Invite a friend", url: "/" },
+      { title: "Invite a friend", url: "/" },
+      ,
     ],
   },
   {
@@ -98,3 +90,33 @@ export const style = {
     fontSize: 25,
   },
 };
+
+// export const footerLinks = [
+//   {
+//     title: "About",
+//     links: [
+//       // { title: "How it works", url: "/" },
+//       { title: "Featured", url: "/" },
+//       { title: "Partnership", url: "/" },
+//       { title: "Bussiness Relation", url: "/" },
+//     ],
+//   },
+//   {
+//     title: "Company",
+//     links: [
+//       { title: "Events", url: "/" },
+//       { title: "Blog", url: "/blog" },
+//       { title: "Podcast", url: "/" },
+//       // { title: "Invite a friend", url: "/" },
+//     ],
+//   },
+//   {
+//     title: "Socials",
+//     links: [
+//       // { title: "Discord", url: "/" },
+//       { title: "Instagram", url: "https://www.instagram.com/enochpromise1" },
+//       { title: "Twitter", url: "https://twitter.com/Tech_Noch" },
+//       { title: "Facebook", url: "https://web.facebook.com/?_rdc=1&_rdr" },
+//     ],
+//   },
+// ];
