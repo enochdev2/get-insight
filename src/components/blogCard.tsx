@@ -19,7 +19,7 @@ const BlogCard = ({blogs, value, blogCardstyle}: any) => {
             <Image src={blog.imageUrl} fill className=" m-auto " alt="blog" />
           </div>
           <div className="px-2">
-            <h2 className="font-bold my-2 mb-8 text-xl">{blog.title}</h2>
+            <h2 className="font-bold my-2 mb-4 text-xl">{blog.title}</h2>
             <p className="my-4 text-justify text-ellipsis">
               {path === "home"
                 ? `${blog.except.substring(0, 200)}...`

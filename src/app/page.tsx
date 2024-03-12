@@ -1,4 +1,4 @@
-import { fetchRecentPost } from "@/Services";
+import { fetchBlog, fetchRecentPost } from "@/Services";
 import Categories from "@/components/Categories";
 import BlogCard from "@/components/blogCard";
 import { Metadata } from "next";
@@ -14,13 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const blogs: any = await fetchRecentPost();
-
-  const classNames =
-    " bg-slate-100 flex gap-2 flex-col dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8";
-
-  const blogCardstyle =
-    "my-3 shadow-lg bg-white text-ellipsis h-[400px]  overflow-y-hidden rounded-lg py-3 gap-2 px-4 dark:bg-slate-800 py-5";
+  const blogs: any = await fetchBlog();
+  const blogl = blogs.slice(0, 6);
 
   return (
     <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between bg-[f1f5f9]">
@@ -39,6 +34,14 @@ export default async function Home() {
             knowledge and wisdom.
           </h4>
         </div>
+        <div className="  w-10/12 lgw-3/4 flex justify-center my-5 m-auto text-center">
+          <Categories
+            style={`cursor-pointer grow block py-3 px-2 dark:bg-slate-950 rounded-lg
+          bg-slate-100`}
+            title={null}
+            classNames="gradient-bg-services m-auto md:w-[60%] flex  justify-between dark:bg-slate-800 shadow-lg rounded-lg py-3 px-3 font-bold text-sky-800"
+          />
+        </div>
         <div className="w-10/12 md:w-3/4 m-auto font-serif font-semibold text-justify text-lg my-8 shadow-lg py-5 lg:px-5 px-2 rounded-lg">
           <h1 className="m-auto">
             From managing finances to fostering family bonds, navigating the
@@ -51,22 +54,17 @@ export default async function Home() {
           </h1>
         </div>
       </section>
-      <section className="w-full px-3">
-        <div className=" w-10/12 lgw-3/4 m-auto">
-
-        <Categories
-          style={`cursor-pointer grow block  py-3 px-2 mb-3 w-[90%] dark:bg-slate-950 rounded-lg
-          bg-slate-100`}
-          title={"Categories :"}
-          classNames={classNames}
-          />
-          </div>
-      </section>
+      <section className="w-full px-3"></section>
       <section className="mx-2 w-full overflow-x-hidden">
-        <div className="service w-10/12 overflow-x-hidden  lg:col-span-2 col-span-3 my-15 text-ellipsis py-8 mx-auto justify-center px-3 md:px-12 gap-6 bg-gray-100">
-          <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} value="home" />
+        <div className="service sm:w-11/12 w-[95%] dark:bg-transparent mx-auto md:px-4 px-2 lg:px-10 gap-6 py-5 bg-gray-100">
+          <BlogCard
+            blogs={blogl}
+            blogCardstyle={` bg-white px-12 w-full  py-4 m-auto h-[400px] rounded-lg  dark:bg-slate-800 `}
+            value="home"
+          />
         </div>
       </section>
     </main>
   );
 }
+// w-10/12 overflow-x-hidden  lg:col-span-2  py-8 mx-auto justify-center px-6 md:px-12 gap-12 bg-gray-100 dark:bg-transparent
