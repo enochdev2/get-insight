@@ -52,27 +52,31 @@ const About = () => {
         </h1>
         <ul className="text-lg font-medium my-4 max-w-6xl mx-auto space-y-2">
           <li >
-            Business : Explore cutting-edge business trends, entrepreneurial
+          <span className="font-extrabold mr-3"> BUSINESS:</span>
+             Explore cutting-edge business trends, entrepreneurial
             insights, and strategies for success in today&lsquo;s competitive
             landscape.
           </li>
           <li>
-            Finance: Gain valuable tips and advice on personal finance,
+          <span className="font-extrabold mr-3"> FINANCE:</span>
+            Gain valuable tips and advice on personal finance,
             investment opportunities, and navigating the complexities of the
             financial world.
           </li>
           <li>
-            Family: Discover tips for strengthening family bonds, managing
+          <span className="font-extrabold mr-3"> FAMILY:</span>
+            Discover tips for strengthening family bonds, managing
             work-life balance, and fostering healthy relationships within your
             family unit.{" "}
           </li>
           <li>
-            Technology: Stay updated on the latest technological innovations,
+            <span className="font-extrabold mr-3"> Technology:</span> 
+             Stay updated on the latest technological innovations,
             digital transformations, and how they impact both businesses and
             individuals.
           </li>
         </ul>
-        
+
         <div className=" relative max-w-[60%] mx-auto mb-10 lg:h-96 h-[250px]">
             <Image src="/insightpeoples.jpg" alt="Real-Insight" fill />
           </div>
@@ -86,7 +90,7 @@ const About = () => {
         <h1 className="underline font-bold text-xl dark:text-white text-center">
           Our Values
         </h1>
-        <p className="text-lg font-medium my-4 max-w-6xl mx-auto">
+        <p className="text-lg font-medium my-4 max-w-6xl mx-auto space-y-2">
         <br />
         Quality: We are committed to delivering well-researched, accurate, and
         insightful content to our readers.
@@ -98,11 +102,11 @@ const About = () => {
         engaged community where ideas can be shared, discussions can flourish,
         and connections can be made.
         <br />
-        Connect With Us [Provide links to your social media profiles, email
+        {/* Connect With Us [Provide links to your social media profiles, email
         newsletter sign-up, and any other channels through which readers can
         connect with you.] #### Get Involved [Encourage readers to engage with
         your content by leaving comments, sharing articles with their networks,
-        and reaching out with feedback or topic suggestions.]
+        and reaching out with feedback or topic suggestions.] */}
         <br />
         </p>
         <p className="text-lg font-medium my-4 max-w-6xl mx-auto">

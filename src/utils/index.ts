@@ -28,9 +28,9 @@ export const footerLinks = [
     title: "About",
     links: [
       // { title: "How it works", url: "/" },
-      { title: "Featured", url: "/" },
+      { title: "Techarvel", url: "https://portfolio-enoch.vercel.app" },
       { title: "Blog", url: "/blog" },
-      { title: "Invite a friend", url: "/" },
+      { title: "portfolio", url: "https://portfolio-enoch.vercel.app" },
       ,
     ],
   },
@@ -41,6 +41,7 @@ export const footerLinks = [
       { title: "Instagram", url: "https://www.instagram.com/enochpromise1" },
       { title: "Twitter", url: "https://twitter.com/Tech_Noch" },
       { title: "Facebook", url: "https://web.facebook.com/?_rdc=1&_rdr" },
+      { title: "LinkedIn", url: "https://www.linkedin.com/in/enoch-akhabue-%F0%9F%92%BB-full-stack-developer-01b991269" },
     ],
   },
 ];
