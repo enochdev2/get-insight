@@ -12,9 +12,9 @@ const BlogCard = ({blogs, value, blogCardstyle}: any) => {
       {blogs.map((blog: any, index: number) => (
         <div key={index} className={`${blogCardstyle}`}>
           <div
-            className={`relative w-[95%] ${path === "home" ? "h-24" : "h-36"} ${
+            className={`relative w-[90%] ${path === "home" ? "h-24" : "h-36"} ${
               path === "home" ? "lg:h-36" : "lg:h-52"
-            }  m-auto mr-4 `}
+            }  m-auto  `}
           >
             <Image src={blog.imageUrl} fill className=" m-auto " alt="blog" />
           </div>

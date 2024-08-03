@@ -116,7 +116,8 @@ ${
               ))}
             </div>
           </div>
-          <div className="sm:flex hidden gap-3">
+
+          {/* <div className="sm:flex hidden gap-3">
             <div className="hidden sm:block">
               {session?.user?.email ? (
                 <Link href="/profile">
@@ -137,7 +138,8 @@ ${
                 </Link>
               )}
             </div>
-          </div>
+          </div> */}
+
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline text-slate-500 hover:underline">
               <ThemeToggler />

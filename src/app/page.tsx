@@ -56,10 +56,10 @@ export default async function Home() {
       </section>
       <section className="w-full px-3"></section>
       <section className="mx-2 w-full overflow-x-hidden">
-        <div className="service sm:w-11/12 w-[95%] dark:bg-transparent mx-auto md:px-4 px-2 lg:px-10 gap-6 py-5 bg-gray-100">
+        <div className="sm:service  w-full overflow-x-hidden  ">
           <BlogCard
             blogs={blogl}
-            blogCardstyle={` bg-white px-12 w-full  py-4 m-auto h-[400px] rounded-lg  dark:bg-slate-800 `}
+            blogCardstyle={`bg-white w-full py-4 mx-auto`}
             value="home"
           />
         </div>
@@ -67,4 +67,8 @@ export default async function Home() {
     </main>
   );
 }
+
+
 // w-10/12 overflow-x-hidden  lg:col-span-2  py-8 mx-auto justify-center px-6 md:px-12 gap-12 bg-gray-100 dark:bg-transparent
+
+// sm:w-11/12 w-[90%] dark:bg-transparent mx-auto md:px-4 px-2 lg:px-10 gap-6 py-5 bg-gray-900 overflow-x-hidden
