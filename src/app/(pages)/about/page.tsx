@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 const About = () => {
   return (
     <section className="w-full min-h-screen py-12 ">
-      <div className="lg:mx-20 mt-12 mx-14 text-justify">
+      <div className="lg:mx-20 mt-12 md:mx-14 mx-5 text-justify">
       <div className=" relative max-w-[100%] mb-10 lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
         </div>
-        <div className="z-10 md:w-2/3 w-full bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%] translate-y-[-20%] lg:translate-y-[20%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
-          <h1 className="font-bold text-2xl lg:text-3xl my-2 bg-gradient-to-r from-cyan-600 via-green-600 to-teal-500 text-bold text-transparent bg-clip-text">
+        <div className="z-10 md:w-2/3 w-[90%] bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%] translate-y-[0%] md:translate-y-[10%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
+          <h1 className="font-bold md:text-2xl text-lg lg:text-3xl my-2 bg-gradient-to-r from-cyan-600 via-green-600 to-teal-500 text-bold text-transparent bg-clip-text">
             Welcome to Dev-Noch Blog,
           </h1>
           <h4 className="md:text-2xl bg-black/40 rounded-lg py-3 px-4 text-white text-lg font-sans w-9/12 m-auto ">
@@ -28,7 +28,7 @@ const About = () => {
         <h1 className="underline font-bold text-xl mb-4 dark:text-white text-center">
           About Dev-Noch Blog
         </h1>
-        <p className="text-lg font-medium my-4 max-w-6xl mx-auto">
+        <p className="text-lg font-medium text-start md:text-justify my-4 max-w-6xl mx-auto">
           Welcome to Dev-Noch Blog, where we explore the intersections of
           business, finance, family, and technology to provide insightful
           articles and resources for our readers. Here, we embark on a journey
@@ -38,7 +38,7 @@ const About = () => {
         <h1 className="underline font-bold text-xl dark:text-white text-center">
           Our Mission At Dev-Noch Blog
         </h1>
-        <p className="text-lg font-medium my-4 max-w-6xl mx-auto">
+        <p className="text-lg font-medium my-4 md:text-justify text-start max-w-6xl mx-auto">
           our mission is to empower individuals and businesses alike with
           knowledge and expertise in the realms of business strategies,
           financial management, familial dynamics, and technological
@@ -50,7 +50,7 @@ const About = () => {
         <h1 className="underline font-bold text-xl dark:text-white text-center">
           What We Cover
         </h1>
-        <ul className="text-lg font-medium my-4 max-w-6xl mx-auto space-y-2">
+        <ul className="text-lg font-medium my-4 max-w-6xl mx-auto space-y-2 md:text-justify text-start">
           <li >
           <span className="font-extrabold mr-3"> BUSINESS:</span>
              Explore cutting-edge business trends, entrepreneurial
@@ -77,7 +77,7 @@ const About = () => {
           </li>
         </ul>
 
-        <div className=" relative max-w-[60%] mx-auto mb-10 lg:h-96 h-[250px]">
+        <div className=" relative md:max-w-[60%] max-w-[80%] mx-auto mb-10 lg:h-96 h-[250px]">
             <Image src="/insightpeoples.jpg" alt="Real-Insight" fill />
           </div>
         {/* <h1 className="underline font-bold text-xl dark:text-white text-center">
@@ -90,7 +90,7 @@ const About = () => {
         <h1 className="underline font-bold text-xl dark:text-white text-center">
           Our Values
         </h1>
-        <p className="text-lg font-medium my-4 max-w-6xl mx-auto space-y-2">
+        <p className="text-lg font-medium md:text-justify text-start my-4 max-w-6xl mx-auto space-y-2">
         <br />
         Quality: We are committed to delivering well-researched, accurate, and
         insightful content to our readers.

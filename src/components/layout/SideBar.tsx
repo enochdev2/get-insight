@@ -28,11 +28,11 @@ const SideBar = ({ handleMenu }: any) => {
       name: "ABOUT",
       link: "/about",
     },
-    {
-      id: 4,
-      name: " PROFILE",
-      link: "/profile",
-    },
+    // {
+    //   id: 4,
+    //   name: " PROFILE",
+    //   link: "/profile",
+    // },
   ];
 
   return (
