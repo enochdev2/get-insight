@@ -1,5 +1,6 @@
 import { fetchBlog, fetchRecentPost } from "@/Services";
 import Categories from "@/components/Categories";
+import WhatsNew from "@/components/WhatsNew";
 import BlogCard from "@/components/blogCard";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const blogs: any = await fetchBlog();
-  const blogl = blogs.slice(0, 6);
+  const blogl = blogs?.slice(0, 6);
 
   return (
     <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between bg-[f1f5f9]">
@@ -55,17 +56,20 @@ export default async function Home() {
           </h1>
         </div>
       </section>
-      <section className="w-full px-3"></section>
-      <section className="mx-2 w-full py-3 overflow-x-hidden">
-        <div className="sm:service flex-wrap flex bg-gray-200 py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
+      <section className="max-w-[90%] md:px-8 bg-gray-50 dark:bg-black/30 rounded-lg my-6 px-3">
+        <WhatsNew/>
+      </section>
+      <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
+        <h2 className=" mx-auto font-bold my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
+        <div className="sm:service flex-wrap flex bg-gray-200 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
         {blogl.map((blog: any, index: number) => (
-        <div key={index} className=" px-4 m-2 bg-slate-100 py-2 space-y-2">
+        <div key={index} className=" px-4 m-2 bg-slate-100 dark:bg-black/30 py-2 space-y-2">
           <div
             className="relative w-[90%] h-24 md:h-36 m-auto "
           >
             <Image src={blog.imageUrl} fill className=" m-auto " alt="blog" />
           </div>
-          <div className="px-2 md:px-5 m bg-black/10 rounded-xl py-3" >
+          <div className="px-2 md:px-5 dark:text- bg-black/10 rounded-xl py-3" >
             <h2 className="font-bold my-2 mb-4 text-xl text-center">{blog.title}</h2>
             <p className="my-4  md:text-justify text-base md:text-lg text-ellipsis">
               {blog.except.substring(0, 200)}...
