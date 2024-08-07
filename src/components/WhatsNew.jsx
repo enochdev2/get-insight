@@ -17,11 +17,11 @@ const WhatsNew = () => (
     >
       <motion.div
         variants={fadeIn('right', 'tween', 0.2, 1)}
-        className="flex-[0.95] flex justify-center flex-col"
+        className="flex-[1.7]  bg-black/50 px-5 py-3 pt-0 rounded-lg flex justify-center flex-col"
       >
         <TypingText title=" Our Service?" />
         <TitleText title={<>Unlock the Potential of Web3 with Expert Developement</>} />
-        <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
+        <div className="mt-[28px] flex flex-wrap justify-between gap-[18px]">
           {newFeatures.map((feature) => (
             <NewFeatures key={feature.title} {...feature} />
           ))}
@@ -30,13 +30,13 @@ const WhatsNew = () => (
 
       <motion.div
         variants={planetVariants('right')}
-        className={`flex-1 ${styles.flexCenter}`}
+        className={`flex-1 ${styles.flexCenter} h-[750px]`}
       >
-        <img
-          src="/whats-new.png"
+        {/* <img
+          src="/blockchain.svg"
           alt="get-started"
           className="w-[90%] h-[90%] object-contain"
-        />
+        /> */}
       </motion.div>
     </motion.div>
   </section>

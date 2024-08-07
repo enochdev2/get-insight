@@ -63,7 +63,7 @@ const Headers = ({ session }: any) => {
   return (
     <>
       <header
-        className={` flex w-full gap-3 items-center  mb-0 pt-2 pb-2 px-2 bg-sky-950 shadow-md
+        className={` flex w-full gap-3 items-center  mb-0 pt-2 pb-2 px-2 md:px-32 bg-sky-950 shadow-md
 ${
   sticky
     ? "!fixed !z-[9999]   shadow-sticky backdrop:blur-sm !transition dark:!bg-primary dark:!bg-opacity-80"
@@ -83,11 +83,11 @@ ${
               />
               <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
                 <span className="text-slate-200">Dev-</span>
-                <span className="text-slate-400">Noch</span>
+                <span className="bg-gradient-to-r from-sky-500 via-slate-500 to-sky-500 text-transparent bg-clip-text ">Noch</span>
               </h1>
             </Link>
           </div>
-          <form
+          {/* <form
             onSubmit={handleSubmit}
             className="bg-slate-100 p-3 rounded-lg flex items-center"
           >
@@ -101,7 +101,7 @@ ${
             <button title="submit" type="submit">
               <FaSearch className="text-slate-600" />
             </button>
-          </form>
+          </form> */}
           <div>
             <div className="sm:flex hidden sm:gap-1  md:gap-2">
               {item.map((items: NavBarItem, id: number) => (
@@ -117,7 +117,7 @@ ${
             </div>
           </div>
 
-          {/* <div className="sm:flex hidden gap-3">
+          <div className="sm:flex hidden gap-3">
             <div className="hidden sm:block">
               {session?.user?.email ? (
                 <Link href="/profile">
@@ -138,7 +138,7 @@ ${
                 </Link>
               )}
             </div>
-          </div> */}
+          </div>
 
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline text-slate-500 hover:underline">
