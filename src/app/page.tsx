@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const blogs: any = await fetchBlog();
-  const blogl = blogs?.slice(0, 6);
+  const blogl = blogs?.slice(0, 4);
 
   return (
     <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between bg-[f1f5f9]">
