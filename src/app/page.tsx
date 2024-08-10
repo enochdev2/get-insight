@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Feedbacks from "../components/Feedbacks"
+import Product from "@/components/Product";
 
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
@@ -21,7 +22,7 @@ export default async function Home() {
   const blogl = blogs?.slice(0, 4);
 
   return (
-    <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between bg-[f1f5f9]">
+    <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between app__bg">
       <section className="w-screen  mx-0 px-0">
         <div className="relative w-screen lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
@@ -33,7 +34,7 @@ export default async function Home() {
           <h4 className="md:text-xl bg-black/50 py-3 px-4 text-gray-200 font-medium rounded-lg text-lg font-sans w-9/12 m-auto">
             Your ultimate destination for insightful and enriching content.
             Here, we embark on a journey through the realms of business,
-            finance, family, and technology, offering you a treasure trove of
+            finance, Web3, and technology, offering you a treasure trove of
             knowledge and wisdom.
           </h4>
         </div>
@@ -47,16 +48,17 @@ export default async function Home() {
         </div>
         <div className="w-10/12 md:w-3/4 m-auto font-serif font-medium md:font-semibold md:text-justify text-base md:text-lg my-8 shadow-lg py-5 lg:px-5 px-2 rounded-lg">
           <h1 className="m-auto">
-            From managing finances to fostering family bonds, navigating the
+            From managing finances to navigating the
             complexities of business strategies, and embracing the latest
             technological advancements, Dev-Noch blog delves into the
             multifaceted aspects of modern life. Join us as we explore the
-            intricate interplay between finance, business, family dynamics, and
-            technology, offering insights, tips, and strategies to achieve
+            intricate interplay between finance, business, technology, and
+            Web3, offering insights, tips, and strategies to achieve
             harmony and success in today&lsquo;s dynamic world.
           </h1>
         </div>
       </section>
+      {/* <Product /> */}
       <section className="max-w-[90%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
       <Feedbacks />
         <WhatsNew/>

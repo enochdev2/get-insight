@@ -21,6 +21,14 @@
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     
   }
+
+  .app__bg {
+    background: url('/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
 }
 .content img {
   width: 80%;

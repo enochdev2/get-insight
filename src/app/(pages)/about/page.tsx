@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen py-12 ">
+    <section className="w-full min-h-screen py-12 app__bg ">
       <div className="lg:mx-20 mt-12 md:mx-14 mx-5 text-justify">
       <div className=" relative max-w-[100%] mb-10 lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
@@ -21,7 +21,7 @@ const About = () => {
           <h4 className="md:text-2xl bg-black/40 rounded-lg py-3 px-4 text-white text-lg font-sans w-9/12 m-auto ">
             Your ultimate destination for insightful and enriching content.
             Here, we embark on a journey through the realms of business,
-            finance, family, and technology, offering you a treasure trove of
+            finance, Web3, and technology, offering you a treasure trove of
             knowledge and wisdom.
           </h4>
         </div>
@@ -30,9 +30,9 @@ const About = () => {
         </h1>
         <p className="text-lg font-medium text-start md:text-justify my-4 max-w-6xl mx-auto">
           Welcome to Dev-Noch Blog, where we explore the intersections of
-          business, finance, family, and technology to provide insightful
+          business, finance, Web3, and technology to provide insightful
           articles and resources for our readers. Here, we embark on a journey
-          through the realms of business, finance, family, and technology,
+          through the realms of business, finance, Web3, and technology,
           offering you a treasure trove of knowledge and wisdom.
         </p>
         <h1 className="underline font-bold text-xl dark:text-white text-center">
@@ -64,10 +64,10 @@ const About = () => {
             financial world.
           </li>
           <li>
-          <span className="font-extrabold mr-3"> FAMILY:</span>
-            Discover tips for strengthening family bonds, managing
+          <span className="font-extrabold mr-3"> Web3:</span>
+            Discover tips for strengthening Web3 bonds, managing
             work-life balance, and fostering healthy relationships within your
-            family unit.{" "}
+            Web3 unit.{" "}
           </li>
           <li>
             <span className="font-extrabold mr-3"> Technology:</span> 
@@ -112,7 +112,7 @@ const About = () => {
         <p className="text-lg font-medium my-4 max-w-6xl mx-auto">
           Thank you for visiting Dev-Noch Blog. We hope you find our content
           valuable and look forward to journeying with you as we explore the
-          fascinating worlds of business, finance, family, and technology
+          fascinating worlds of business, finance, Web3, and technology
           together.
         </p>
       </div>

@@ -6,7 +6,7 @@ export const fetchBlog = async () => {
   const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
     cache: "no-store",
   });
-  const data = res.json();
+  const data = res?.json();
   return data;
 };
 

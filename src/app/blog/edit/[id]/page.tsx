@@ -235,7 +235,7 @@ const EditPost = ({ params }: any) => {
               <option value="all">All</option>
               <option value="Finance">Finance</option>
               <option value="Technology">Technology</option>
-              <option value="Family">Family</option>
+              <option value="Web3">Web3</option>
               <option value="Business">Business</option>
             </select>
           </div>

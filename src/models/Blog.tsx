@@ -24,7 +24,7 @@ const BlogSchema = new mongoose.Schema(
     categories: {
       type: String,
       required: true,
-      enum: ["Finance", "Technology", "Family", "Business"],
+      enum: ["Finance", "Technology", "Web3", "Business"],
       default: "Finance",
     },
     userId: {

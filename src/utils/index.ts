@@ -83,8 +83,8 @@ export const categories: Categories[] = [
     label: "Business",
   },
   {
-    id: "Family",
-    label: "Family",
+    id: "Web3",
+    label: "Web3",
   },
   {
     id: "Technology",
