@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen py-12 app__bg ">
+    <section className="w-full min-h-screen py-12 ">
       <div className="lg:mx-20 mt-12 md:mx-14 mx-5 text-justify">
       <div className=" relative max-w-[100%] mb-10 lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />

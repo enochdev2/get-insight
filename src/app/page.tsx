@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Feedbacks from "../components/Feedbacks"
 import Product from "@/components/Product";
+import TechArvel from "@/components/TechArvel";
 
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
@@ -22,7 +23,7 @@ export default async function Home() {
   const blogl = blogs?.slice(0, 4);
 
   return (
-    <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between app__bg">
+    <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between ">
       <section className="w-screen  mx-0 px-0">
         <div className="relative w-screen lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
@@ -57,6 +58,9 @@ export default async function Home() {
             harmony and success in today&lsquo;s dynamic world.
           </h1>
         </div>
+      </section>
+      <section>
+        {/* <TechArvel/> */}
       </section>
       {/* <Product /> */}
       <section className="max-w-[90%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
