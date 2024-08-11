@@ -63,10 +63,6 @@ export default async function Home() {
         {/* <TechArvel/> */}
       </section>
       {/* <Product /> */}
-      <section className="max-w-[90%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
-      <Feedbacks />
-        <WhatsNew/>
-      </section>
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
         <h2 className=" mx-auto font-bold my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
         <div className="sm:service flex-wrap flex bg-gray-200 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
@@ -100,6 +96,11 @@ export default async function Home() {
           /> */}
         </div>
       </section>
+      <section className="max-w-[90%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
+      <Feedbacks />
+        <WhatsNew/>
+      </section>
+      
     </main>
   );
 }
