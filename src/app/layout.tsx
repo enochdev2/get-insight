@@ -48,7 +48,7 @@ export default function RootLayout({
           </head>
         )}
       </head>
-      <body className=" relative w-screen overflow-x-hidden bg-[url('/background.png')] dark:bg-[url('/2.png')] ">
+      <body className=" relative w-screen overflow-x-hidden bg-[url('/4.png')] dark:bg-[url('/7.png')] ">
         <Provider>
           <NextThemeProvider>
             <Navbar />

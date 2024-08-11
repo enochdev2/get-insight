@@ -48,7 +48,7 @@ export default async function Home() {
           />
         </div>
         <div className="w-10/12 md:w-3/4 m-auto font-serif font-medium md:font-semibold md:text-justify text-base md:text-lg my-8 shadow-lg py-5 lg:px-5 px-2 rounded-lg">
-          <h1 className="m-auto">
+          <h1 className="m-auto ">
             From managing finances to navigating the
             complexities of business strategies, and embracing the latest
             technological advancements, Dev-Noch blog delves into the
