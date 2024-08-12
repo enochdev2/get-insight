@@ -75,7 +75,7 @@ export default async function Home() {
 
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
         <h2 className=" mx-auto font-bold my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
-        <div className="sm:service flex-wrap flex bg-gray-200 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
+        <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
         {blogl.map((blog: any, index: number) => (
         <div key={index} className=" px-4 m-2 bg-slate-100 dark:bg-black/30 py-2 space-y-2">
           <div
