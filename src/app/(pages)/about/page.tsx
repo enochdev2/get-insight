@@ -1,3 +1,4 @@
+import WhatsNew from "@/components/WhatsNew";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
@@ -9,12 +10,14 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen py-12 ">
+    <section className="w-full min-h-screen overflow-hidden py-12 ">
+
       <div className="lg:mx-20 mt-12 md:mx-14 mx-5 text-justify">
       <div className=" relative max-w-[100%] mb-10 lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
-        </div>
-        <div className="z-10 md:w-2/3 w-[90%] bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%] translate-y-[0%] md:translate-y-[10%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
+      </div>
+
+      <div className="z-10 md:w-2/3 w-[90%] bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%] translate-y-[0%] md:translate-y-[10%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
           <h1 className="font-bold md:text-2xl text-lg lg:text-3xl my-2 bg-gradient-to-r from-cyan-600 via-green-600 to-teal-500 text-bold text-transparent bg-clip-text">
             Welcome to Dev-Noch Blog,
           </h1>
@@ -24,7 +27,8 @@ const About = () => {
             finance, Web3, and technology, offering you a treasure trove of
             knowledge and wisdom.
           </h4>
-        </div>
+      </div>
+
         <h1 className="underline font-bold text-xl mb-4 dark:text-white text-center">
           About Dev-Noch Blog
         </h1>
@@ -35,6 +39,7 @@ const About = () => {
           through the realms of business, finance, Web3, and technology,
           offering you a treasure trove of knowledge and wisdom.
         </p>
+        
         <h1 className="underline font-bold text-xl dark:text-white text-center">
           Our Mission At Dev-Noch Blog
         </h1>
@@ -47,7 +52,15 @@ const About = () => {
         </p>
 
         
-        <h1 className="underline font-bold text-xl dark:text-white text-center">
+      
+      </div>
+
+      <section className="md:max-w-[90%] max-w-[95%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
+        <WhatsNew/>
+      </section>
+
+      <div className="lg:mx-20 mt-12 md:mx-14 mx-5 text-justify">
+      <h1 className="underline font-bold text-xl dark:text-white text-center">
           What We Cover
         </h1>
         <ul className="text-lg font-medium my-4 max-w-6xl mx-auto space-y-2 md:text-justify text-start">
@@ -79,7 +92,7 @@ const About = () => {
 
         <div className=" relative md:max-w-[60%] max-w-[80%] mx-auto mb-10 lg:h-96 h-[250px]">
             <Image src="/insightpeoples.jpg" alt="Real-Insight" fill />
-          </div>
+        </div>
         {/* <h1 className="underline font-bold text-xl dark:text-white text-center">
           Meet the Team
           </h1>
@@ -115,7 +128,11 @@ const About = () => {
           fascinating worlds of business, finance, Web3, and technology
           together.
         </p>
+      
+
       </div>
+
+      
     </section>
   );
 };

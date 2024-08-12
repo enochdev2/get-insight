@@ -20,8 +20,8 @@ const SideBar = ({ handleMenu }: any) => {
     },
     {
       id: 3,
-      name: " SERVICE",
-      link: "/productOffer",
+      name: " SERVICES",
+      link: "/services",
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const SideBar = ({ handleMenu }: any) => {
   return (
     <>
       <div
-        className="sm:hidden flex flex-col  absolute top-[70px] bg-slate-700 left-0 w-screen h-screen justify-between items-center py-12  z-[30] gap-5"
+        className="sm:hidden flex flex-col  absolute top-[70px] bg-[url('/5.png')] left-0 w-screen h-screen justify-between items-center py-12  z-[30] gap-5"
         onClick={() => handleMenu()}
       >
         <div className="flex justify-center flex-col w-full gap-3">
@@ -46,7 +46,7 @@ const SideBar = ({ handleMenu }: any) => {
             <Link
               href={items.link}
               key={id}
-              className="py-2 px-4 my-3 text-center w-[80%] bg-slate-400  mx-auto rounded-xl hover:bg-white"
+              className="py-2 px-4 my-3 text-center w-[80%] bg-slate-800  mx-auto rounded-xl hover:bg-white"
             >
               {items.name}
             </Link>

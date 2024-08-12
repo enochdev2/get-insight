@@ -3,10 +3,10 @@ import React from "react";
 
 const Product = () => {
   return (
-    <section className="px-[35px] bg-black/80 md:px-[30px] py-[60px] text-white my-12 rounded-lg  md:items-center">
-    <div className="px-[20px mx-auto max-w-[1500px]">
-      <div className="md:-mx-[10px] xl-:mx-[20] flex flex-wrap gap-4 items-center ">
-        <div className="col-lg-6 col-md-12 flex-1 col-sm-12 col-xs-12">
+    <section className="px-[25px] bg-black/80 md:px-[30px] py-[60px] text-white my-12 rounded-lg  md:items-center">
+    <div className=" mx-auto max-w-[1500px]">
+      <div className="md:-mx-[10px] xl-:mx-[20] lg:flex flex-wrap gap-2 md:gap-5 lg:gap-3 items-center ">
+        <div className="col-lg-6 col-md-12 flex-1 col-sm-12">
           <header className="crumina-module relative z-[5] mb-[30px] text-[1.375em] leading-[1.6] my-[10px] text-[#ffba00] text-inherit  block  ">
             <div className="mb-[25px] text-[#06a7f1] dark:text-[#05d350] text-3xl "> Custom Software Solutions for Your Business </div>
              <h2 className="inline-block rounded-xl px-2 py-3 bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] leading-[1.3em] relative text-5xl mb-8 "> 
@@ -53,7 +53,7 @@ const Product = () => {
         </div>
 
 
-          <div className="col-lg-6 col-md-12 md:w-[40%] rounded-2xl md:h-[700px] bg-green-300 col-sm-12 col-xs-12 overflow-hidden">
+          <div className="col-lg-6 col-md-12 w-[60%] m-auto lg:w-[40%] rounded-2xl md:h-[500px] lg:h-[700px] bg-green-300 col-sm-12 col-xs-12 overflow-hidden">
             <img className=" h-full w-full m-auto" src="/websites.png" alt="phone" />
           </div>
       </div>

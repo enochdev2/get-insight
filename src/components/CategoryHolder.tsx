@@ -10,12 +10,15 @@ const CategoryHolder = () => {
       {path === "/" ? (
         ""
       ) : (
-        <div className="sticky -mt-2 pt-2 pb-2 top-[65px] !bg-gray-100 dark:bg-gray-100/40 dark:text-white flex justify-center pr-4 z-[109]">
+        <div className="sticky max-w-xl mx-auto rounded-xl -mt-2 pt-2 pb-1 top-[65px] bg-[url('/7.png')] text-white flex justify-center items-center pr-4 z-[109]">
+          <div className=" pt-2  ">
           <Categories
-            style={`mx-1 md:mx-6 px-2 text-sm md:text-base py-2 rounded-lg border-b `}
+            style={`mx-1 md:mx-4 bg-black/30 px-3   text-sm md:text-base py-3 rounded-lg border  `}
             title={null}
-            classNames={` text-[#314E52]  flex justify-space-around font-semibold items-center h-full md:w-3xl pt-2 pb-1  my-2`}
+            classNames={` text-[#ffffff]  flex justify-space-around font-semibold items-center h-full m-auto pt-2 pb-1  my-2 `}
           />
+
+          </div>
         </div>
       )}
     </>

@@ -7,7 +7,7 @@ const NewFeatures = ({ imgUrl, title, subtitle }) => (
     >
       <img src={imgUrl} alt="icon" className="w-1/2 h-1/2 object-contain" />
     </div> */}
-    <h1 className="mt-[6px] font-bold sm:max-w-[750px] text-[30px] leading-[30.24px] bg-gradient-to-r from-pink-600 to-purple-700  text-transparent bg-clip-text">
+    <h1 className="mt-[6px] font-bold sm:max-w-[750px] text-[30px] leading-[30.24px] bg-gradient-to-r from-pink-200 to-purple-200  text-transparent bg-clip-text">
      {title}
     </h1>
     <p className="flex-1 mt-[16px] font-medium text-[22px] text-[#f1ebeb] leading-[32.4px]">

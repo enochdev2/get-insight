@@ -29,7 +29,7 @@ export default async function Home() {
         <div className="relative w-screen lg:h-96 h-[430px]">
           <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
         </div>
-        <div className="z-10 md:w-2/3 w-full bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%] translate-y-[-30%] lg:translate-y-[-30%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
+        <div className="z-10 md:w-2/3 w-full bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%]  translate-y-[-38%] lg:translate-y-[-30%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
           <h2 className="font-bold text-2xl lg:text-3xl my-2 bg-gradient-to-r from-pink-700 via-green-800 to-blue-900 text-transparent bg-clip-text">
             Welcome to Dev-Noch Blog,
           </h2>
@@ -40,15 +40,17 @@ export default async function Home() {
             knowledge and wisdom.
           </h4>
         </div>
-        <div className=" max-w-2xl rounded-xl bg-custom-image bg-cover bg-center flex justify-center my-5 m-auto text-center">
+        <div className=" max-w-3xl rounded-xl bg-custom-image bg-cover bg-center flex justify-center my-5 m-auto text-center">
           <Categories
             style={`cursor-pointer grow block md:mx-3 py-3 px-2 dark:bg-slate-950 rounded-lg
           bg-slate-100`}
             title={null}
-            classNames=" m-auto md:w-[60%] flex  justify-between dark:bg-slate-800 shadow-lg rounded-lg py-3 px-3 font-bold text-sky-800"
+            classNames=" m-auto md:w-[70%] w-full flex  justify-between
+             dark:bg-slate-800/30   rounded-lg py-3 px-1 font-bold text-sky-200
+             "
           />
         </div>
-        <div className="w-10/12 md:w-3/4 m-auto font-serif font-medium md:font-semibold md:text-justify text-base md:text-lg my-8 shadow-lg py-5 lg:px-5 px-2 rounded-lg">
+        <div className="w-11/12 md:w-3/4 m-auto font-serif font-medium md:font-semibold md:text-justify text-lg md:text-lg my-6 bg-black/40 shadow-lg py-5 lg:px-5 px-3 rounded-lg">
           <h1 className="m-auto ">
             From managing finances to navigating the
             complexities of business strategies, and embracing the latest
@@ -60,9 +62,9 @@ export default async function Home() {
           </h1>
         </div>
       </section>
-      <section className=" max-w-[92rem]">
+      <section className=" overflow-hidden xs:px-3 sm:px-3 md:px-5 md:w-3xl xl:max-w-[92rem]">
         <TechArvel/>
-        <div className=" mt-20 w-full  text- m-auto border-b-black-700 text-sky-900 text-xl text-center font-semibold">
+        <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
         FeaturedPosts{" "}
       </div>
       <div>
@@ -74,12 +76,12 @@ export default async function Home() {
 
 
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
-        <h2 className=" mx-auto font-bold my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
+        <h2 className=" mx-auto font-bold bg-gradient-to-lr from-[#080935] via-[#321894] to-[#686ec2] my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
         <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
         {blogl.map((blog: any, index: number) => (
-        <div key={index} className=" px-4 m-2 bg-slate-100 dark:bg-black/30 py-2 space-y-2">
+        <div key={index} className=" px-4 m-2  bg-[#b8b8dd]/90 dark:bg-black/30 py-8 rounded-lg space-y-2">
           <div
-            className="relative w-[90%] h-24 md:h-36 m-auto "
+            className="relative w-[90%] h-24  md:h-36 m-auto "
           >
             <Image src={blog.imageUrl} fill className=" m-auto " alt="blog" />
           </div>
@@ -102,7 +104,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="max-w-[90%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
+      <section className="md:max-w-[90%] max-w-[95%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
         <WhatsNew/>
       </section>
       
