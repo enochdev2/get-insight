@@ -64,12 +64,12 @@ export default async function Home() {
       </section>
       <section className=" overflow-hidden xs:px-3 sm:px-3 md:px-5 md:w-3xl xl:max-w-[92rem]">
         <TechArvel/>
-        <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
+        {/* <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
         FeaturedPosts{" "}
       </div>
       <div className="w-[80%]">
       <FeaturedPosts />
-      </div>
+      </div> */}
         <Product />
       </section>
       
