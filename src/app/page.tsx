@@ -67,7 +67,7 @@ export default async function Home() {
         <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
         FeaturedPosts{" "}
       </div>
-      <div>
+      <div className="w-[80%]">
       <FeaturedPosts />
       </div>
         <Product />
@@ -76,7 +76,10 @@ export default async function Home() {
 
 
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
-        <h2 className=" mx-auto font-bold bg-gradient-to-lr from-[#080935] via-[#321894] to-[#686ec2] my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
+      <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
+        Blog Post{" "}
+      </div>
+        {/* <h2 className=" mx-auto font-bold bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] my-3 text-2xl text-center text-sky-800"> Blog posts</h2> */}
         <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
         {blogl.map((blog: any, index: number) => (
         <div key={index} className=" px-4 m-2  bg-[#b8b8dd]/90 dark:bg-black/30 py-8 rounded-lg space-y-2">
