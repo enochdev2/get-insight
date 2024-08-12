@@ -9,6 +9,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Feedbacks from "../components/Feedbacks"
 import Product from "@/components/Product";
 import TechArvel from "@/components/TechArvel";
+import FeaturedPosts from "@/components/FeaturedPosts";
 
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
@@ -59,10 +60,19 @@ export default async function Home() {
           </h1>
         </div>
       </section>
-      <section>
-        {/* <TechArvel/> */}
+      <section className=" max-w-[92rem]">
+        <TechArvel/>
+        <div className=" mt-20 w-full  text- m-auto border-b-black-700 text-sky-900 text-xl text-center font-semibold">
+        FeaturedPosts{" "}
+      </div>
+      <div>
+      <FeaturedPosts />
+      </div>
+        <Product />
       </section>
-      {/* <Product /> */}
+      
+
+
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
         <h2 className=" mx-auto font-bold my-3 text-2xl text-center text-sky-800"> Blog posts</h2>
         <div className="sm:service flex-wrap flex bg-gray-200 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
@@ -89,18 +99,19 @@ export default async function Home() {
           </div>
         </div>
       ))}
-          {/* <BlogCard
-            blogs={blogl}
-            blogCardstyle={` dark:bg-inherit bg-gray-100 my-3 py-3 mx-auto`}
-            value="home"
-          /> */}
         </div>
       </section>
+
       <section className="max-w-[90%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
-      <Feedbacks />
         <WhatsNew/>
       </section>
       
     </main>
   );
 }
+
+{/* <BlogCard
+  blogs={blogl}
+  blogCardstyle={` dark:bg-inherit bg-gray-100 my-3 py-3 mx-auto`}
+  value="home"
+/> */}

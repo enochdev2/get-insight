@@ -33,6 +33,11 @@ const Headers = ({ session }: any) => {
       link: "/blog",
     },
     {
+      id: 2,
+      name: "SERVICES",
+      link: "/services",
+    },
+    {
       id: 3,
       name: " ABOUT",
       link: "/about",
