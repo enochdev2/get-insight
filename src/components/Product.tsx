@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React from "react";
 
 const Product = () => {
@@ -53,8 +54,11 @@ const Product = () => {
         </div>
 
 
-          <div className="col-lg-6 col-md-12 w-[60%] m-auto lg:w-[40%] rounded-2xl md:h-[500px] lg:h-[700px] bg-green-300 col-sm-12 col-xs-12 overflow-hidden">
-            <img className=" h-full w-full m-auto" src="/websites.png" alt="phone" />
+          <div className="col-lg-6 col-md-12 w-[60%] m-auto lg:w-[40%] rounded-2xl md:h-[500px] lg:h-[700px]  col-sm-12 col-xs-12 overflow-hidden">
+            <div className="relative h-full w-full m-auto ">
+
+            <Image fill className=" h-full w-full m-auto" src="/websites.png" alt="phone" />
+            </div>
           </div>
       </div>
     </div>

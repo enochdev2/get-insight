@@ -122,7 +122,7 @@ ${
             </div>
           </div>
 
-          <div className="sm:flex hidden gap-3">
+          <div className=" hidden gap-3">
             <div className="hidden sm:block">
               {session?.user?.email ? (
                 <Link href="/profile">

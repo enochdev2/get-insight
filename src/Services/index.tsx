@@ -4,7 +4,7 @@ export const localhost = process.env.domain;
 
 export const fetchBlog = async () => {
   const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
-    cache: "no-store",
+    cache: "force-cache",
   });
   const data = res?.json();
   return data;
@@ -41,7 +41,7 @@ export const fetchRelatedPost = async (categories: string) => {
   try {
     const res = await fetch(
       `https://www.dev-noch.com.ng/api/blog/relatedPost?categories=${categories}`,
-      { cache: "no-store" }
+      { cache: "force-cache" }
     );
     const data = await res.json();
     return data;

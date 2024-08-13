@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import styles from "../styles";
 import { fadeIn, textVariant } from '@/utils/motion';
+import Image from 'next/image';
 
 
 const testimonials = [
@@ -14,7 +15,7 @@ const testimonials = [
       name: "FRONTEND",
       designation: "CFO",
       company: "🌐 Frontend Development",
-      image: "frontend.jpg",
+      image: "/frontend.jpg",
     },
     {
       testimonial:
@@ -22,7 +23,7 @@ const testimonials = [
       name: "BACKEND",
       designation: "COO",
       company: "🔧 Backend Development",
-      image: "backend.jpg",
+      image: "/backend.jpg",
     },
     {
       testimonial:
@@ -30,7 +31,7 @@ const testimonials = [
       name: "BLOCKCHAIN",
       designation: "CTO",
       company: "🔗 Blockchain Development",
-      image: "blockchain.svg",
+      image: "/blockchain.png",
     },
   ];
 
@@ -38,12 +39,12 @@ const TechArvel = () => {
     return(
     <div className={`mt-12 mx-auto bg-[url("/22.png")] rounded-[20px]`}>
         <div
-            className={`bg-[#151030] rounded-2xl sm:px-16 px-6 sm:py-5 py-10 md:min-h-[380px] min-h-[400px]  lg:min-h-[350px]`}
+            className={`bg-[#151030] rounded-2xl sm:px-16 px-6 sm:py-5 py-10 md:min-h-[390px] min-h-[410px]  lg:min-h-[350px]`}
         >
             <motion.div variants={textVariant()}>
             <p className="sm:text-[18px] text-[14px] text-[#aaa6c3] uppercase">Transform Your Vision into Reality with Expert Development Services! </p>
-            <h2 className="text-white font-bold md:text-[50px] sm:text-[40px] text-[30px]">Services</h2>
-            <p className='text-[#abacf1] text-base md:text-xl'>Are you ready to elevate your project with cutting-edge development solutions? Look no further! At TechArvel, we specialize in delivering top-notch development services across the full stack. Whether you&apos;re building a new web application, creating a blockchain solution, or anything in between, we&apos;ve got you covered!</p>
+            <h2 className="text-white font-bold md:text-[45px] sm:text-[30px] text-[25px]">Elevate Your Business with Expert Development Solutions</h2>
+            <p className='text-[#abacf1] text-base md:text-xl'>Are you ready to elevate your project with cutting-edge development solutions? Look no further! At <span className='text-lg md:text-2xl font-bold text-[#0004ff] '>TechArvel</span> , we specialize in delivering top-notch development services across the full stack. Whether you&apos;re building a new web application, creating a blockchain solution, or anything in between, we&apos;ve got you covered!</p>
             </motion.div>
         </div>
         <div className={`-mt-20 pb-14 sm:px-2 px-2 md:px-5 lg:px-8 flex flex-wrap  gap-3`}>
@@ -53,11 +54,13 @@ const TechArvel = () => {
          className='bg-black p-3 rounded-3xl  w-full md:w-[48.5%] lg:w-[32%]'
          >
           <div className='w-full relative'>
-           <img
+            <div className='w-full h-44 rounded-lg object-cover'>
+           <Image fill
           src={testimonial.image}
           alt={`{testimonial.name}`}
           className='w-full h-44 rounded-lg object-cover'
         />
+            </div>
           <h2 className='mt-1 text-[#d6d4ec] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-clip text-[32px]'>
             {''}{testimonial.company}
           </h2>

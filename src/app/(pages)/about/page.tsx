@@ -14,7 +14,7 @@ const About = () => {
 
       <div className="lg:mx-20 mt-12 md:mx-14 mx-5 text-justify">
       <div className=" relative max-w-[100%] mb-10 lg:h-96 h-[430px]">
-          <Image src="/RealInisight.jpg" alt="Real-Insight" fill />
+          <Image src="/banner.png" alt="Real-Insight" fill />
       </div>
 
       <div className="z-10 md:w-2/3 w-[90%] bg-slate-300 absolute translate-x-[-50%] md:translate-x-[-50%] translate-y-[0%] md:translate-y-[10%] left-[50%] bg-transparent top-48 font-semibold m-auto text-center py-8 px-2 dark:text-black">
@@ -55,7 +55,7 @@ const About = () => {
       
       </div>
 
-      <section className="md:max-w-[90%] max-w-[95%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
+      <section className="md:max-w-[90%] max-w-[95%] md:px-8 bg-custom-image bg-cover m-auto bg-center dark:bg-black/30 rounded-lg my-4 px-3">
         <WhatsNew/>
       </section>
 
