@@ -4,7 +4,7 @@ export const localhost = process.env.domain;
 
 export const fetchBlog = async () => {
   const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
-    cache: "force-cache",
+    next: {revalidate: 21600}
   });
   const data = res?.json();
   return data;
@@ -12,7 +12,7 @@ export const fetchBlog = async () => {
 
 export const fetchSingleBlog = async (id: string | number) => {
   const res = await fetch(`https://www.dev-noch.com.ng/api/blog/${id}`, {
-    cache: "no-store",
+    next: {revalidate: 3600}
   });
   const data = res.json();
   if (res.status === 404) {
@@ -27,7 +27,7 @@ export const fetchRecentPost = async () => {
     const res = await fetch(
       `https://www.dev-noch.com.ng/api/blog/recentPost`,
       {
-        cache: "no-store",
+        next: {revalidate: 21600}
       }
     );
     const data = await res.json();
@@ -41,7 +41,7 @@ export const fetchRelatedPost = async (categories: string) => {
   try {
     const res = await fetch(
       `https://www.dev-noch.com.ng/api/blog/relatedPost?categories=${categories}`,
-      { cache: "force-cache" }
+      { next: {revalidate: 21600} }
     );
     const data = await res.json();
     return data;
