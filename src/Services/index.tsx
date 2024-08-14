@@ -54,7 +54,7 @@ export const fetchCategoriesPost = async (categories: string) => {
   try {
     const res = await fetch(
       `https://www.dev-noch.com.ng/api/blog/categories?categories=${categories}`,
-      { cache: "no-store" }
+      { next: {revalidate: 21600} }
     );
     const data = await res.json();
     return data;

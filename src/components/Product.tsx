@@ -21,7 +21,7 @@ const Product = () => {
              </div>
           </header>
 
-          <p className=" text-[22px] text-[#d9d5ee]">
+          <p className=" text-[22px] text-balance text-[#d9d5ee]">
 
           Is your business struggling to keep up with the latest technology? At TechArvel, we provide cutting-edge software development services tailored to meet your unique needs. From custom applications to seamless integrations, our solutions are designed to solve your toughest challenges. Don&apos;t let outdated systems hold you back. Contact TechArvel today and transform your business for the digital age.
             

@@ -65,7 +65,7 @@ const Comments = ({ id }: any) => {
 
   return (
     <>
-      <div className="bg-white  shadow-lg rounded-lg p-8 sm:w-11/12   m-auto sm:col-span-4  pb-12 mb-8">
+      <div className="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-8 sm:w-11/12   m-auto sm:col-span-4  pb-12 mb-8">
         <h3 className="text-xl  w-11/12 mb-8 font-semibold border-b pb-4">
           {comments?.length} Comments
         </h3>

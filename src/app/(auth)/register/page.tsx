@@ -107,7 +107,8 @@ const Register = () => {
             >
               Register
             </button>
-            <button
+
+            {/* <button
               type="button"
               onClick={() => signIn("google")}
               className="flex gap-4 justify-center w-[85%] m-auto  py-2 px-2 border border-sky-900 text-base md:text-lg font-semibold rounded-full bg-slate-100  dark:bg-slate-800"
@@ -119,7 +120,8 @@ const Register = () => {
                 height={24}
               />
               Sign-Up with google
-            </button>
+            </button> */}
+
           </form>
           <h3 className="mb-4 text-center text-lg">
             Already have an account?{" "}

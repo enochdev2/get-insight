@@ -46,7 +46,7 @@ export default async function Home() {
           bg-slate-100`}
             title={null}
             classNames=" m-auto md:w-[70%] w-full flex  justify-between
-             dark:bg-slate-800/30   rounded-lg py-3 px-1 font-bold text-sky-950
+             dark:bg-slate-800/30   rounded-lg py-3 px-1 font-bold dark:text-sky-200 text-sky-950
              "
           />
         </div>
@@ -76,7 +76,7 @@ export default async function Home() {
 
 
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
-      <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
+      <div className=" mt-20 mb-5 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
         Blog Post{" "}
       </div>
         <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">

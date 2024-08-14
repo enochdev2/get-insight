@@ -37,13 +37,13 @@ const testimonials = [
 
 const TechArvel = () => {
     return(
-    <div className={`mt-12 mx-auto bg-[url("/22.png")] rounded-[20px]`}>
+    <div className={`mt-12 mx-auto backdrop-blur-lg bg-black/30 rounded-[20px]`}>
         <div
             className={`bg-[#151030] rounded-2xl sm:px-16 px-6 sm:py-5 py-10 md:min-h-[390px] min-h-[410px]  lg:min-h-[350px]`}
         >
             <motion.div variants={textVariant()}>
-            <p className="sm:text-[18px] text-[14px] text-[#aaa6c3] uppercase">Transform Your Vision into Reality with Expert Development Services! </p>
-            <h2 className="text-white font-bold md:text-[45px] sm:text-[30px] text-[25px]">Elevate Your Business with Expert Development Solutions</h2>
+            {/* <p className="sm:text-[18px] text-[14px] text-[#aaa6c3] uppercase">Transform Your Vision into Reality with Expert Development Services! </p> */}
+            <h2 className="text-white font-bold my-4 md:text-[45px] sm:text-[30px] text-[25px]">Elevate Your Business with Expert Development Solutions</h2>
             <p className='text-[#abacf1] text-base md:text-xl'>Are you ready to elevate your project with cutting-edge development solutions? Look no further! At <span className='text-lg md:text-2xl font-bold text-[#0004ff] '>TechArvel</span> , we specialize in delivering top-notch development services across the full stack. Whether you&apos;re building a new web application, creating a blockchain solution, or anything in between, we&apos;ve got you covered!</p>
             </motion.div>
         </div>
@@ -51,7 +51,7 @@ const TechArvel = () => {
               {testimonials.map((testimonial:any, index:any) => (
          <motion.div key={index}
          variants={fadeIn("", "spring", index * 0.5, 0.75)}
-         className='bg-black p-3 rounded-3xl  w-full md:w-[48.5%] lg:w-[32%]'
+         className='bg-[url("/22.png")] p-3 rounded-3xl  w-full md:w-[48.5%] lg:w-[32%]'
          >
           <div className='w-full relative'>
             <div className='w-full h-44 rounded-lg object-cover'>

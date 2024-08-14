@@ -21,7 +21,7 @@ const LogIn = () => {
   useEffect(() => {
     if (refresh) {
       router.refresh();
-      router.push("/");
+      router.push("/blog");
     }
   }, [refresh]);
 
