@@ -32,7 +32,7 @@ const FeaturedPosts = () => {
 
   useEffect(() => {
     fetchBlog().then((result) => {
-      setFeaturedPosts(result);
+      setFeaturedPosts(result.datas);
       setDataLoaded(true);
     });
   }, []);

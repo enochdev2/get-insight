@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const blogs: any = await fetchBlog();
-  const blogl = blogs?.slice(0, 4);
+  const blogl = blogs?.datas.slice(0, 4);
 
   return (
     <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between ">
@@ -80,7 +80,7 @@ export default async function Home() {
         Blog Post{" "}
       </div>
         <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
-        {blogl.map((blog: any, index: number) => (
+        {blogl?.map((blog: any, index: number) => (
         <div key={index} className=" px-4 m-2  bg-[#ced1e6]/70 dark:bg-black/30 py-8 rounded-lg space-y-2">
           <div
             className="relative w-[90%] h-24  md:h-36 m-auto "

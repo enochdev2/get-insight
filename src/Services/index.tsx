@@ -2,11 +2,15 @@ import { notFound } from "next/navigation";
 
 export const localhost = process.env.domain;
 
-export const fetchBlog = async () => {
-  const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
+export const fetchBlog = async (page = 1) => {
+  // const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
+  //   next: {revalidate: 21600}
+  // });
+  const res = await fetch(`http://localhost:3000/api/blog?page=${page}`, {
     next: {revalidate: 21600}
   });
-  const data = res?.json();
+  const data = await res.json();
+  // console.log("🚀 ~ fetchBlog ~ data:", data)
   return data;
 };
 

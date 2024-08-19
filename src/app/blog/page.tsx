@@ -1,13 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import FeaturedPosts from "@/components/FeaturedPosts";
+import BlogCard from "@/components/blogCard";
 import Categories from "@/components/Categories";
+import FeaturedPosts from "@/components/FeaturedPosts";
+import Pagination from "@/components/Pagination";
 import RelatedPost from "@/components/RelatedPost";
 import { fetchBlog } from "@/Services";
-import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { Metadata } from "next";
-import BlogCard from "@/components/blogCard";
 
 export const metadata: Metadata = {
   title: "Dev-Noch Blog",
@@ -17,15 +14,25 @@ export const metadata: Metadata = {
   },
 };
 
-const Blog = async () => {
-  const blogs: any = await fetchBlog();
+const Blog = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
 
-  const path = "blog"
-  
-  const blogCardstyle = "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg pt-5 pb-3 gap-2 px-4 dark:bg-slate-800"
+  // const pageNumbers = pageNumber
+  const bloog: any = await fetchBlog(page);
+  const blogs = bloog.datas;
+  const isNext = bloog.isNext;
+
+  const path = "blog";
+
+  const blogCardstyle =
+    "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg pt-5 pb-3 gap-2 px-4 dark:bg-slate-800";
 
   const classNames =
-    " bg-slate-300 flex gap-4 flex-col dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8";
+    " ";
 
   return (
     <main className="w-full pt-2  ">
@@ -36,7 +43,11 @@ const Blog = async () => {
         <FeaturedPosts />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 my-15">
           <div className="lg:col-span-8 gap-3 col-span-1 my-15">
-            <BlogCard blogs={blogs} blogCardstyle={blogCardstyle} value={path} />
+            <BlogCard
+              blogs={blogs}
+              blogCardstyle={blogCardstyle}
+              value={path}
+            />
           </div>
 
           <div className="lg:col-span-4 col-span-1">
@@ -52,6 +63,10 @@ const Blog = async () => {
           </div>
         </div>
       </div>
+      <Pagination
+        pageNumber={searchParams?.page ? +searchParams.page : 1}
+        isNext={isNext}
+      />
     </main>
   );
 };

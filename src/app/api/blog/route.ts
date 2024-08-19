@@ -6,10 +6,35 @@ import  db from "@/lib/db";
 export async function GET(req:Request) {
   try {
     await db.connect()
-    
+    const url = new URL(req.url);
+    const page = url.searchParams.get("page");
+    const pageNumber = Number(page);
+    console.log("🚀 ~ GET ~ pageNumber :", pageNumber )
 
-    const data = await Blog.find().sort({ createdAt: -1})
+    const pageSize = 10
+
+     // Calculate the number of users to skip based on the page number and page size.
+     const skipAmount = (pageNumber - 1) * pageSize;
+
+
+    const datas : any = await Blog.find().sort({ createdAt: -1}).skip(skipAmount)
+    .limit(pageSize);
+
+
+    const totalBlogCount = await Blog.countDocuments();
+    console.log("🚀 ~ GET ~ totalBlogCount:", totalBlogCount)
+
+    
+    // const blogs = await datas.exec();
+    
+    const isNext = totalBlogCount > skipAmount + datas.length;
+    console.log("🚀 ~ GET ~ skipAmount:", skipAmount)
+    console.log("🚀 ~ GET ~ datas.length:", datas.length)
+    console.log("🚀 ~ GET ~ isNext:", isNext)
+
+    const data = {datas, isNext}
     return new Response(JSON.stringify(data), { status: 201 });
+
   } catch (error: any) {
     console.log(error.message);
     return new Response(JSON.stringify(error.message), { status: 401 });

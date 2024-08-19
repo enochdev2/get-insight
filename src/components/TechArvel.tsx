@@ -81,10 +81,10 @@ const TechArvel = () => {
          </motion.div>
         ))}
       <div className='flex flex-wrap gap-5 mt-3 text-white w-full justify-between' >
-        <p className='bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] rounded-lg  px-3 py-2   '>👉 Contact Us: <a href="" className='text-[#f78d8d]'> Techarvel.info@gmail.com</a></p>
-        <p className='bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] rounded-lg  px-3 py-2   '>👉 Visit Our Website: <a href="" className='text-[#f78d8d]'> wwww.techarvelsoftwaresolution.com</a> </p>
-        <p className='bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] rounded-lg  px-3 py-2   '>👉 Follow Us: <a href="" className='text-[#f78d8d]'> TechArvel</a> </p>
-        {/* <p> TechArvel, Where Innovation Meets Excellence🌟  </p> */}
+        <p className='bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] rounded-lg  px-3 py-2   '>👉 Contact Us: <a href="" className='text-[#f7c0c0]'> smartdevelopments.info@gmail.com</a></p>
+        {/* <p className='bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] rounded-lg  px-3 py-2   '>👉 Visit Our Website: <a href="" className='text-[#f0bcbc]'> wwww.techarvelsoftwaresolution.com</a> </p>
+        <p className='bg-gradient-to-r from-[#080935] via-[#321894] to-[#686ec2] rounded-lg  px-3 py-2   '>👉 Follow Us: <a href="" className='text-[#f0aeae]'> TechArvel</a> </p> */}
+        <p> TechArvel, Where Innovation Meets Excellence🌟  </p>
       </div>
         </div>
 
