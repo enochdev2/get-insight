@@ -20,8 +20,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const blogs: any = await fetchBlogs();
-  const blogl = blogs?.datas.slice(0, 4);
+  const blog: any = await fetchBlogs();
+  console.log("🚀 ~ Home ~ blog:", blog)
+  const blogl : any = blog?.slice(0, 4);
 
   return (
     <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between ">
