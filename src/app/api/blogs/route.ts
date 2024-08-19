@@ -13,9 +13,10 @@ export async function GET(req:Request) {
 
      // Calculate the number of users to skip based on the page number and page size.
      const skipAmount = (pageNumber - 1) * pageSize;
+     const skipValue = Math.max(0, skipAmount)
 
 
-    const datas : any = await Blog.find().sort({ createdAt: -1}).skip(skipAmount)
+    const datas : any = await Blog.find().sort({ createdAt: -1}).skip(skipValue)
     .limit(pageSize);
 
 
