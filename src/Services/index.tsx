@@ -6,7 +6,7 @@ export const fetchBlog = async (page = 1) => {
   // const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
   //   next: {revalidate: 21600}
   // });
-  const res = await fetch(`http://localhost:3000/api/blog?page=${page}`, {
+  const res = await fetch(`http://localhost:3000/api/blogs?page=${page}`, {
     next: {revalidate: 21600}
   });
   const data = await res.json();
