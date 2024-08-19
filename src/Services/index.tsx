@@ -13,6 +13,15 @@ export const fetchBlog = async (page = 1) => {
   // console.log("🚀 ~ fetchBlog ~ data:", data)
   return data;
 };
+export const fetchBlogs = async (page = 1) => {
+  const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
+    next: {revalidate: 21600}
+  });
+
+  const data = await res.json();
+  // console.log("🚀 ~ fetchBlog ~ data:", data)
+  return data;
+};
 
 export const fetchSingleBlog = async (id: string | number) => {
   const res = await fetch(`https://www.dev-noch.com.ng/api/blog/${id}`, {

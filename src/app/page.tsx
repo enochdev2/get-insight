@@ -1,4 +1,4 @@
-import { fetchBlog, fetchRecentPost } from "@/Services";
+import { fetchBlog, fetchBlogs, fetchRecentPost } from "@/Services";
 import Categories from "@/components/Categories";
 import WhatsNew from "@/components/WhatsNew";
 import BlogCard from "@/components/blogCard";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const blogs: any = await fetchBlog();
+  const blogs: any = await fetchBlogs();
   const blogl = blogs?.datas.slice(0, 4);
 
   return (
