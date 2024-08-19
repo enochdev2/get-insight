@@ -63,6 +63,7 @@ const Create_post = () => {
     }
 
     try {
+      
       const imageUrl = await uploadImage();
       console.log(imageUrl);
 
@@ -83,6 +84,7 @@ const Create_post = () => {
       });
       const blog = await res.json();
       if (res.ok) {
+        console.log("amen");
         router.push(`/blog/${blog?._id}`);
       } else {
         throw new Error("Error occured");

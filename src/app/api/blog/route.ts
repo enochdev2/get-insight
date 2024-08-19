@@ -8,7 +8,7 @@ export async function GET(req:Request) {
     await db.connect()
     const url = new URL(req.url);
     const page = url.searchParams.get("page");
-    const pageNumber = Number(page);
+    const pageNumber: number = Number(page);
     console.log("🚀 ~ GET ~ pageNumber :", pageNumber )
 
     const pageSize = 10
@@ -22,15 +22,11 @@ export async function GET(req:Request) {
 
 
     const totalBlogCount = await Blog.countDocuments();
-    console.log("🚀 ~ GET ~ totalBlogCount:", totalBlogCount)
 
     
     // const blogs = await datas.exec();
     
     const isNext = totalBlogCount > skipAmount + datas.length;
-    console.log("🚀 ~ GET ~ skipAmount:", skipAmount)
-    console.log("🚀 ~ GET ~ datas.length:", datas.length)
-    console.log("🚀 ~ GET ~ isNext:", isNext)
 
     const data = {datas, isNext}
     return new Response(JSON.stringify(data), { status: 201 });
