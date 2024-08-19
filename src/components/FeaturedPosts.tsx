@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import FeaturedPostCard from './FeaturedPostCard';
-import { fetchBlog } from '@/Services';
+import { fetchBlog, fetchBlogs } from '@/Services';
 
 
 const responsive = {
@@ -31,7 +31,7 @@ const FeaturedPosts = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
-    fetchBlog().then((result) => {
+    fetchBlogs().then((result) => {
       setFeaturedPosts(result.datas);
       setDataLoaded(true);
     });

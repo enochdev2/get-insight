@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import styles from '../styles';
-import { fetchBlog } from "@/Services";
+import { fetchBlog, fetchBlogs } from "@/Services";
 import { categories } from "@/utils";
 import { planetVariants, staggerContainer, fadeIn } from '../utils/motion';
 
@@ -12,7 +12,7 @@ const Categories = ({classNames,title,style}:{classNames:string, title:string|nu
   const [categorie, setCategories] = useState([]);
 
   useEffect(() => {
-    fetchBlog().then((result) => {
+    fetchBlogs().then((result) => {
       setCategories(result);
     });
   }, []);
