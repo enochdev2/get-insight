@@ -13,7 +13,7 @@ export const fetchBlog = async (page = 1) => {
   const data = await res.json();
   return data;
 };
-export const fetchBlogs = async (page = 1) => {
+export const fetchBlogs = async () => {
   const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
     cache: "no-store"
     // next: {revalidate: 21600}
