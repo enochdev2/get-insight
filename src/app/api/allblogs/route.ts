@@ -21,7 +21,7 @@ export async function GET(req: Request) {
     const skipValue = Math.max(0, skipAmount);
 
     // Fetch blogs with pagination and sorting by creation date (most recent first).
-    const blogs = await Blog.find().sort({ createdAt: -1 }).skip(skipValue).limit(pageSize);
+    const blogs = await Blog.find().sort({ createdAt: -1 }).skip(+skipValue).limit(pageSize);
 
     // Count the total number of blog documents in the collection.
     const totalBlogCount = await Blog.countDocuments();
