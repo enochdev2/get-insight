@@ -28,11 +28,13 @@ const responsive = {
 
 const FeaturedPosts = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
+  console.log("🚀 ~ FeaturedPosts ~ featuredPosts:", featuredPosts)
   const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     fetchBlogs().then((result) => {
-      setFeaturedPosts(result.datas);
+      console.log("🚀 ~ fetchBlogs ~ result:", result)
+      setFeaturedPosts(result);
       setDataLoaded(true);
     });
   }, []);
@@ -56,7 +58,7 @@ const FeaturedPosts = () => {
   return (
     <div className="mb-8">
       <Carousel infinite customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} responsive={responsive} itemClass="px-4">
-        {dataLoaded && featuredPosts.map((post, index) => (
+        {dataLoaded && featuredPosts?.map((post, index) => (
           <FeaturedPostCard 
           key={index} post={post}
            />

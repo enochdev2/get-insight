@@ -9,7 +9,7 @@ const BlogCard = ({blogs, value, blogCardstyle}: any) => {
   const path = value;
   return (
     <>
-      {blogs.map((blog: any, index: number) => (
+      {blogs?.map((blog: any, index: number) => (
         <div key={index} className={`${blogCardstyle} ${path === "home" ? "  border-red-600 border" : ""} overflow-hidden`}>
           <div
             className={`relative w-[90%] ${path === "home" ? "h-24" : "h-36"} ${

@@ -8,7 +8,7 @@ export async function GET(req:Request) {
     await db.connect()
 
     const data  = await Blog.find().sort({ createdAt: -1});
-    console.log("🚀 ~ GET ~ data:", data)
+    // console.log("🚀 ~ GET ~ data:", data)
 
     return new Response(JSON.stringify(data), { status: 201 });
 

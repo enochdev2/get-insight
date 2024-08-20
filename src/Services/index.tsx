@@ -6,11 +6,12 @@ export const fetchBlog = async (page = 1) => {
   // const res = await fetch(`https://www.dev-noch.com.ng/api/blog`, {
   //   next: {revalidate: 21600}
   // });
-  const res = await fetch(`https://www.dev-noch.com.ng/api/blogs?page=${page}`, {
+  const res = await fetch(`https://www.dev-noch.com.ng/api/allblogs?page=${page}`, {
      cache: "no-store"
     // next: {revalidate: 21600}
   });
   const data = await res.json();
+  // console.log("🚀 ~ fetchBlog ~ data:", data)
   return data;
 };
 
@@ -58,6 +59,7 @@ export const fetchRelatedPost = async (categories: string) => {
       { next: {revalidate: 21600} }
     );
     const data = await res.json();
+    console.log("🚀 ~ fetchRelatedPost ~ data:", data)
     return data;
   } catch (error) {
     console.log(error);

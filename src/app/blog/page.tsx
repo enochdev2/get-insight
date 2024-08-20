@@ -23,7 +23,7 @@ const Blog = async ({
 
   // const pageNumbers = pageNumber
   const bloog: any = await fetchBlog(page);
-  const blogs = bloog.datas;
+  const blogs = bloog.blogs;
   const isNext = bloog.isNext;
 
   const path = "blog";
