@@ -1,8 +1,4 @@
-import { TypingText, TitleText } from './CustomTexts';
-import NewFeatures from './NewFeatures';
+import { TypingText, TitleText } from "./CustomTexts";
+import NewFeatures from "./NewFeatures";
 
-export {
-  TitleText,
-  TypingText,
-  NewFeatures,
-};
+export { TitleText, TypingText, NewFeatures };

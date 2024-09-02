@@ -31,8 +31,7 @@ const Blog = async ({
   const blogCardstyle =
     "my-14 shadow-md lg:flex  bg-slate-200 rounded-lg pt-5 pb-3 gap-2 px-4 dark:bg-slate-800";
 
-  const classNames =
-    " ";
+  const classNames = " ";
 
   return (
     <main className="w-full pt-2  ">

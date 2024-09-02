@@ -9,12 +9,10 @@ export async function GET(req: Request) {
     await db.connect();
     const url = new URL(req.url);
     const searchTerm = url.searchParams.get("categories");
-   
 
     const data = await Blog.find({ categories: searchTerm })
       .sort({ createdAt: -1 })
       .limit(6);
-  
 
     return new Response(JSON.stringify(data), { status: 201 });
   } catch (error: any) {

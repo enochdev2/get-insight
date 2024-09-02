@@ -1,10 +1,10 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
-import styles from '../styles';
-import { newFeatures } from '../utils';
-import { NewFeatures, TitleText, TypingText } from '.';
-import { planetVariants, staggerContainer, fadeIn } from '../utils/motion';
+import styles from "../styles";
+import { newFeatures } from "../utils";
+import { NewFeatures, TitleText, TypingText } from ".";
+import { planetVariants, staggerContainer, fadeIn } from "../utils/motion";
 
 const WhatsNew = () => (
   <section className={`sm:p-10  lg:px-6 py-12 relative z-10`}>
@@ -16,11 +16,13 @@ const WhatsNew = () => (
       className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
     >
       <motion.div
-        variants={fadeIn('right', 'tween', 0.2, 1)}
+        variants={fadeIn("right", "tween", 0.2, 1)}
         className="flex-[1.7]  bg-black/50 px-5 py-3 pt-0 rounded-lg flex justify-center flex-col"
       >
         <TypingText title=" Our Service?" />
-        <TitleText title={<>Unlock the Potential of Web3 with Expert Developement</>} />
+        <TitleText
+          title={<>Unlock the Potential of Web3 with Expert Developement</>}
+        />
         <div className="mt-[28px] flex flex-wrap justify-between gap-[18px]">
           {newFeatures.map((feature) => (
             <NewFeatures key={feature.title} {...feature} />
@@ -29,7 +31,7 @@ const WhatsNew = () => (
       </motion.div>
 
       <motion.div
-        variants={planetVariants('right')}
+        variants={planetVariants("right")}
         className={`flex-1 ${styles.flexCenter} h-[750px]`}
       >
         {/* <img

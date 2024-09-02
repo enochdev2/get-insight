@@ -19,11 +19,9 @@ interface Image {
   setImageUrl: (value: React.SetStateAction<string>) => void;
 }
 
-export default function ProfileDetail({session}:any) {
+export default function ProfileDetail({ session }: any) {
   // const { data: session, status } = useSession() as { data: any; status: any };
   const router = useRouter();
-
-  
 
   const fileRef = useRef<any>(null);
   const [file, setFile] = useState("");
@@ -102,7 +100,7 @@ export default function ProfileDetail({session}:any) {
         toast.error(data.message);
       } else {
         toast.success("User Updated Successfully");
-        router.refresh()
+        router.refresh();
       }
     } catch (error) {
       console.log(error);
@@ -175,7 +173,7 @@ export default function ProfileDetail({session}:any) {
               type="text"
               placeholder="Country"
               className="border p-3 rounded-lg w-full"
-              value={session?.user?.country|| country}
+              value={session?.user?.country || country}
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>
@@ -206,7 +204,7 @@ export default function ProfileDetail({session}:any) {
                 type="text"
                 placeholder="Postal code"
                 className="border p-3  w-full rounded-lg"
-                value={session?.user?.postalcode|| postalcode}
+                value={session?.user?.postalcode || postalcode}
                 onChange={(e) => setPostalCode(e.target.value)}
               />
             </div>

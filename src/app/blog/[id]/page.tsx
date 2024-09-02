@@ -6,7 +6,6 @@ import moment from "moment";
 import RelatedPost from "@/components/RelatedPost";
 import { Metadata } from "next";
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -17,29 +16,26 @@ export async function generateMetadata({
     return {
       title: "not Found",
       description: "the page is not found",
-  
     };
 
   return {
     title: BlogDetail.title,
     description: BlogDetail.except,
     openGraph: {
-      images: [BlogDetail.imageUrl]
+      images: [BlogDetail.imageUrl],
     },
-    verification:{
-      google: "google-site-verification: google8736e73035654ff5.html"
-     },
-    alternates:{
-      canonical: `https://www.dev-noch.com.ng/blog/${params.id}`
-    }
+    verification: {
+      google: "google-site-verification: google8736e73035654ff5.html",
+    },
+    alternates: {
+      canonical: `https://www.dev-noch.com.ng/blog/${params.id}`,
+    },
   };
 }
 
-
-
 const BlogDetails = async ({ params }: any) => {
   const BlogDetail = await fetchSingleBlog(params.id);
-  
+
   const idx = params.id as string;
 
   const handleLike = () => {};
@@ -49,12 +45,15 @@ const BlogDetails = async ({ params }: any) => {
       <div className="px-4 md:px-5 overflow-x-hidden shadow-lg w-[98%] m-auto mt-20 lg:col-span-3 col-span-4 grid place-items-center gap-3">
         <div className="w-full">
           <div className="font-bold my-8 m-auto  text-2xl">
-            <h1>
-            {BlogDetail?.title}
-            </h1>
+            <h1>{BlogDetail?.title}</h1>
           </div>
           <div className="relative overflow-hidden w-[90%] h-[200px] shadow-md rounded-lg m-auto">
-            <Image src={BlogDetail?.imageUrl} fill alt="blog" className="shadow-md" />
+            <Image
+              src={BlogDetail?.imageUrl}
+              fill
+              alt="blog"
+              className="shadow-md"
+            />
           </div>
           <div className="my-1 py-5 px-2">
             <p className="text-black m-2 mb-4 shadow-md font-semibold text-base w-full flex justify-between dark:text-white dark:border py-3 px-3 rounded-lg ">

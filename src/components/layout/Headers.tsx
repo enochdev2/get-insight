@@ -88,7 +88,9 @@ ${
               />
               <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
                 <span className="text-slate-200">Dev-</span>
-                <span className="bg-gradient-to-r from-sky-500 via-slate-500 to-sky-500 text-transparent bg-clip-text ">Noch</span>
+                <span className="bg-gradient-to-r from-sky-500 via-slate-500 to-sky-500 text-transparent bg-clip-text ">
+                  Noch
+                </span>
               </h1>
             </Link>
           </div>

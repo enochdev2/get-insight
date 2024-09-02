@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dev-noch.com.ng"),
   title: "Dev-Noch",
-  
+
   description: "Providing the best digital experiences",
   openGraph: {
     images: ["/Dev-Noch1.png"],

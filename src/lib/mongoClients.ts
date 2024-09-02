@@ -9,7 +9,7 @@ const uri = process.env.MONGO_URI;
 const options = {};
 // let global: any;
 let client;
-let clientPromise:  Promise<MongoClient>;
+let clientPromise: Promise<MongoClient>;
 
 if (process.env.NODE_ENV === "development") {
   // In development mode, use a global variable so that the value

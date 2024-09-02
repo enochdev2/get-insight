@@ -121,7 +121,6 @@ const Register = () => {
               />
               Sign-Up with google
             </button> */}
-
           </form>
           <h3 className="mb-4 text-center text-lg">
             Already have an account?{" "}

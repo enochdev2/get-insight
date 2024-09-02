@@ -36,7 +36,7 @@ export interface Blog {
   title: string;
   description: string;
   categories: string;
-  userId: {username:string};
+  userId: { username: string };
   userimage: string;
   comments: string[];
   image: string;
@@ -46,8 +46,8 @@ export interface Categories {
   id: string;
   label: string;
 }
- 
-export interface ProfileForm  {
+
+export interface ProfileForm {
   username: string;
   email: any;
   password: string;

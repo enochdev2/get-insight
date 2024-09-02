@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Feedbacks from "../components/Feedbacks"
+import Feedbacks from "../components/Feedbacks";
 import Product from "@/components/Product";
 import TechArvel from "@/components/TechArvel";
 import FeaturedPosts from "@/components/FeaturedPosts";
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const blog: any = await fetchBlogs();
-  console.log("🚀 ~ Home ~ blog:", blog)
-  const blogl : any = blog?.slice(0, 4);
+  console.log("🚀 ~ Home ~ blog:", blog);
+  const blogl: any = blog?.slice(0, 4);
 
   return (
     <main className="  flex min-h-screen flex-col items-center overflow-x-hidden justify-between ">
@@ -53,18 +53,18 @@ export default async function Home() {
         </div>
         <div className="w-11/12 md:w-3/4 m-auto font-serif font-medium md:font-semibold md:text-justify text-lg md:text-lg my-6 bg-black/40 shadow-lg py-5 lg:px-5 px-3 rounded-lg">
           <h1 className="m-auto text-[#eeeff3]">
-            From managing finances to navigating the
-            complexities of business strategies, and embracing the latest
-            technological advancements, Dev-Noch blog delves into the
-            multifaceted aspects of modern life. Join us as we explore the
-            intricate interplay between finance, business, technology, and
-            Web3, offering insights, tips, and strategies to achieve
-            harmony and success in today&lsquo;s dynamic world.
+            From managing finances to navigating the complexities of business
+            strategies, and embracing the latest technological advancements,
+            Dev-Noch blog delves into the multifaceted aspects of modern life.
+            Join us as we explore the intricate interplay between finance,
+            business, technology, and Web3, offering insights, tips, and
+            strategies to achieve harmony and success in today&lsquo;s dynamic
+            world.
           </h1>
         </div>
       </section>
       <section className=" overflow-hidden xs:px-3 sm:px-3 md:px-5 md:w-3xl xl:max-w-[92rem]">
-        <TechArvel/>
+        <TechArvel />
         {/* <div className=" mt-20 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
         FeaturedPosts{" "}
       </div>
@@ -73,50 +73,58 @@ export default async function Home() {
       </div> */}
         <Product />
       </section>
-      
-
 
       <section className="mx-2 w-full py-3 overflow-x-hidden mt-10">
-      <div className=" mt-20 mb-5 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
-        Blog Post{" "}
-      </div>
-        <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
-        {blogl?.map((blog: any, index: number) => (
-        <div key={index} className=" px-4 m-2  bg-[#ced1e6]/70 dark:bg-black/30 py-8 rounded-lg space-y-2">
-          <div
-            className="relative w-[90%] h-24  md:h-36 m-auto "
-          >
-            <Image src={blog.imageUrl} fill className=" m-auto " alt="blog" />
-          </div>
-          <div className="px-2 md:px-5 dark:text- shadow-lg rounded-xl py-3" >
-            <h2 className="font-bold my-2 mb-4 text-xl text-center">{blog.title}</h2>
-            <p className="my-4  md:text-justify text-base md:text-lg text-ellipsis">
-              {blog.except.substring(0, 200)}...
-              <Link href={`blog/${blog._id}`} className="">
-                <button
-                  type="button"
-                  className="py-1 items-center px-3 flex ml-5  text-cyan-700 rounded-md hover:text-teal-600 "
-                >
-                  Read More <FaArrowRightLong className="w-12" width="80px" />
-                </button>
-              </Link>
-            </p>
-          </div>
+        <div className=" mt-20 mb-5 max-w-xl  px-5 rounded-xl  text- m-auto bg-gradient-to-tr from-[#080935] via-[#321894] to-[#686ec2] border-b-black-700 py-3 text-sky-100  text-xl text-center font-semibold">
+          Blog Post{" "}
         </div>
-      ))}
+        <div className="sm:service flex-wrap flex bg-gray-200/10 dark:bg-transparent py-3 px-3 max-w-[85rem] gap-3 m-auto overflow-x-hidden ">
+          {blogl?.map((blog: any, index: number) => (
+            <div
+              key={index}
+              className=" px-4 m-2  bg-[#ced1e6]/70 dark:bg-black/30 py-8 rounded-lg space-y-2"
+            >
+              <div className="relative w-[90%] h-24  md:h-36 m-auto ">
+                <Image
+                  src={blog.imageUrl}
+                  fill
+                  className=" m-auto "
+                  alt="blog"
+                />
+              </div>
+              <div className="px-2 md:px-5 dark:text- shadow-lg rounded-xl py-3">
+                <h2 className="font-bold my-2 mb-4 text-xl text-center">
+                  {blog.title}
+                </h2>
+                <p className="my-4  md:text-justify text-base md:text-lg text-ellipsis">
+                  {blog.except.substring(0, 200)}...
+                  <Link href={`blog/${blog._id}`} className="">
+                    <button
+                      type="button"
+                      className="py-1 items-center px-3 flex ml-5  text-cyan-700 rounded-md hover:text-teal-600 "
+                    >
+                      Read More{" "}
+                      <FaArrowRightLong className="w-12" width="80px" />
+                    </button>
+                  </Link>
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="md:max-w-[90%] max-w-[95%] md:px-8 bg-custom-image bg-cover bg-center dark:bg-black/30 rounded-lg my-4 px-3">
-        <WhatsNew/>
+        <WhatsNew />
       </section>
-      
     </main>
   );
 }
 
-{/* <BlogCard
+{
+  /* <BlogCard
   blogs={blogl}
   blogCardstyle={` dark:bg-inherit bg-gray-100 my-3 py-3 mx-auto`}
   value="home"
-/> */}
+/> */
+}

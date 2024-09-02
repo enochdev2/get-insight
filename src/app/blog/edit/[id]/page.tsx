@@ -49,7 +49,9 @@ const EditPost = ({ params }: any) => {
 
   useEffect(() => {
     async function fetchBlog() {
-      const res = await fetch(`https://www.dev-noch.com.ng/api/blog/${params.id}`);
+      const res = await fetch(
+        `https://www.dev-noch.com.ng/api/blog/${params.id}`
+      );
       const blog = await res.json();
 
       setTitle(blog.title);

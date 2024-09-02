@@ -30,10 +30,8 @@ const Footer = () => {
               </a>
             </div>
             <div>
-              <a 
-              title="icon"
-              href= "https://x.com/EnochPromise5">
-              <TwitterIcon size={30} round={true} />
+              <a title="icon" href="https://x.com/EnochPromise5">
+                <TwitterIcon size={30} round={true} />
               </a>
             </div>
             {/* <div>
@@ -54,14 +52,14 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20">
-          {footerLinks.map((item:any) => (
+          {footerLinks.map((item: any) => (
             <div
               key={item.title}
               className="flex flex-col gap-6 text-base min-w-[170px] "
             >
               <h3 className="font-bold underline">{item.title}</h3>
               <div className="flex flex-col gap-5 ">
-                {item.links.map((link:any) => (
+                {item.links.map((link: any) => (
                   <Link
                     key={link.title}
                     href={link.url}

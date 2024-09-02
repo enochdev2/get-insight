@@ -16,13 +16,12 @@ const ReletedPost = async ({ categories }: any) => {
     ? await fetchRelatedPost(categories)
     : await fetchRecentPost();
 
-    console.log(categories);
-    
+  console.log(categories);
 
   return (
     <div className="bg-white shadow-lg rounded-lg dark:bg-slate-800 p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-        {categories ?  "related Posts" : "recent Posts" }
+        {categories ? "related Posts" : "recent Posts"}
       </h3>
       {relatedPosts?.map((post: Post, index: number) => (
         <div
@@ -41,7 +40,11 @@ const ReletedPost = async ({ categories }: any) => {
           </div>
           <div className="flex-grow ml-4">
             {/* <p className="text-gray-500 font-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p> */}
-            <Link href={`blog/${post._id.toString()}`} className="text-sm" key={index}>
+            <Link
+              href={`blog/${post._id.toString()}`}
+              className="text-sm"
+              key={index}
+            >
               {post.title}
             </Link>
           </div>
